@@ -10,7 +10,7 @@ function Login({ onLogin }) {
     e.preventDefault();
 
     // Simple hardcoded login for demo purposes
-    if (username === "admin" && password === "1234") {
+    if (username === "Freiderich" && password === "1234") {
       onLogin(username);
       setError("");
     } else {
@@ -21,7 +21,7 @@ function Login({ onLogin }) {
   return (
     <form onSubmit={handleSubmit} autoComplete="off" className="form">
       <div className="control">
-        <h1>SmartEnroll | Sign In</h1>
+        <h1>Portfolio | Sign In</h1>
       </div>
 
       <div className="control block-cube block-input">
