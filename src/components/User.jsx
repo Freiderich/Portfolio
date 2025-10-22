@@ -37,58 +37,52 @@ function User({ username = "Student", onLogout }) {
       {/* Header / Navbar */}
       <div className="header">
         <div className="header__logo">
-          <strong>SmartEnroll</strong>
+          <strong>Portfolio</strong>
         </div>
 
         <nav className="navbar">
           <ul className="navbar__menu">
             <li className="navbar__item">
-              <a href="#" className="navbar__link">
+              <a href="#home" className="navbar__link">
                 <i data-feather="home"></i>
                 <span>Home</span>
               </a>
             </li>
             <li className="navbar__item">
-              <a href="#" className="navbar__link">
+              <a href="#about" className="navbar__link">
                 <i data-feather="user"></i>
-                <span>Profile</span>
+                <span>About</span>
               </a>
             </li>
             <li className="navbar__item">
-              <a href="#" className="navbar__link">
-                <i data-feather="credit-card"></i>
-                <span>Payments</span>
+              <a href="#projects" className="navbar__link">
+                <i data-feather="code"></i>
+                <span>Projects</span>
               </a>
             </li>
             <li className="navbar__item">
-              <a href="#" className="navbar__link">
-                <i data-feather="file-text"></i>
-                <span>Enrollment</span>
+              <a href="#skills" className="navbar__link">
+                <i data-feather="layers"></i>
+                <span>Skills</span>
               </a>
             </li>
             <li className="navbar__item">
-              <a href="#" className="navbar__link">
-                <i data-feather="bell"></i>
-                <span>Notices</span>
+              <a href="#experience" className="navbar__link">
+                <i data-feather="briefcase"></i>
+                <span>Experience</span>
               </a>
             </li>
             <li className="navbar__item">
-              <a href="#" className="navbar__link">
-                <i data-feather="help-circle"></i>
-                <span>Help</span>
-              </a>
-            </li>
-            <li className="navbar__item">
-              <a href="#" className="navbar__link">
-                <i data-feather="settings"></i>
-                <span>Settings</span>
+              <a href="#contact" className="navbar__link">
+                <i data-feather="mail"></i>
+                <span>Contact</span>
               </a>
             </li>
           </ul>
 
           <div className="navbar__auth">
             <span className="navbar__user">
-              Logged in as <strong>{username}</strong>
+              Welcome, <strong>{username}</strong>
             </span>
             <button className="btn btn-logout" onClick={onLogout}>
               Logout

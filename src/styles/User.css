@@ -1,4 +1,6 @@
-/* Root and Base Styles */
+/* =========================
+   Root & Base Styles
+========================= */
 :root {
   --link-width: 10rem;
   --primary: #00d4ff;
@@ -6,108 +8,29 @@
 
 html, body {
   height: 100%;
-  background-color: #212121 !important;
-  color: #ffffff !important;
-  font-family: monospace, serif;
-  letter-spacing: 0.05em;
   margin: 0;
   padding: 0;
-}
-
-/* Typography and Links */
-h1, h2, h3, p, li, a, button, span {
-  color: #ffffff !important;
-}
-
-a {
-  color: rgb(0, 255, 255) !important;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ffffff !important;
-  text-decoration: underline;
-}
-
-.text-muted,
-.text-secondary {
-  color: #cccccc !important;
-}
-
-/* Card Layout */
-.card {
-  background-color: #2e2e2e !important;
-  border: 1px solid rgba(52, 9, 121, 1) !important;
-  border-radius: 15px !important;
-  box-shadow: 0 0 10px rgba(2, 2, 2, 0.3);
-  padding: 1.5rem;
-}
-
-.card-header {
-  background-color: #383838 !important;
-  color: #0ff !important;
-  font-weight: bold;
-  border-bottom: 1px solid #0ff !important;
-}
-
-.card-body {
-  color: #ffffff !important;
-}
-
-/* Buttons */
-.btn {
-  background: transparent;
-  border: 1px solid #0ff;
-  color: #0ff;
-  font-family: monospace;
-}
-
-.btn:hover {
-  background: #0ff;
-  color: #000;
-}
-
-/* Box Highlight */
-.box-highlight {
-  position: relative;
   background-color: #212121;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
-  overflow: hidden;
-  border: 1px solid rgba(0, 212, 255, 0.4);
+  color: #ffffff;
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
 }
 
-.box-highlight::before {
-  content: '';
-  position: absolute;
-  height: 10px;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(52, 9, 121, 1) 37%,
-    rgba(0, 212, 255, 1) 94%
-  );
-  bottom: 100%;
-  left: 5px;
-  right: -5px;
-  transform: skew(-45deg, 0);
-}
-
-/* ========== Animated Navbar Styles ========== */
-
+/* =========================
+   Header / Navbar
+========================= */
 .header {
-  position: sticky;
+  position: fixed; /* Stays at top */
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   background: rgba(0, 0, 0, 0.95);
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 212, 255, 0.2);
 }
 
 .header__logo strong {
@@ -117,10 +40,13 @@ a:hover {
   text-shadow: 1px 1px 3px rgba(0, 212, 255, 0.4);
 }
 
+/* Navbar structure */
 .navbar {
   display: flex;
   align-items: center;
   position: relative;
+  flex: 1; /* Takes up available space */
+  justify-content: center; /* Centers the menu */
 }
 
 .navbar__menu {
@@ -129,6 +55,7 @@ a:hover {
   position: relative;
   padding: 0;
   margin: 0;
+  gap: .5rem;
 }
 
 .navbar__item {
@@ -146,6 +73,27 @@ a:hover {
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.3s ease all;
+  padding: 0.5rem 0;
+}
+
+.navbar__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  height: 3.5rem;
+  width: var(--link-width);
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease all;
+  padding: 0.5rem 0;
+}
+
+.navbar__link svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
 }
 
 .navbar__link span {
@@ -163,6 +111,9 @@ a:hover {
   transform: translateY(-2px);
 }
 
+/* =========================
+   Speedline Animation
+========================= */
 .speedline {
   position: absolute;
   bottom: -20px;
@@ -172,18 +123,21 @@ a:hover {
   box-shadow:
     0 -5px var(--primary),
     0 -5px var(--primary),
-    0 0 3rem 0.5rem var(--primary),
+    0 0 6rem 0.5rem var(--primary),
     2rem 0 0 rgba(255, 255, 255, 0.2),
     -2rem 0 0 rgba(255, 255, 255, 0.2),
     4rem 0 0 rgba(255, 255, 255, 0.2),
     -4rem 0 0 rgba(255, 255, 255, 0.2),
     6rem 0 0 rgba(255, 255, 255, 0.2),
     -6rem 0 0 rgba(255, 255, 255, 0.2);
-  transition: left 0.3s ease;
+  transition: left 0.6s ease;
   pointer-events: none;
   transform: translateX(-50%);
 }
 
+/* =========================
+   Navbar Right Side
+========================= */
 .navbar__auth {
   display: flex;
   align-items: center;
@@ -196,6 +150,9 @@ a:hover {
   color: #ccc;
 }
 
+/* =========================
+   Logout Button
+========================= */
 .btn-logout {
   background: transparent;
   border: 1px solid #0ff;
@@ -204,9 +161,59 @@ a:hover {
   font-family: monospace;
   border-radius: 4px;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .btn-logout:hover {
   background: #0ff;
   color: #000;
+}
+
+/* =========================
+   Page Content Container
+========================= */
+.container {
+  margin-top: 100px; /* Push content below fixed navbar */
+  padding: 1.5rem;
+}
+
+/* =========================
+   Text / Card Styles
+========================= */
+h1, h2, h3, p, li, a, button, span {
+  color: #ffffff !important;
+}
+
+a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.text-muted,
+.text-secondary {
+  color: #cccccc;
+}
+
+.card {
+  background-color: #2e2e2e;
+  border: 1px solid rgba(52, 9, 121, 1);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(2, 2, 2, 0.3);
+  padding: 1.5rem;
+}
+
+.card-header {
+  background-color: #383838;
+  color: #0ff;
+  font-weight: bold;
+  border-bottom: 1px solid #0ff;
+}
+
+.card-body {
+  color: #ffffff;
 }
