@@ -1,6 +1,8 @@
 import { useState } from "react";
-import Login from "./Login";
-import Logout from "./Logout";
+import Login from "./Login.jsx";
+import Logout from "./Logout.jsx";
+import User from "./User.jsx";
+import "../styles/index.css";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -17,20 +19,9 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-container">
       {user ? (
-        <div style={{ textAlign: "center", marginTop: "2rem" }}>
-          <h1>Welcome, {user}!</h1>
-          <button
-            onClick={handleLogout}
-            className="btn block-cube block-cube-hover"
-          >
-            <div className="bg-top"><div className="bg-inner"></div></div>
-            <div className="bg-right"><div className="bg-inner"></div></div>
-            <div className="bg"><div className="bg-inner"></div></div>
-            <div className="text">Logout</div>
-          </button>
-        </div>
+        <User username={user} onLogout={handleLogout} />
       ) : loggedOut ? (
         <Logout onLogout={() => setLoggedOut(false)} />
       ) : (
