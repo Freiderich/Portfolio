@@ -1,4 +1,4 @@
-import './Logout.css';
+import '../styles/Logout.css';
 
 function Logout({ onLogout }) {
   return (
@@ -9,7 +9,7 @@ function Logout({ onLogout }) {
 
       <div className="logout-box">
         <h1>You have been logged out.</h1>
-        <p>Thank you for using the dashboard.</p>
+        <p>Thank you for using the Portfolio.</p>
 
         <button
           className="block-cube block-cube-hover btn-cube"
