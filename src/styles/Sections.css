@@ -1,0 +1,35 @@
+/* =========================
+   Sections
+========================= */
+.section {
+  height: 100vh; /* full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
+  text-align: center;
+  padding: 2rem;
+}
+
+.section h1, .section h2 {
+  margin: 0.5rem 0;
+}
+
+.section p {
+  max-width: 600px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* =========================
+   Links & Text
+========================= */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
