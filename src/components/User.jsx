@@ -1,35 +1,13 @@
 import { useEffect } from "react";
-import "../styles/user.css";
+import "../styles/User.css";
 
-function User({ username = "Student", onLogout }) {
+function User({ username = "Student" }) {
   useEffect(() => {
     // Load Feather icons
     const script = document.createElement("script");
     script.src = "https://unpkg.com/feather-icons";
     script.onload = () => window.feather.replace();
     document.body.appendChild(script);
-
-    // Animated navbar speedline
-    const menuItems = document.querySelectorAll(".navbar__item");
-    const speedline = document.createElement("div");
-    speedline.classList.add("speedline");
-    document.querySelector(".navbar__menu").appendChild(speedline);
-
-    menuItems.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        const rect = item.getBoundingClientRect();
-        const parentRect = item.parentElement.getBoundingClientRect();
-        const offsetLeft = rect.left - parentRect.left;
-        speedline.style.left = `${offsetLeft + rect.width / 2}px`;
-      });
-    });
-
-    return () => {
-      // Cleanup event listeners when component unmounts
-      menuItems.forEach((item) =>
-        item.removeEventListener("mouseenter", () => {})
-      );
-    };
   }, []);
 
   return (
@@ -79,16 +57,40 @@ function User({ username = "Student", onLogout }) {
               </a>
             </li>
           </ul>
-
-          <div className="navbar__auth">
-            <span className="navbar__user">
-              Welcome, <strong>{username}</strong>
-            </span>
-            <button className="btn btn-logout" onClick={onLogout}>
-              Logout
-            </button>
-          </div>
         </nav>
+      </div>
+
+      {/* Main content container */}
+      <div className="container">
+        <section id="home">
+          <h1>Welcome to My Portfolio</h1>
+          <p>This is the Home section.</p>
+        </section>
+
+        <section id="about">
+          <h2>About Me</h2>
+          <p>Write something about yourself here.</p>
+        </section>
+
+        <section id="projects">
+          <h2>Projects</h2>
+          <p>Showcase your projects here.</p>
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <p>List your skills here.</p>
+        </section>
+
+        <section id="experience">
+          <h2>Experience</h2>
+          <p>Your work experience or internships go here.</p>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>Provide contact information or a contact form.</p>
+        </section>
       </div>
     </div>
   );

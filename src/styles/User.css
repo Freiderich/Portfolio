@@ -2,7 +2,6 @@
    Root & Base Styles
 ========================= */
 :root {
-  --link-width: 10rem;
   --primary: #00d4ff;
 }
 
@@ -35,27 +34,27 @@ html, body {
 
 .header__logo strong {
   font-size: 1.5rem;
-  color: #0ff;
+  color: var(--primary);
   font-family: monospace;
   text-shadow: 1px 1px 3px rgba(0, 212, 255, 0.4);
 }
 
-/* Navbar structure */
+/* =========================
+   Navbar Structure
+========================= */
 .navbar {
   display: flex;
   align-items: center;
-  position: relative;
-  flex: 1; /* Takes up available space */
-  justify-content: center; /* Centers the menu */
+  flex: 1;
+  justify-content: center;
 }
 
 .navbar__menu {
   display: flex;
   list-style: none;
-  position: relative;
   padding: 0;
   margin: 0;
-  gap: .5rem;
+  gap: 1rem;
 }
 
 .navbar__item {
@@ -63,47 +62,36 @@ html, body {
 }
 
 .navbar__link {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 3.5rem;
-  width: var(--link-width);
+  width: 8rem;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  transition: 0.3s ease all;
-  padding: 0.5rem 0;
-}
-
-.navbar__link {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
-  height: 3.5rem;
-  width: var(--link-width);
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: 0.3s ease all;
-  padding: 0.5rem 0;
-}
-
-.navbar__link svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 2;
+  transition: color 0.3s ease;
 }
 
 .navbar__link span {
   font-size: 0.8rem;
   opacity: 0.8;
-  transition: 0.3s ease all;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.navbar__link i {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effects */
 .navbar__link:hover {
   color: var(--primary);
+  text-shadow: 0 0 8px var(--primary), 0 0 16px rgba(0, 212, 255, 0.4);
 }
 
 .navbar__link:hover span {
@@ -111,109 +99,57 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* =========================
-   Speedline Animation
-========================= */
-.speedline {
-  position: absolute;
-  bottom: -20px;
-  width: 2px;
-  height: 4px;
-  background: var(--primary);
-  box-shadow:
-    0 -5px var(--primary),
-    0 -5px var(--primary),
-    0 0 6rem 0.5rem var(--primary),
-    2rem 0 0 rgba(255, 255, 255, 0.2),
-    -2rem 0 0 rgba(255, 255, 255, 0.2),
-    4rem 0 0 rgba(255, 255, 255, 0.2),
-    -4rem 0 0 rgba(255, 255, 255, 0.2),
-    6rem 0 0 rgba(255, 255, 255, 0.2),
-    -6rem 0 0 rgba(255, 255, 255, 0.2);
-  transition: left 0.6s ease;
-  pointer-events: none;
-  transform: translateX(-50%);
+.navbar__link:hover i {
+  transform: translateY(-5px);
 }
 
-/* =========================
-   Navbar Right Side
-========================= */
-.navbar__auth {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-left: 2rem;
+/* Sliding underline */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+
 
 .navbar__user {
   font-size: 0.9rem;
   color: #ccc;
 }
 
-/* =========================
-   Logout Button
-========================= */
-.btn-logout {
-  background: transparent;
-  border: 1px solid #0ff;
-  color: #0ff;
-  padding: 0.3rem 0.6rem;
-  font-family: monospace;
-  border-radius: 4px;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-
-.btn-logout:hover {
-  background: #0ff;
-  color: #000;
-}
 
 /* =========================
-   Page Content Container
+   Page Content
 ========================= */
 .container {
-  margin-top: 100px; /* Push content below fixed navbar */
-  padding: 1.5rem;
+  margin-top: 100px; /* Space for fixed navbar */
+  padding: 2rem;
 }
 
-/* =========================
-   Text / Card Styles
-========================= */
 h1, h2, h3, p, li, a, button, span {
-  color: #ffffff !important;
+  color: #fff;
 }
 
 a {
-  color: #00ffff;
+  color: var(--primary);
   text-decoration: none;
 }
 
 a:hover {
-  color: #ffffff;
+  color: #fff;
   text-decoration: underline;
 }
 
-.text-muted,
-.text-secondary {
+.text-muted, .text-secondary {
   color: #cccccc;
-}
-
-.card {
-  background-color: #2e2e2e;
-  border: 1px solid rgba(52, 9, 121, 1);
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(2, 2, 2, 0.3);
-  padding: 1.5rem;
-}
-
-.card-header {
-  background-color: #383838;
-  color: #0ff;
-  font-weight: bold;
-  border-bottom: 1px solid #0ff;
-}
-
-.card-body {
-  color: #ffffff;
 }
