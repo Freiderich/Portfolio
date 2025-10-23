@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/home.css";
 
-function TypingEffect() {
+function Home() {
   const texts = ["A Web Developer", "A Creative Designer", "A Problem Solver"];
-  const [displayedText, setDisplayedText] = React.useState("");
-  const [textIndex, setTextIndex] = React.useState(0);
-  const [charIndex, setCharIndex] = React.useState(0);
-  const [isDeleting, setIsDeleting] = React.useState(false);
+  const [displayedText, setDisplayedText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const currentText = texts[textIndex];
     const timeout = setTimeout(() => {
       setDisplayedText(
@@ -36,6 +36,7 @@ function TypingEffect() {
         <h1>
           Hi, I’m <span className="highlight">Freiderich</span>
         </h1>
+
         <h2 className="typed-text">
           {displayedText}
           <span className="cursor"></span>
