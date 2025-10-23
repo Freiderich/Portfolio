@@ -1,13 +1,24 @@
 import React from "react";
+import "../styles/sections.css";
+import "../styles/home.css";
 
 function Sections({ username }) {
   return (
     <main>
+      {/* HOME SECTION */}
       <section id="home" className="section home-section">
-        <h1>Hi, I’m {username}</h1>
-        <p>Welcome to my portfolio. Scroll down to see my projects and skills!</p>
+        <div className="home-content">
+          <h1>
+            Hi, I’m <span className="highlight">{username}</span>
+          </h1>
+          <p>
+            Welcome to my portfolio. Scroll down to see my projects and skills!
+          </p>
+          <a href="#projects" className="cube-btn">Explore My Work</a>
+        </div>
       </section>
 
+      {/* OTHER SECTIONS */}
       <section id="about" className="section">
         <h2>About Me</h2>
         <p>This is the about section.</p>
