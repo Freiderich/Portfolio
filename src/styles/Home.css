@@ -70,20 +70,31 @@
   text-align: center;
 }
 
+/* INTRO TEXT SECTION */
 .home-right .intro-text {
   max-width: 500px;
-  margin-bottom: 400px;
+  margin-bottom: 350px;
   line-height: 1.6;
   color: #ddd;
 }
+
 .intro-text p {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 1rem;
 }
 
+/* FIRST PARAGRAPH – personal vision */
+.intro-text .dream {
+  color: #e0e0ff;
+  font-weight: 500;
+}
+
+/* SECOND PARAGRAPH – mission statement */
 .intro-text .mission {
   font-style: italic;
-  color: #b8b8ff;
+  color: #9fa8ff;
+  margin-bottom: 0px;
+  margin-top: 25px;
 }
 
 /* GLOWING GRADIENT NAME */
@@ -187,5 +198,9 @@
 
   .home-bottom {
     bottom: 30px;
+  }
+
+  .home-right .intro-text {
+    margin-bottom: 150px;
   }
 }
