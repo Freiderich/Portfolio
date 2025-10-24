@@ -33,11 +33,11 @@ html, body {
 }
 
 .header__logo strong {
-  font-size: 1.5rem;
-  color: var(--primary);
-  font-family: monospace;
-  text-shadow: 1px 1px 3px rgba(0, 212, 255, 0.4);
+  position: relative;
+  left: 10rem; /* move right */
+  /* or left: -10px; to move left */
 }
+
 
 /* =========================
    Navbar Structure
