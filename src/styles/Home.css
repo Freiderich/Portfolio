@@ -70,32 +70,100 @@
   text-align: center;
 }
 
-/* INTRO TEXT SECTION */
 .home-right .intro-text {
   max-width: 500px;
-  margin-bottom: 350px;
+  margin-bottom: 400px;
   line-height: 1.6;
   color: #ddd;
 }
 
 .intro-text p {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 1rem;
 }
 
-/* FIRST PARAGRAPH – personal vision */
-.intro-text .dream {
-  color: #e0e0ff;
-  font-weight: 500;
-}
-
-/* SECOND PARAGRAPH – mission statement */
 .intro-text .mission {
   font-style: italic;
-  color: #9fa8ff;
-  margin-bottom: 0px;
-  margin-top: 25px;
+  color: #b8b8ff;
 }
+
+/* 🌟 DREAM BOX */
+.dream-box {
+  position: relative;
+  padding: 25px 30px;
+  margin: 20px 0;
+  border-radius: 15px;
+  background: rgba(15, 15, 25, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  color: #e0e0ff;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  box-shadow: 
+    0 0 25px rgba(0, 212, 255, 0.15),
+    inset 0 0 15px rgba(0, 212, 255, 0.05);
+  backdrop-filter: blur(8px);
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* glowing outline animation */
+.dream-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  background: linear-gradient(90deg, #00d4ff, #7a00ff, #00ffa3, #00d4ff) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background-size: 400% 400%;
+  animation: borderGlow 6s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dream-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 0 35px rgba(0, 212, 255, 0.25),
+    inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.dream-box:hover::before {
+  opacity: 1;
+}
+
+/* optional glowing title inside */
+.dream-box h3 {
+  font-size: 1.3rem;
+  color: #00d4ff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* GLOWING GRADIENT NAME */
 .highlight {
@@ -198,9 +266,5 @@
 
   .home-bottom {
     bottom: 30px;
-  }
-
-  .home-right .intro-text {
-    margin-bottom: 150px;
   }
 }

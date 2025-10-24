@@ -33,7 +33,6 @@ function Home() {
     <section id="home" className="section home-section">
       <div className="overlay"></div>
 
-      {/* Main layout: left (intro) and right (text) */}
       <div className="home-container fade-in">
         {/* LEFT SIDE */}
         <div className="home-left">
@@ -49,12 +48,14 @@ function Home() {
         {/* RIGHT SIDE */}
         <div className="home-right">
           <div className="intro-text">
-            <p>
-              I’ve always dreamed of creating digital experiences that inspire
-              and connect people. Building interactive and responsive web
-              applications allows me to turn ideas into something real — things
-              that others can see, use, and enjoy.
-            </p>
+            <div className="dream-box">
+              <p>
+                I’ve always dreamed of creating digital experiences that inspire
+                and connect people. Building interactive and responsive web
+                applications allows me to turn ideas into something real — things
+                that others can see, use, and enjoy.
+              </p>
+            </div>
             <p className="mission">
               My goal is to keep learning, creating, and building meaningful
               digital solutions that make an impact.
@@ -63,7 +64,7 @@ function Home() {
         </div>
       </div>
 
-      {/* CENTERED BUTTON + SCROLL ICON */}
+      {/* CENTER BUTTON + ARROW */}
       <div className="home-bottom">
         <a href="#projects" className="cube-btn">
           Explore My Work
