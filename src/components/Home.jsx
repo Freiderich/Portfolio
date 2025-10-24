@@ -30,37 +30,46 @@ function Home() {
   }, [charIndex, isDeleting, textIndex]);
 
   return (
-    <section id="home" className="section home-section">
-      <div className="overlay"></div>
-      <div className="home-content fade-in">
+  <section id="home" className="section home-section">
+    <div className="overlay"></div>
+
+    <div className="home-container fade-in">
+      {/* LEFT SIDE */}
+      <div className="home-left">
         <h1>
           Hi, I’m <span className="highlight">Freiderich</span>
         </h1>
-
         <h2 className="typed-text">
           {displayedText}
           <span className="cursor"></span>
         </h2>
+      </div>
 
+      {/* RIGHT SIDE */}
+      <div className="home-right">
         <div className="intro-text">
           <p>
-            I'm passionate about building interactive and responsive web
-            experiences using modern technologies. I enjoy transforming creative
-            ideas into real-world projects that make an impact.
+            I’ve always dreamed of creating digital experiences that inspire
+            and connect people. Building interactive and responsive web
+            applications allows me to turn ideas into something real — things
+            that others can see, use, and enjoy.
           </p>
           <p className="mission">
-            My goal is to continuously learn, innovate, and contribute to
-            meaningful digital solutions.
+            My goal is to keep learning, creating, and building meaningful
+            digital solutions that make an impact.
           </p>
         </div>
-
-        <a href="#projects" className="cube-btn">
-          Explore My Work
-        </a>
-
-        <div className="scroll-down">&#x21E3;</div>
       </div>
-    </section>
+    </div>
+
+    {/* CENTER BUTTON + ARROW */}
+    <div className="home-bottom">
+      <a href="#projects" className="cube-btn">
+        Explore My Work
+      </a>
+      <div className="scroll-down">&#x21E3;</div>
+    </div>
+  </section>
   );
 }
 

@@ -24,15 +24,7 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-.home-content {
-  position: relative;
-  text-align: center;
-  max-width: 650px;
-  padding: 20px;
-  z-index: 1;
-}
-
-/* Fade-in animation for content */
+/* FADE IN EFFECT */
 .fade-in {
   opacity: 0;
   animation: fadeInUp 1.5s ease forwards;
@@ -43,13 +35,59 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Heading styles */
-.home-content h1 {
-  font-size: 2.8rem;
+/* MAIN CONTAINER (LEFT + RIGHT SPLIT) */
+.home-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* LEFT SECTION */
+.home-left {
+  flex: 2;
+  text-align: left;
+}
+
+.home-left h1 {
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
-/* Glowing gradient name */
+.home-left h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* RIGHT SECTION */
+.home-right {
+  flex: 1;
+  text-align: left;
+}
+
+.home-right .intro-text {
+  max-width: 500px;
+  margin-bottom: 100px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.intro-text p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.intro-text .mission {
+  font-style: italic;
+  color: #b8b8ff;
+}
+
+/* GLOWING GRADIENT NAME */
 .highlight {
   background: linear-gradient(90deg, #340979, #00d4ff);
   -webkit-background-clip: text;
@@ -57,7 +95,7 @@
   text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
 }
 
-/* Typing text + cursor */
+/* TYPING TEXT + CURSOR */
 .typed-text {
   display: inline-block;
   font-size: 1.3rem;
@@ -83,13 +121,7 @@
   50% { opacity: 0; }
 }
 
-.home-content p {
-  color: #ccc;
-  font-size: 1rem;
-  margin-bottom: 25px;
-}
-
-/* Cube-style button */
+/* CUBE-STYLE BUTTON */
 .cube-btn {
   display: inline-block;
   padding: 12px 30px;
@@ -109,9 +141,8 @@
   transform: translateY(-3px);
 }
 
-/* Scroll down indicator */
+/* SCROLL DOWN INDICATOR */
 .scroll-down {
-  margin-top: 50px;
   font-size: 2rem;
   color: #00d4ff;
   animation: bounce 1.5s infinite;
@@ -122,19 +153,40 @@
   50% { transform: translateY(-10px); }
 }
 
-.intro-text {
-  margin: 15px auto 30px;
-  max-width: 600px;
-  line-height: 1.6;
-  color: #ddd;
+/* CENTERED BOTTOM SECTION (BUTTON + ARROW) */
+.home-bottom {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
-.intro-text p {
-  margin-bottom: 10px;
-  font-size: 1rem;
+.home-bottom .cube-btn {
+  display: inline-block;
+  margin-bottom: 50px;
 }
 
-.intro-text .mission {
-  font-style: italic;
-  color: #b8b8ff;
+.home-bottom .scroll-down {
+  margin-top: 0px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-left, .home-right {
+    text-align: center;
+  }
+
+  .home-left h1 {
+    font-size: 2.4rem;
+  }
+
+  .home-bottom {
+    bottom: 30px;
+  }
 }
