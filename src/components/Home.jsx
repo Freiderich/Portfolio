@@ -50,16 +50,18 @@ function Home() {
           <div className="intro-text">
             <div className="dream-box">
               <p>
-                I’ve always dreamed of creating digital experiences that inspire
-                and connect people. Building interactive and responsive web
-                applications allows me to turn ideas into something real — things
-                that others can see, use, and enjoy.
+                This portfolio showcases my skills in building dynamic, 
+                user-centered web applications. I focus on combining design 
+                and functionality to create seamless experiences that 
+                bring ideas to life on the screen.
               </p>
             </div>
-            <p className="mission">
+            <div className ="mission-box">
+               <p className="mission">
               My goal is to keep learning, creating, and building meaningful
               digital solutions that make an impact.
             </p>
+            </div>
           </div>
         </div>
       </div>

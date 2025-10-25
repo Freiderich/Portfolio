@@ -72,7 +72,7 @@
 
 .home-right .intro-text {
   max-width: 500px;
-  margin-bottom: 400px;
+  margin-bottom: 15rem;
   line-height: 1.6;
   color: #ddd;
 }
@@ -87,78 +87,142 @@
   color: #b8b8ff;
 }
 
-/* 🌟 DREAM BOX */
-.dream-box {
+/* Base box style (shared by both dream and mission) */
+.dream-box,
+.mission-box {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-top: 5rem;
   position: relative;
-  padding: 25px 30px;
-  margin: 20px 0;
-  border-radius: 15px;
-  background: rgba(15, 15, 25, 0.8);
-  border: 1px solid rgba(0, 212, 255, 0.25);
-  color: #e0e0ff;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-  box-shadow: 
-    0 0 25px rgba(0, 212, 255, 0.15),
-    inset 0 0 15px rgba(0, 212, 255, 0.05);
-  backdrop-filter: blur(8px);
-  background-image:
-    linear-gradient(rgba(0, 212, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.06) 1px, transparent 1px);
-  background-size: 30px 30px;
-  transition: all 0.3s ease;
   overflow: hidden;
+  backdrop-filter: blur(8px);
+  animation: pulseGlow 4s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
-/* glowing outline animation */
-.dream-box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 15px;
-  border: 1px solid transparent;
-  background: linear-gradient(90deg, #00d4ff, #7a00ff, #00ffa3, #00d4ff) border-box;
-  -webkit-mask:
-    linear-gradient(#fff 0 0) padding-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  background-size: 400% 400%;
-  animation: borderGlow 6s linear infinite;
+/* Hover effect for both boxes */
+.dream-box:hover,
+.mission-box:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.4);
 }
 
-@keyframes borderGlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Dream Box – Blue tones */
+.dream-box {
+  border-color: rgba(0, 170, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
 }
 
 .dream-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 
-    0 0 35px rgba(0, 212, 255, 0.25),
-    inset 0 0 20px rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 200, 255, 0.8);
+  box-shadow: 0 0 45px rgba(0, 200, 255, 0.6);
 }
 
-.dream-box:hover::before {
-  opacity: 1;
+/* Dream box matrix overlay */
+.dream-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    120deg,
+    rgba(0, 170, 255, 0.08) 0,
+    rgba(0, 170, 255, 0.08) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  transform: rotate(25deg);
+  animation: matrixScrollBlue 10s linear infinite;
 }
 
-/* optional glowing title inside */
-.dream-box h3 {
-  font-size: 1.3rem;
-  color: #00d4ff;
-  margin-bottom: 10px;
-  text-shadow: 0 0 8px rgba(0, 212, 255, 0.7);
+/* Mission Box – Green tones */
+.mission-box {
+  border-color: rgba(0, 255, 170, 0.4);
+  box-shadow: 0 0 25px rgba(0, 255, 170, 0.3);
 }
 
+.mission-box:hover {
+  border-color: rgba(0, 255, 170, 0.8);
+  box-shadow: 0 0 45px rgba(0, 255, 170, 0.6);
+}
 
+/* Mission box matrix overlay */
+.mission-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    120deg,
+    rgba(0, 255, 170, 0.08) 0,
+    rgba(0, 255, 170, 0.08) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  transform: rotate(25deg);
+  animation: matrixScrollGreen 10s linear infinite;
+}
 
+/* Shared glow animation */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
+  }
+}
 
+/* Blue matrix flow */
+@keyframes matrixScrollBlue {
+  0% {
+    transform: translateY(0) rotate(25deg);
+  }
+  100% {
+    transform: translateY(100%) rotate(25deg);
+  }
+}
 
+/* Green matrix flow */
+@keyframes matrixScrollGreen {
+  0% {
+    transform: translateY(0) rotate(25deg);
+  }
+  100% {
+    transform: translateY(100%) rotate(25deg);
+  }
+}
 
+.box-section {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .box-section {
+    flex-direction: row; /* side by side on larger screens */
+    gap: 2rem;
+  }
+
+  .dream-box,
+  .mission-box {
+    flex: 1;
+    max-width: 100%;
+    margin-left: -10rem;
+  }
+}
 
 
 
