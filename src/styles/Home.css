@@ -1,4 +1,4 @@
-/* HOME SECTION STYLE */
+/* 🌌 HOME SECTION STYLE */
 .home-section {
   position: relative;
   height: 100vh;
@@ -24,7 +24,7 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-/* FADE IN EFFECT */
+/* ✨ FADE IN EFFECT */
 .fade-in {
   opacity: 0;
   animation: fadeInUp 1.5s ease forwards;
@@ -35,11 +35,10 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* MAIN CONTAINER (LEFT + RIGHT SPLIT) */
+/* 🧭 MAIN CONTAINER (LEFT + RIGHT SPLIT) */
 .home-container {
   position: relative;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 80%;
@@ -48,10 +47,11 @@
   z-index: 1;
 }
 
-/* LEFT SECTION */
+/* 👋 LEFT SECTION */
 .home-left {
   flex: 2;
   text-align: left;
+  transform: translateY(-5rem); /* Move text slightly upward */
 }
 
 .home-left h1 {
@@ -64,7 +64,7 @@
   margin-bottom: 15px;
 }
 
-/* RIGHT SECTION */
+/* 💡 RIGHT SECTION */
 .home-right {
   flex: 1;
   text-align: center;
@@ -72,7 +72,9 @@
 
 .home-right .intro-text {
   max-width: 500px;
-  margin-bottom: 15rem;
+  margin-top: -15rem;
+  margin-right: -2rem;
+  margin-left: -5rem;
   line-height: 1.6;
   color: #ddd;
 }
@@ -82,18 +84,13 @@
   font-size: 1rem;
 }
 
-.intro-text .mission {
-  font-style: italic;
-  color: #b8b8ff;
-}
-
-/* Base box style (shared by both dream and mission) */
+/* 💎 SHARED BOX STYLE (Dream + Mission) */
 .dream-box,
 .mission-box {
   background: rgba(0, 0, 0, 0.25);
-  border: 1px solid;
+  border: .05rem solid;
   padding: 1.5rem 2rem;
-  border-radius: 12px;
+  border-radius: 1rem;
   margin-top: 5rem;
   position: relative;
   overflow: hidden;
@@ -103,14 +100,13 @@
   cursor: pointer;
 }
 
-/* Hover effect for both boxes */
+/* ✴️ Hover effect */
 .dream-box:hover,
 .mission-box:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 35px rgba(0, 255, 255, 0.4);
 }
 
-/* Dream Box – Blue tones */
+/* 🌊 Dream Box – Blue Matrix Effect */
 .dream-box {
   border-color: rgba(0, 170, 255, 0.4);
   box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
@@ -121,7 +117,6 @@
   box-shadow: 0 0 45px rgba(0, 200, 255, 0.6);
 }
 
-/* Dream box matrix overlay */
 .dream-box::before {
   content: "";
   position: absolute;
@@ -137,10 +132,10 @@
     transparent 4px
   );
   transform: rotate(25deg);
-  animation: matrixScrollBlue 10s linear infinite;
+  animation: matrixScroll 10s linear infinite;
 }
 
-/* Mission Box – Green tones */
+/* 💚 Mission Box – Green Matrix Effect */
 .mission-box {
   border-color: rgba(0, 255, 170, 0.4);
   box-shadow: 0 0 25px rgba(0, 255, 170, 0.3);
@@ -151,7 +146,6 @@
   box-shadow: 0 0 45px rgba(0, 255, 170, 0.6);
 }
 
-/* Mission box matrix overlay */
 .mission-box::before {
   content: "";
   position: absolute;
@@ -167,69 +161,22 @@
     transparent 4px
   );
   transform: rotate(25deg);
-  animation: matrixScrollGreen 10s linear infinite;
+  animation: matrixScroll 10s linear infinite;
 }
 
-/* Shared glow animation */
+/* 🌟 Shared Glow Animation */
 @keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
-  }
+  0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
+  100% { box-shadow: 0 0 35px rgba(255, 255, 255, 0.4); }
 }
 
-/* Blue matrix flow */
-@keyframes matrixScrollBlue {
-  0% {
-    transform: translateY(0) rotate(25deg);
-  }
-  100% {
-    transform: translateY(100%) rotate(25deg);
-  }
+/* 🧬 Matrix Flow (used by both) */
+@keyframes matrixScroll {
+  0% { transform: translateY(0) rotate(25deg); }
+  100% { transform: translateY(100%) rotate(25deg); }
 }
 
-/* Green matrix flow */
-@keyframes matrixScrollGreen {
-  0% {
-    transform: translateY(0) rotate(25deg);
-  }
-  100% {
-    transform: translateY(100%) rotate(25deg);
-  }
-}
-
-.box-section {
-  display: flex;
-  flex-direction: column; /* stack vertically */
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .box-section {
-    flex-direction: row; /* side by side on larger screens */
-    gap: 2rem;
-  }
-
-  .dream-box,
-  .mission-box {
-    flex: 1;
-    max-width: 100%;
-    margin-left: -10rem;
-  }
-}
-
-
-
-
-
-
-/* GLOWING GRADIENT NAME */
+/* 🌈 GLOWING NAME */
 .highlight {
   background: linear-gradient(90deg, #340979, #00d4ff);
   -webkit-background-clip: text;
@@ -237,7 +184,7 @@
   text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
 }
 
-/* TYPING TEXT + CURSOR */
+/* ⌨️ TYPING EFFECT */
 .typed-text {
   display: inline-block;
   font-size: 1.3rem;
@@ -263,7 +210,7 @@
   50% { opacity: 0; }
 }
 
-/* CUBE-STYLE BUTTON */
+/* 🧊 CUBE BUTTON */
 .cube-btn {
   display: inline-block;
   padding: 12px 30px;
@@ -283,7 +230,7 @@
   transform: translateY(-3px);
 }
 
-/* SCROLL DOWN INDICATOR */
+/* ⬇️ SCROLL INDICATOR */
 .scroll-down {
   font-size: 2rem;
   color: #00d4ff;
@@ -295,7 +242,7 @@
   50% { transform: translateY(-10px); }
 }
 
-/* CENTERED BOTTOM SECTION (BUTTON + ARROW) */
+/* ⬇️ BOTTOM SECTION */
 .home-bottom {
   position: absolute;
   bottom: 120px;
@@ -305,15 +252,10 @@
 }
 
 .home-bottom .cube-btn {
-  display: inline-block;
   margin-bottom: 50px;
 }
 
-.home-bottom .scroll-down {
-  margin-top: 0px;
-}
-
-/* RESPONSIVE DESIGN */
+/* 📱 RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .home-container {
     flex-direction: column;
