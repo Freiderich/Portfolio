@@ -1,21 +1,58 @@
-import React from "react";
-import "../styles/About.css";
+import React, { useState } from "react";
+import "../styles/about.css";
 
 function About() {
+  const [activeBox, setActiveBox] = useState(null);
+
+  const handleBoxClick = (box) => setActiveBox(box);
+  const closeOverlay = () => setActiveBox(null);
+
   return (
-    <section id="about" className="section about-section">
-      <h2>About Me</h2>
-      <div className="about-cards">
-        <div className="about-card">
-          <p><strong>Education:</strong> 4th year Computer Engineering student at Holy Angel University</p>
+    <section id="about" className="about-section">
+      <h2 className="about-title">About Me</h2>
+      <p className="about-description">
+        I love exploring creative ways to combine technology and design. 
+        When I’m not coding, I experiment with digital art, animations, and solving challenging problems.
+      </p>
+
+      {/* Boxes */}
+      <div className="about-boxes">
+        <div className="about-box" onClick={() => handleBoxClick("hobbies")}>
+          <h3>Hobbies</h3>
         </div>
-        <div className="about-card">
-          <p><strong>Hobbies:</strong> Self-studying arts and making animations when not programming</p>
+        <div className="about-box" onClick={() => handleBoxClick("education")}>
+          <h3>Education</h3>
         </div>
-        <div className="about-card">
-          <p><strong>Passion:</strong> Building intuitive and responsive web applications</p>
+        <div className="about-box" onClick={() => handleBoxClick("passion")}>
+          <h3>Passion</h3>
         </div>
       </div>
+
+      {/* Full-screen overlay */}
+      {activeBox && (
+        <div className="overlay-screen">
+          <button className="close-btn" onClick={closeOverlay}>×</button>
+
+          {activeBox === "hobbies" && (
+            <div className="overlay-content">
+              <h2>Hobbies</h2>
+              <p>Here’s my digital art, animations, and videos.</p>
+            </div>
+          )}
+          {activeBox === "education" && (
+            <div className="overlay-content">
+              <h2>Education</h2>
+              <p>Courses, certifications, and achievements.</p>
+            </div>
+          )}
+          {activeBox === "passion" && (
+            <div className="overlay-content">
+              <h2>Passion Projects</h2>
+              <p>Web applications, UI/UX designs, and coding challenges.</p>
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 }
