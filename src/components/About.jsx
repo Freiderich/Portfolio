@@ -37,7 +37,10 @@ function About() {
     {activeBox === "hobbies" && (
       <div className="overlay-content hobbies-content">
         <h2>Hobbies</h2>
-        <p>Here’s my digital art, animations, and games.</p>
+        <p>As a digital artist, I create illustrations using my XP-Pen tablet 
+            in Krita, explore 3D modeling and animation in Blender, 
+            and unwind by playing games on Steam — blending creativity 
+            and fun in everything I do.</p>
         <div className="hobbies-gallery">
             <img src={hobbyImage} alt="Digital art" className="hobby-image" />
         </div>
