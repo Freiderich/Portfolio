@@ -1,4 +1,6 @@
-/* ABOUT SECTION */
+/* ===============================
+   ABOUT SECTION
+================================= */
 .about-section {
   padding: 6rem 2rem;
   text-align: center;
@@ -11,6 +13,7 @@
 
 .about-title {
   font-size: 3rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   color: #00d4ff;
   text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
@@ -26,24 +29,27 @@
   color: #ccc;
 }
 
-/* BOXES */
+/* ===============================
+   BOXES
+================================= */
 .about-boxes {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  align-items: stretch;
+  gap: 6rem;
   flex-wrap: wrap;
 }
 
 .about-box {
-  flex: 1 1 250px;
+  flex: 1 1 280px;
   max-width: 300px;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   border: 2px solid #00d4ff;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 15px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
 .about-box:hover {
@@ -53,19 +59,27 @@
 }
 
 .about-box h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #00d4ff;
+  margin-bottom: 1rem;
 }
 
-/* OVERLAY */
+.about-box p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* ===============================
+   OVERLAY FULL-SCREEN
+================================= */
 .overlay-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 10, 30, 0.95);
-  z-index: 1000;
+  background: rgba(10, 10, 30, 0.97);
+  z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,43 +89,90 @@
   animation: fadeIn 0.4s ease forwards;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
+/* Content inside overlay */
 .overlay-content {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid #00d4ff;
+  border-radius: 16px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
   max-width: 800px;
-  color: #fff;
   text-align: center;
+  color: #fff;
 }
 
 .overlay-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
 }
 
 .overlay-content p {
   font-size: 1.2rem;
   line-height: 1.8;
+  color: #ccc;
+  margin-top: 0.5rem;
 }
 
-/* CLOSE BUTTON FIX */
+/* ===============================
+   CLOSE BUTTON
+================================= */
 .close-btn {
-  position: fixed; /* change from absolute to fixed */
-  top: 20px;
-  right: 20px;
+  position: fixed;
+  top: 25px;
+  right: 35px;
   background: none;
-  color: #00d4ff; /* make it stand out */
+  color: #00d4ff;
   font-size: 3rem;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  z-index: 1001; /* above the overlay content */
-  transition: color 0.2s ease;
+  z-index: 3000;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .close-btn:hover {
   color: #00ffff;
+  transform: scale(1.1);
+}
+
+/* ===============================
+   ANIMATIONS
+================================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===============================
+   HOBBIES OVERLAY GALLERY
+================================= */
+.hobbies-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hobbies-gallery {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.hobby-image {
+  max-width: 30%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.7);
 }

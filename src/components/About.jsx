@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../styles/about.css";
+import "../styles/About.css";
+import hobbyImage from "../assets/redesign N wow.jpg";
 
 function About() {
   const [activeBox, setActiveBox] = useState(null);
@@ -29,30 +30,36 @@ function About() {
       </div>
 
       {/* Full-screen overlay */}
-      {activeBox && (
-        <div className="overlay-screen">
-          <button className="close-btn" onClick={closeOverlay}>×</button>
+{activeBox && (
+  <div className="overlay-screen">
+    <button className="close-btn" onClick={closeOverlay}>×</button>
 
-          {activeBox === "hobbies" && (
-            <div className="overlay-content">
-              <h2>Hobbies</h2>
-              <p>Here’s my digital art, animations, and videos.</p>
-            </div>
-          )}
-          {activeBox === "education" && (
-            <div className="overlay-content">
-              <h2>Education</h2>
-              <p>Courses, certifications, and achievements.</p>
-            </div>
-          )}
-          {activeBox === "passion" && (
-            <div className="overlay-content">
-              <h2>Passion Projects</h2>
-              <p>Web applications, UI/UX designs, and coding challenges.</p>
-            </div>
-          )}
+    {activeBox === "hobbies" && (
+      <div className="overlay-content hobbies-content">
+        <h2>Hobbies</h2>
+        <p>Here’s my digital art, animations, and games.</p>
+        <div className="hobbies-gallery">
+            <img src={hobbyImage} alt="Digital art" className="hobby-image" />
         </div>
-      )}
+      </div>
+    )}
+
+    {activeBox === "education" && (
+      <div className="overlay-content education-content">
+        <h2>Education</h2>
+        <p>Courses, certifications, and achievements.</p>
+      </div>
+    )}
+
+    {activeBox === "passion" && (
+      <div className="overlay-content passion-content">
+        <h2>Passion Projects</h2>
+        <p>Web applications, UI/UX designs, and coding challenges.</p>
+      </div>
+    )}
+  </div>
+)}
+
     </section>
   );
 }
