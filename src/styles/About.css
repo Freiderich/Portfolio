@@ -1,0 +1,40 @@
+.about-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #ddd;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-card {
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+}
+
+.about-card p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+}

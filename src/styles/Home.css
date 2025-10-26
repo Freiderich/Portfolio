@@ -24,7 +24,7 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-/* ✨ FADE IN EFFECT */
+/* FADE IN EFFECT */
 .fade-in {
   opacity: 0;
   animation: fadeInUp 1.5s ease forwards;
@@ -35,7 +35,7 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* 🧭 MAIN CONTAINER (LEFT + RIGHT SPLIT) */
+/* MAIN CONTAINER (LEFT + RIGHT SPLIT) */
 .home-container {
   position: relative;
   display: flex;
@@ -47,7 +47,7 @@
   z-index: 1;
 }
 
-/* 👋 LEFT SECTION */
+/* LEFT SECTION */
 .home-left {
   flex: 2;
   text-align: left;
@@ -64,7 +64,7 @@
   margin-bottom: 15px;
 }
 
-/* 💡 RIGHT SECTION */
+/* RIGHT SECTION */
 .home-right {
   flex: 1;
   text-align: center;
@@ -84,7 +84,7 @@
   font-size: 1rem;
 }
 
-/* 💎 SHARED BOX STYLE (Dream + Mission) */
+/* SHARED BOX STYLE (Dream + Mission) */
 .dream-box,
 .mission-box {
   background: rgba(0, 0, 0, 0.25);
@@ -100,13 +100,13 @@
   cursor: pointer;
 }
 
-/* ✴️ Hover effect */
+/* Hover effect */
 .dream-box:hover,
 .mission-box:hover {
   transform: translateY(-5px) scale(1.02);
 }
 
-/* 🌊 Dream Box – Blue Matrix Effect */
+/* Dream Box – Blue Matrix Effect */
 .dream-box {
   border-color: rgba(0, 170, 255, 0.4);
   box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
@@ -135,7 +135,7 @@
   animation: matrixScroll 10s linear infinite;
 }
 
-/* 💚 Mission Box – Green Matrix Effect */
+/* Mission Box – Green Matrix Effect */
 .mission-box {
   border-color: rgba(0, 255, 170, 0.4);
   box-shadow: 0 0 25px rgba(0, 255, 170, 0.3);
@@ -164,19 +164,19 @@
   animation: matrixScroll 10s linear infinite;
 }
 
-/* 🌟 Shared Glow Animation */
+/* Shared Glow Animation */
 @keyframes pulseGlow {
   0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
   100% { box-shadow: 0 0 35px rgba(255, 255, 255, 0.4); }
 }
 
-/* 🧬 Matrix Flow (used by both) */
+/* Matrix Flow (used by both) */
 @keyframes matrixScroll {
   0% { transform: translateY(0) rotate(25deg); }
   100% { transform: translateY(100%) rotate(25deg); }
 }
 
-/* 🌈 GLOWING NAME */
+/* GLOWING NAME */
 .highlight {
   background: linear-gradient(90deg, #340979, #00d4ff);
   -webkit-background-clip: text;
@@ -184,7 +184,7 @@
   text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
 }
 
-/* ⌨️ TYPING EFFECT */
+/* TYPING EFFECT */
 .typed-text {
   display: inline-block;
   font-size: 1.3rem;
@@ -210,7 +210,7 @@
   50% { opacity: 0; }
 }
 
-/* 🧊 CUBE BUTTON */
+/* CUBE BUTTON */
 .cube-btn {
   display: inline-block;
   padding: 12px 30px;
@@ -230,7 +230,7 @@
   transform: translateY(-3px);
 }
 
-/* ⬇️ SCROLL INDICATOR */
+/* SCROLL INDICATOR */
 .scroll-down {
   font-size: 2rem;
   color: #00d4ff;
@@ -242,7 +242,7 @@
   50% { transform: translateY(-10px); }
 }
 
-/* ⬇️ BOTTOM SECTION */
+/* BOTTOM SECTION */
 .home-bottom {
   position: absolute;
   bottom: 120px;
@@ -255,7 +255,7 @@
   margin-bottom: 50px;
 }
 
-/* 📱 RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .home-container {
     flex-direction: column;
