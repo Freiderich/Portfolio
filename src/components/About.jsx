@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/About.css";
 import hobbyImage from "../assets/redesign N wow.jpg";
+import cynImage from "../assets/Cyn.jpg";
 
 function About() {
   const [activeBox, setActiveBox] = useState(null);
@@ -54,11 +55,9 @@ function About() {
           draw stylized characters and scenes, experimenting with color,
           light, and emotion.
         </p>
-        <img
-          src={hobbyImage}
-          alt="Digital Art"
-          className="hobby-image"
-        />
+          <img src={hobbyImage} alt="Digital Art" className="hobby-image" />
+          <img src={cynImage} alt="Cyn" className="hobby-image" />
+
       </div>
 
       <div className="hobby-column">
