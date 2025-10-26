@@ -4,18 +4,20 @@ import hobbyImage from "../assets/redesign N wow.jpg";
 import cynImage from "../assets/Cyn.jpg";
 import markImage from "../assets/Invincible.jpg";
 import alImage from "../assets/alastor.jpg";
+import huskImage from "../assets/Husk.jpg";
+import pitouImage from "../assets/Pitou.jpg";
 
 function About() {
   const [activeBox, setActiveBox] = useState(null);
   const [previewImage, setPreviewImage] = useState(null); // for image preview
   const [visiblePair, setVisiblePair] = useState(0); // which pair of images is showing
 
-  const images = [hobbyImage, cynImage, markImage, alImage];
+  const images = [hobbyImage, cynImage, markImage, alImage, huskImage, pitouImage];
 
   // Fade to next pair every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisiblePair((prev) => (prev + 1) % 2); // 0 -> 1 -> 0 loop
+      setVisiblePair((prev) => (prev + 1) % 3); // 0 -> 1 -> 0 loop
     }, 4000);
     return () => clearInterval(interval);
   }, []);
@@ -77,9 +79,10 @@ function About() {
                    {images.map((img, index) => {
   const isVisible =
     (visiblePair === 0 && (index === 0 || index === 1)) ||
-    (visiblePair === 1 && (index === 2 || index === 3));
+    (visiblePair === 1 && (index === 2 || index === 3)) ||
+    (visiblePair === 2 && (index === 4 || index === 5)) ;
 
-  if (!isVisible) return null; // only render the visible pair
+  if (!isVisible) return null;
 
   const posClass = (index % 2 === 0) ? "left" : "right"; // first of pair = left, second = right
 
