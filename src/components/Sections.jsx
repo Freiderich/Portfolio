@@ -1,16 +1,14 @@
 import React from "react";
 import Home from "./Home";
+import About from "./About";
 import "../styles/sections.css";
 
 function Sections() {
   return (
     <main>
       <Home />
-
-      <section id="about" className="section">
-        <h2>About Me</h2>
-        <p>This is the about section.</p>
-      </section>
+      
+      <About />
 
       <section id="projects" className="section">
         <h2>Projects</h2>
