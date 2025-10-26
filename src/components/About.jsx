@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../styles/About.css";
 import hobbyImage from "../assets/redesign N wow.jpg";
 import cynImage from "../assets/Cyn.jpg";
+import markImage from "../assets/Invincible.jpg"
+import alImage from "../assets/alastor.jpg";
 
 function About() {
   const [activeBox, setActiveBox] = useState(null);
@@ -55,8 +57,13 @@ function About() {
           draw stylized characters and scenes, experimenting with color,
           light, and emotion.
         </p>
-          <img src={hobbyImage} alt="Digital Art" className="hobby-image" />
-          <img src={cynImage} alt="Cyn" className="hobby-image" />
+{/* Fade Gallery (2 images visible at once) */}
+      <div className="fade-gallery pair-mode">
+        <img src={hobbyImage} alt="Digital Art" className="pair-fade-item" />
+        <img src={cynImage} alt="Cyn" className="pair-fade-item" />
+        <img src={markImage} alt="Mark" className="pair-fade-item" />
+        <img src={alImage} alt="Alastor" className="pair-fade-item" />
+      </div>
 
       </div>
 
