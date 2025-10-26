@@ -107,10 +107,10 @@
 .overlay-content {
   background: rgba(0, 0, 0, 0.3);
   border: 2px solid #00d4ff;
-  border-radius: 16px;
+  border-radius: 1rem;
   padding: 2.5rem 3rem;
   box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
-  max-width: 800px;
+  max-width: 100rem;
   text-align: center;
   color: #fff;
 }
@@ -161,32 +161,82 @@
 
 /* ===============================
    HOBBIES OVERLAY GALLERY
-================================= */
-.hobbies-overlay {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+=============================== */
+.hobbies-content {  
+  width: 100%;
+  text-align: center;
 }
 
-.hobbies-gallery {
-  margin-top: 2rem;
+.hobbies-content h2 {
+  font-size: 2.5rem;
+  color: #00d4ff;
+  margin-top: -1.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Adjust text inside the hobbies overlay */
+.hobbies-content p {
+  font-size: 1.3rem;    /* 👈 change this value */
+  line-height: 1.6;     /* spacing between lines */
+  max-width: 800px;     /* optional: keep it readable */
+  margin: 1rem auto;    /* centers it */
+}
+
+/* Horizontal layout for 3 sections */
+.hobbies-row {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 10rem;
+  margin-top: 2rem;
 }
 
-.hobby-image {
-  max-width: 30%;
-  height: auto;
-  border-radius: 12px;
-  border: 2px solid #00d4ff;
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+.hobby-column {
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.1rem solid #00d4ff;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  width: 20rem;
+  min-height: 500px;
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hobby-image:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 35px rgba(0, 255, 255, 0.7);
+.hobby-column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
 }
+
+.hobby-column h3 {
+  font-size: 1.5rem;
+  color: #00d4ff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.hobby-column p {
+  font-size: 1rem;
+  color: #eee;
+  line-height: 1.6;
+}
+
+.hobby-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: 1px solid #00d4ff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+

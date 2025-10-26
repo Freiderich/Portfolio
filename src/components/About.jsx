@@ -12,8 +12,9 @@ function About() {
     <section id="about" className="about-section">
       <h2 className="about-title">About Me</h2>
       <p className="about-description">
-        I love exploring creative ways to combine technology and design. 
-        When I’m not coding, I experiment with digital art, animations, and solving challenging problems.
+        I’m passionate about blending technology and creativity to build
+        interactive experiences. Beyond coding, I explore art, animation, and
+        gaming — expressing imagination through digital design and motion.
       </p>
 
       {/* Boxes */}
@@ -30,39 +31,91 @@ function About() {
       </div>
 
       {/* Full-screen overlay */}
-{activeBox && (
-  <div className="overlay-screen">
-    <button className="close-btn" onClick={closeOverlay}>×</button>
+      {activeBox && (
+        <div className="overlay-screen">
+          <button className="close-btn" onClick={closeOverlay}>×</button>
 
-    {activeBox === "hobbies" && (
-      <div className="overlay-content hobbies-content">
-        <h2>Hobbies</h2>
-        <p>As a digital artist, I create illustrations using my XP-Pen tablet 
-            in Krita, explore 3D modeling and animation in Blender, 
-            and unwind by playing games on Steam — blending creativity 
-            and fun in everything I do.</p>
-        <div className="hobbies-gallery">
-            <img src={hobbyImage} alt="Digital art" className="hobby-image" />
-        </div>
-      </div>
-    )}
+          {/* Hobbies */}
+          {activeBox === "hobbies" && (
+  <div className="overlay-content hobbies-content">
+    <h2>Hobbies</h2>
+    <p className="intro-text">
+      I’m a digital artist who loves to express ideas visually,
+      explore 3D animation, and unwind with games that spark
+      creativity and storytelling.
+    </p>
 
-    {activeBox === "education" && (
-      <div className="overlay-content education-content">
-        <h2>Education</h2>
-        <p>Courses, certifications, and achievements.</p>
-      </div>
-    )}
+    <div className="hobbies-row">
 
-    {activeBox === "passion" && (
-      <div className="overlay-content passion-content">
-        <h2>Passion Projects</h2>
-        <p>Web applications, UI/UX designs, and coding challenges.</p>
+      <div className="hobby-column">
+        <h3>Digital Art</h3>
+        <p>
+          I use an <strong>XP-Pen tablet</strong> in <strong>Krita</strong> to
+          draw stylized characters and scenes, experimenting with color,
+          light, and emotion.
+        </p>
+        <img
+          src={hobbyImage}
+          alt="Digital Art"
+          className="hobby-image"
+        />
       </div>
-    )}
+
+      <div className="hobby-column">
+        <h3>3D Animation</h3>
+        <p>
+          I create models and short animations in <strong>Blender</strong>,
+          learning lighting, motion, and design techniques that bring
+          imagination to life.
+        </p>
+      </div>
+
+      <div className="hobby-column">
+        <h3>Gaming</h3>
+        <p>
+          I play games on <strong>Steam</strong> — mostly indie and
+          story-driven titles that inspire creativity, design, and strategy.
+        </p>
+      </div>
+
+    </div>
   </div>
 )}
 
+
+          {/* Education */}
+          {activeBox === "education" && (
+            <div className="overlay-content education-content">
+              <h2>Education</h2>
+              <p>
+                Currently pursuing a <strong>Bachelor’s in Computer Engineering</strong> — 
+                focusing on software development, design thinking, and innovative technologies.
+              </p>
+              <p>
+                I’ve explored fields like web development, data analysis, and 
+                emerging technologies, aiming to combine them into practical and 
+                creative solutions.
+              </p>
+            </div>
+          )}
+
+          {/* Passion */}
+          {activeBox === "passion" && (
+            <div className="overlay-content passion-content">
+              <h2>Passion Projects</h2>
+              <p>
+                I love creating web applications that merge functionality and
+                design. My passion lies in making interfaces that are not just
+                usable but enjoyable.
+              </p>
+              <p>
+                From front-end React apps to experimenting with AI and kiosk
+                systems, I aim to turn ideas into real, interactive experiences.
+              </p>
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 }
