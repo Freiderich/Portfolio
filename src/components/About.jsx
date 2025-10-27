@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../styles/About.css";
-import hobbyImage from "../assets/redesign N wow.jpg";
-import cynImage from "../assets/Cyn.jpg";
-import markImage from "../assets/Invincible.jpg";
-import alImage from "../assets/alastor.jpg";
-import huskImage from "../assets/Husk.jpg";
-import pitouImage from "../assets/Pitou.jpg";
+import hobbyImage from "../assets/images/redesign N wow.jpg";
+import cynImage from "../assets/images/Cyn.jpg";
+import markImage from "../assets/images/Invincible.jpg";
+import alImage from "../assets/images/alastor.jpg";
+import huskImage from "../assets/images/Husk.jpg";
+import pitouImage from "../assets/images/Pitou.jpg";
+
 
 function About() {
   const [activeBox, setActiveBox] = useState(null);
@@ -77,25 +78,25 @@ function About() {
                   {/* Fade Gallery (2 images visible at once) */}
                   <div className="fade-gallery pair-mode">
                    {images.map((img, index) => {
-  const isVisible =
-    (visiblePair === 0 && (index === 0 || index === 1)) ||
-    (visiblePair === 1 && (index === 2 || index === 3)) ||
-    (visiblePair === 2 && (index === 4 || index === 5)) ;
+                      const isVisible =
+                        (visiblePair === 0 && (index === 0 || index === 1)) ||
+                        (visiblePair === 1 && (index === 2 || index === 3)) ||
+                        (visiblePair === 2 && (index === 4 || index === 5)) ;
 
-  if (!isVisible) return null;
+                      if (!isVisible) return null;  
 
-  const posClass = (index % 2 === 0) ? "left" : "right"; // first of pair = left, second = right
+                  const posClass = (index % 2 === 0) ? "left" : "right"; // first of pair = left, second = right
 
-  return (
-    <img
-      key={index}
-      src={img}
-      alt={`Artwork ${index + 1}`}
-      className={`pair-fade-item visible ${posClass}`}
-      onClick={() => setPreviewImage(img)}
-    />
-  );
-})}
+                    return (
+                      <img
+                        key={index}
+                        src={img}
+                        alt={`Artwork ${index + 1}`}
+                        className={`pair-fade-item visible ${posClass}`}
+                        onClick={() => setPreviewImage(img)}
+                      />
+                   );
+                })}
 
                   </div>
                 </div>
