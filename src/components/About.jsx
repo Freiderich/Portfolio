@@ -11,25 +11,35 @@ import doughVideo from "../assets/videos/Doughnut hologram.mp4";
 import energyVideo from "../assets/videos/Energy.mp4";
 import loopVideo from "../assets/videos/Loop.mp4";
 
-
 function About() {
   const [activeBox, setActiveBox] = useState(null);
-  const [previewImage, setPreviewImage] = useState(null); // for image preview
-  const [visiblePair, setVisiblePair] = useState(0); // which pair of images is showing
+  const [previewImage, setPreviewImage] = useState(null);
+  const [previewVideo, setPreviewVideo] = useState(null);
+  const [visiblePair, setVisiblePair] = useState(0);
 
-  const images = [hobbyImage, cynImage, markImage, alImage, huskImage, pitouImage];
+  const images = [
+    hobbyImage,
+    cynImage,
+    markImage,
+    alImage,
+    huskImage,
+    pitouImage,
+  ];
 
-  // Fade to next pair every 4 seconds
+  const videos = [blackVideo, doughVideo, energyVideo, loopVideo];
+
+  // Auto fade between pairs
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisiblePair((prev) => (prev + 1) % 3); // 0 -> 1 -> 0 loop
+      setVisiblePair((prev) => (prev + 1) % 3);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
 
   const handleBoxClick = (box) => setActiveBox(box);
   const closeOverlay = () => setActiveBox(null);
-  const closePreview = () => setPreviewImage(null);
+  const closePreviewImage = () => setPreviewImage(null);
+  const closePreviewVideo = () => setPreviewVideo(null);
 
   return (
     <section id="about" className="about-section">
@@ -53,7 +63,7 @@ function About() {
         </div>
       </div>
 
-      {/* Full-screen overlay */}
+      {/* Full-screen overlay for sections */}
       {activeBox && (
         <div className="overlay-screen">
           <button className="close-btn" onClick={closeOverlay}>
@@ -71,6 +81,7 @@ function About() {
               </p>
 
               <div className="hobbies-row">
+                {/* Digital Art */}
                 <div className="hobby-column">
                   <h3>Digital Art</h3>
                   <p>
@@ -79,12 +90,10 @@ function About() {
                     scenes, experimenting with color, light, and emotion.
                   </p>
 
-                  {/* Fade Gallery (2 images visible at once) */}
                   <div className="fade-gallery images">
                     {images.map((img, index) => {
-                      const pairIndex = Math.floor(index / 2); // groups of two
-                      const isVisible = pairIndex === visiblePair; // only show current pair
-
+                      const pairIndex = Math.floor(index / 2);
+                      const isVisible = pairIndex === visiblePair;
                       const posClass = index % 2 === 0 ? "left" : "right";
 
                       return (
@@ -92,54 +101,57 @@ function About() {
                           key={index}
                           src={img}
                           alt={`Artwork ${index + 1}`}
-                          className={`pair-fade-item ${posClass} ${isVisible ? "visible" : ""}`}
+                          className={`pair-fade-item ${posClass} ${
+                            isVisible ? "visible" : ""
+                          }`}
                           onClick={() => setPreviewImage(img)}
                         />
                       );
                     })}
                   </div>
-
-
                 </div>
 
-             <div className="hobby-column">
-                <h3>3D Animation</h3>
-                <p>
-                  I create models and short animations in <strong>Blender</strong>, learning
-                  lighting, motion, and design techniques that bring imagination to life.
-                </p>
+                {/* 3D Animation */}
+                <div className="hobby-column">
+                  <h3>3D Animation</h3>
+                  <p>
+                    I create models and short animations in{" "}
+                    <strong>Blender</strong>, learning lighting, motion, and
+                    design techniques that bring imagination to life.
+                  </p>
 
-                {/* Fade Gallery for 3D Animation videos */}
-                <div className="fade-gallery videos">
-                  {[blackVideo, doughVideo, energyVideo, loopVideo].map((video, index) => {
-                    const pairIndex = Math.floor(index / 2); // 0 for first pair, 1 for second
-                    const isVisible = pairIndex === visiblePair; // controls fade visibility
-                    const posClass = index % 2 === 0 ? "top" : "bottom"; // stack vertically
+                  <div className="fade-gallery videos">
+                    {videos.map((video, index) => {
+                      const pairIndex = Math.floor(index / 2);
+                      const isVisible = pairIndex === visiblePair;
+                      const posClass = index % 2 === 0 ? "top" : "bottom";
 
-                    return (
-                      <video
-                        key={index}
-                        src={video}
-                        className={`pair-fade-item ${posClass} ${isVisible ? "visible" : ""}`}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        style={{
-                          width: "100%",
-                          height: "50%", // each takes half of gallery height
-                          objectFit: "cover",
-                          borderRadius: "1rem",
-                        }}
-                      />
-                    );
-                  })}
+                      return (
+                        <video
+                          key={index}
+                          src={video}
+                          className={`pair-fade-item ${posClass} ${
+                            isVisible ? "visible" : ""
+                          }`}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          style={{
+                            width: "100%",
+                            height: "50%",
+                            objectFit: "cover",
+                            borderRadius: "1rem",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => setPreviewVideo(video)}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
 
-
-              </div>
-
-
+                {/* Gaming */}
                 <div className="hobby-column">
                   <h3>Gaming</h3>
                   <p>
@@ -188,11 +200,43 @@ function About() {
         </div>
       )}
 
-      {/* Full-size image preview overlay */}
+      {/* Full-size Image Preview Overlay */}
       {previewImage && (
-        <div className="image-preview-overlay" onClick={closePreview}>
+        <div
+          className="image-preview-overlay"
+          onClick={(e) => {
+            if (e.target.classList.contains("image-preview-overlay"))
+              closePreviewImage();
+          }}
+        >
           <img src={previewImage} alt="Preview" className="preview-image" />
-          <button className="close-preview">×</button>
+          <button className="close-preview" onClick={closePreviewImage}>
+            ×
+          </button>
+        </div>
+      )}
+
+      {/* Full-size Video Preview Overlay */}
+      {previewVideo && (
+        <div
+          className="video-preview-overlay"
+          onClick={(e) => {
+            if (e.target.classList.contains("video-preview-overlay"))
+              closePreviewVideo();
+          }}
+        >
+          <video
+            src={previewVideo}
+            className="preview-video"
+            controls
+            autoPlay
+          />
+          <button
+            className="close-video-preview"
+            onClick={closePreviewVideo}
+          >
+            ×
+          </button>
         </div>
       )}
     </section>
