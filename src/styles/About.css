@@ -298,13 +298,13 @@
 
 /* Position top & bottom separately */
 .fade-gallery.videos video.pair-fade-item.top {
-  top: -5%;        /* move it slightly down from the top */
+  top: -1%;        /* move it slightly down from the top */
   left: 50%;
   transform: translateX(-50%);
 }
 
 .fade-gallery.videos video.pair-fade-item.bottom {
-  bottom: -5%;     /* move it slightly up from the bottom */
+  bottom: -1%;     /* move it slightly up from the bottom */
   left: 50%;
   transform: translateX(-50%);
 }

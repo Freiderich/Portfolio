@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "../styles/About.css";
+
+// 🎨 Images
 import hobbyImage from "../assets/images/redesign N wow.jpg";
 import cynImage from "../assets/images/Cyn.jpg";
 import markImage from "../assets/images/Invincible.jpg";
 import alImage from "../assets/images/alastor.jpg";
 import huskImage from "../assets/images/Husk.jpg";
 import pitouImage from "../assets/images/Pitou.jpg";
+
+// 🎥 Videos
 import blackVideo from "../assets/videos/Blackhole.mp4";
 import doughVideo from "../assets/videos/Doughnut hologram.mp4";
 import energyVideo from "../assets/videos/Energy.mp4";
@@ -15,31 +19,37 @@ function About() {
   const [activeBox, setActiveBox] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
   const [previewVideo, setPreviewVideo] = useState(null);
-  const [visiblePair, setVisiblePair] = useState(0);
 
-  const images = [
-    hobbyImage,
-    cynImage,
-    markImage,
-    alImage,
-    huskImage,
-    pitouImage,
-  ];
-
+  // images + videos arrays
+  const images = [hobbyImage, cynImage, markImage, alImage, huskImage, pitouImage];
   const videos = [blackVideo, doughVideo, energyVideo, loopVideo];
 
-  // Auto fade between pairs
+  // current visible pair index
+  const [visibleImagePair, setVisibleImagePair] = useState(0);
+  const [visibleVideoPair, setVisibleVideoPair] = useState(0);
+
+  // Fade images every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisiblePair((prev) => (prev + 1) % 3);
+      setVisibleImagePair((prev) => (prev + 1) % Math.ceil(images.length / 2));
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
+
+  // Fade videos every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleVideoPair((prev) => (prev + 1) % Math.ceil(videos.length / 2));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [videos.length]);
 
   const handleBoxClick = (box) => setActiveBox(box);
   const closeOverlay = () => setActiveBox(null);
-  const closePreviewImage = () => setPreviewImage(null);
-  const closePreviewVideo = () => setPreviewVideo(null);
+  const closePreview = () => {
+    setPreviewImage(null);
+    setPreviewVideo(null);
+  };
 
   return (
     <section id="about" className="about-section">
@@ -63,14 +73,14 @@ function About() {
         </div>
       </div>
 
-      {/* Full-screen overlay for sections */}
+      {/* Full-screen overlay */}
       {activeBox && (
         <div className="overlay-screen">
           <button className="close-btn" onClick={closeOverlay}>
             ×
           </button>
 
-          {/* Hobbies */}
+          {/* Hobbies Section */}
           {activeBox === "hobbies" && (
             <div className="overlay-content hobbies-content">
               <h2>Hobbies</h2>
@@ -81,7 +91,7 @@ function About() {
               </p>
 
               <div className="hobbies-row">
-                {/* Digital Art */}
+                {/* DIGITAL ART */}
                 <div className="hobby-column">
                   <h3>Digital Art</h3>
                   <p>
@@ -93,7 +103,7 @@ function About() {
                   <div className="fade-gallery images">
                     {images.map((img, index) => {
                       const pairIndex = Math.floor(index / 2);
-                      const isVisible = pairIndex === visiblePair;
+                      const isVisible = pairIndex === visibleImagePair;
                       const posClass = index % 2 === 0 ? "left" : "right";
 
                       return (
@@ -111,7 +121,7 @@ function About() {
                   </div>
                 </div>
 
-                {/* 3D Animation */}
+                {/* 3D ANIMATION */}
                 <div className="hobby-column">
                   <h3>3D Animation</h3>
                   <p>
@@ -123,7 +133,7 @@ function About() {
                   <div className="fade-gallery videos">
                     {videos.map((video, index) => {
                       const pairIndex = Math.floor(index / 2);
-                      const isVisible = pairIndex === visiblePair;
+                      const isVisible = pairIndex === visibleVideoPair;
                       const posClass = index % 2 === 0 ? "top" : "bottom";
 
                       return (
@@ -137,13 +147,6 @@ function About() {
                           muted
                           loop
                           playsInline
-                          style={{
-                            width: "100%",
-                            height: "50%",
-                            objectFit: "cover",
-                            borderRadius: "1rem",
-                            cursor: "pointer",
-                          }}
                           onClick={() => setPreviewVideo(video)}
                         />
                       );
@@ -151,7 +154,7 @@ function About() {
                   </div>
                 </div>
 
-                {/* Gaming */}
+                {/* GAMING */}
                 <div className="hobby-column">
                   <h3>Gaming</h3>
                   <p>
@@ -164,14 +167,14 @@ function About() {
             </div>
           )}
 
-          {/* Education */}
+          {/* EDUCATION */}
           {activeBox === "education" && (
             <div className="overlay-content education-content">
               <h2>Education</h2>
               <p>
                 Currently pursuing a{" "}
-                <strong>Bachelor’s in Computer Engineering</strong> — focusing on
-                software development, design thinking, and innovative
+                <strong>Bachelor’s in Computer Engineering</strong> — focusing
+                on software development, design thinking, and innovative
                 technologies.
               </p>
               <p>
@@ -182,7 +185,7 @@ function About() {
             </div>
           )}
 
-          {/* Passion */}
+          {/* PASSION */}
           {activeBox === "passion" && (
             <div className="overlay-content passion-content">
               <h2>Passion Projects</h2>
@@ -200,43 +203,24 @@ function About() {
         </div>
       )}
 
-      {/* Full-size Image Preview Overlay */}
+      {/* IMAGE PREVIEW */}
       {previewImage && (
-        <div
-          className="image-preview-overlay"
-          onClick={(e) => {
-            if (e.target.classList.contains("image-preview-overlay"))
-              closePreviewImage();
-          }}
-        >
+        <div className="image-preview-overlay" onClick={closePreview}>
           <img src={previewImage} alt="Preview" className="preview-image" />
-          <button className="close-preview" onClick={closePreviewImage}>
-            ×
-          </button>
+          <button className="close-preview">×</button>
         </div>
       )}
 
-      {/* Full-size Video Preview Overlay */}
+      {/* VIDEO PREVIEW */}
       {previewVideo && (
-        <div
-          className="video-preview-overlay"
-          onClick={(e) => {
-            if (e.target.classList.contains("video-preview-overlay"))
-              closePreviewVideo();
-          }}
-        >
+        <div className="video-preview-overlay" onClick={closePreview}>
           <video
             src={previewVideo}
             className="preview-video"
             controls
             autoPlay
           />
-          <button
-            className="close-video-preview"
-            onClick={closePreviewVideo}
-          >
-            ×
-          </button>
+          <button className="close-video-preview">×</button>
         </div>
       )}
     </section>
