@@ -296,6 +296,8 @@
   transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
   box-shadow: 0 0 25px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2);
   animation: videoGlow 3s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 1;
 }
 
 
@@ -316,6 +318,9 @@
 .fade-gallery.videos video.pair-fade-item.visible {
   opacity: 1;
   transform: translateX(-50%) scale(1.02);
+
+  pointer-events: auto;
+  z-index: 10;
 }
 
 
