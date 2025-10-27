@@ -6,6 +6,10 @@ import markImage from "../assets/images/Invincible.jpg";
 import alImage from "../assets/images/alastor.jpg";
 import huskImage from "../assets/images/Husk.jpg";
 import pitouImage from "../assets/images/Pitou.jpg";
+import blackVideo from "../assets/videos/Blackhole.mp4";
+import doughVideo from "../assets/videos/Doughnut hologram.mp4";
+import energyVideo from "../assets/videos/Energy.mp4";
+import loopVideo from "../assets/videos/Loop.mp4";
 
 
 function About() {
@@ -76,39 +80,65 @@ function About() {
                   </p>
 
                   {/* Fade Gallery (2 images visible at once) */}
-                  <div className="fade-gallery pair-mode">
-                   {images.map((img, index) => {
-                      const isVisible =
-                        (visiblePair === 0 && (index === 0 || index === 1)) ||
-                        (visiblePair === 1 && (index === 2 || index === 3)) ||
-                        (visiblePair === 2 && (index === 4 || index === 5)) ;
+                  <div className="fade-gallery images">
+                    {images.map((img, index) => {
+                      const pairIndex = Math.floor(index / 2); // groups of two
+                      const isVisible = pairIndex === visiblePair; // only show current pair
 
-                      if (!isVisible) return null;  
+                      const posClass = index % 2 === 0 ? "left" : "right";
 
-                  const posClass = (index % 2 === 0) ? "left" : "right"; // first of pair = left, second = right
+                      return (
+                        <img
+                          key={index}
+                          src={img}
+                          alt={`Artwork ${index + 1}`}
+                          className={`pair-fade-item ${posClass} ${isVisible ? "visible" : ""}`}
+                          onClick={() => setPreviewImage(img)}
+                        />
+                      );
+                    })}
+                  </div>
+
+
+                </div>
+
+             <div className="hobby-column">
+                <h3>3D Animation</h3>
+                <p>
+                  I create models and short animations in <strong>Blender</strong>, learning
+                  lighting, motion, and design techniques that bring imagination to life.
+                </p>
+
+                {/* Fade Gallery for 3D Animation videos */}
+                <div className="fade-gallery videos">
+                  {[blackVideo, doughVideo, energyVideo, loopVideo].map((video, index) => {
+                    const pairIndex = Math.floor(index / 2); // 0 for first pair, 1 for second
+                    const isVisible = pairIndex === visiblePair; // controls fade visibility
+                    const posClass = index % 2 === 0 ? "top" : "bottom"; // stack vertically
 
                     return (
-                      <img
+                      <video
                         key={index}
-                        src={img}
-                        alt={`Artwork ${index + 1}`}
-                        className={`pair-fade-item visible ${posClass}`}
-                        onClick={() => setPreviewImage(img)}
+                        src={video}
+                        className={`pair-fade-item ${posClass} ${isVisible ? "visible" : ""}`}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        style={{
+                          width: "100%",
+                          height: "50%", // each takes half of gallery height
+                          objectFit: "cover",
+                          borderRadius: "1rem",
+                        }}
                       />
-                   );
-                })}
-
-                  </div>
+                    );
+                  })}
                 </div>
 
-                <div className="hobby-column">
-                  <h3>3D Animation</h3>
-                  <p>
-                    I create models and short animations in{" "}
-                    <strong>Blender</strong>, learning lighting, motion, and
-                    design techniques that bring imagination to life.
-                  </p>
-                </div>
+
+              </div>
+
 
                 <div className="hobby-column">
                   <h3>Gaming</h3>
