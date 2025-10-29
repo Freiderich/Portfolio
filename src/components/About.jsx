@@ -8,12 +8,10 @@ import markImage from "../assets/images/Invincible.jpg";
 import alImage from "../assets/images/alastor.jpg";
 import huskImage from "../assets/images/Husk.jpg";
 import pitouImage from "../assets/images/Pitou.jpg";
-import redImage from "../assets/images/Red Dead Redemption 2.png"
-import teamImage from "../assets/images/TeamFortress2.jpg"
-import leftImage from "../assets/images/left4dead2.jpg"
-import tekkenImage from "../assets/images/Tekken-8.jpg"
-
-
+import redGames from "../assets/images/Red Dead Redemption 2.png";
+import teamGames from "../assets/images/TeamFortress2.jpg";
+import leftGames from "../assets/images/left4dead2.jpg";
+import tekkenGames from "../assets/images/Tekken-8.jpg";
 
 // 🎥 Videos
 import blackVideo from "../assets/videos/Blackhole.mp4";
@@ -28,11 +26,13 @@ function About() {
 
   // images + videos arrays
   const images = [hobbyImage, cynImage, markImage, alImage, huskImage, pitouImage];
+  const games = [redGames, teamGames, leftGames, tekkenGames];
   const videos = [blackVideo, doughVideo, energyVideo, loopVideo];
 
   // current visible pair index
   const [visibleImagePair, setVisibleImagePair] = useState(0);
   const [visibleVideoPair, setVisibleVideoPair] = useState(0);
+  const [visibleGamePair, setVisibleGamePair] = useState(0);
 
   // Fade images every 4 seconds
   useEffect(() => {
@@ -49,6 +49,14 @@ function About() {
     }, 5000);
     return () => clearInterval(interval);
   }, [videos.length]);
+
+  // Fade games every 4 seconds (independent)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleGamePair((prev) => (prev + 1) % Math.ceil(games.length / 2));
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [games.length]);
 
   const handleBoxClick = (box) => setActiveBox(box);
   const closeOverlay = () => setActiveBox(null);
@@ -164,10 +172,30 @@ function About() {
                 <div className="hobby-column">
                   <h3>Gaming</h3>
                   <p>
-                    I play games on <strong>Steam</strong> — mostly indie and
-                    story-driven titles that inspire creativity, design, and
-                    strategy.
+                    I enjoy exploring immersive games on <strong>Steam</strong> —
+                    from epic adventures to competitive multiplayer, each inspires
+                    strategy, creativity, and storytelling.
                   </p>
+
+                  <div className="fade-gallery images">
+                    {games.map((game, index) => {
+                      const pairIndex = Math.floor(index / 2);
+                      const isVisible = pairIndex === visibleGamePair;
+                      const posClass = index % 2 === 0 ? "left" : "right";
+
+                      return (
+                        <img
+                          key={index}
+                          src={game}
+                          alt={`Game ${index + 1}`}
+                          className={`pair-fade-item ${posClass} ${
+                            isVisible ? "visible" : ""
+                          }`}
+                          onClick={() => setPreviewImage(game)}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
