@@ -479,7 +479,7 @@
   position: absolute;
   left: -1rem;
   top: 0.5rem;
-  margin-left: -1.1rem;
+  margin-left: -1.02rem;
   width: 1rem;
   height: 1rem;
   background: #00d4ff;
@@ -489,6 +489,16 @@
 .education-item.current .dot {
   background: #ff7b00; /* Highlight current study */
   box-shadow: 0 0 1rem #ff7b00;
+}
+
+.education-item:hover .education-info h3 {
+  color: #00d4ff; /* Highlight title */
+  transition: color 0.3s ease;
+}
+
+.education-item:hover .education-info p {
+  color: #eee; /* Slight brighten for text */
+  transition: color 0.3s ease;
 }
 
 .education-info h3 {
@@ -508,5 +518,41 @@
   font-style: italic;
   color: #aaa;
 }
+
+.education-item {
+  position: relative;
+  margin-bottom: 5rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideFadeIn 0.8s forwards;
+}
+
+/* Staggered animation for multiple items */
+.education-item:nth-child(1) { animation-delay: 0.2s; }
+.education-item:nth-child(2) { animation-delay: 0.4s; }
+.education-item:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.education-item .dot {
+  animation: pulseDot 1.5s infinite alternate;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.3); opacity: 1; }
+}
+
+.education-item.current .dot {
+  animation: pulseDot 1.5s infinite alternate;
+}
+
+
 
 
