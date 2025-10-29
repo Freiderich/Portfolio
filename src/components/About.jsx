@@ -254,10 +254,13 @@ function About() {
                 I love creating <span className="highlight">web applications</span> that merge  
                 <span className="highlight"> functionality</span> and <span className="highlight">design</span>.
               </p>
-
               <p>
-                From front-end React apps to experimenting with AI and kiosk
-                systems, I aim to turn ideas into real, interactive experiences.
+                My passion lies in <span className="highlight">front-end React apps</span>, and <span className="highlight">back-end </span>
+                experimenting with <span className="highlight">AI</span> and <span className="highlight">kiosk systems</span>.
+              </p>
+              <p>
+                I aim to turn ideas into <span className="highlight">real, interactive experiences </span>  
+                 that engage users and bring designs to life.
               </p>
             </div>
           )}
