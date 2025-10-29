@@ -8,6 +8,12 @@ import markImage from "../assets/images/Invincible.jpg";
 import alImage from "../assets/images/alastor.jpg";
 import huskImage from "../assets/images/Husk.jpg";
 import pitouImage from "../assets/images/Pitou.jpg";
+import redImage from "../assets/images/Red Dead Redemption 2.png"
+import teamImage from "../assets/images/TeamFortress2.jpg"
+import leftImage from "../assets/images/left4dead2.jpg"
+import tekkenImage from "../assets/images/Tekken-8.jpg"
+
+
 
 // 🎥 Videos
 import blackVideo from "../assets/videos/Blackhole.mp4";
