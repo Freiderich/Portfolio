@@ -202,22 +202,47 @@ function About() {
           )}
 
           {/* EDUCATION */}
-          {activeBox === "education" && (
-            <div className="overlay-content education-content">
-              <h2>Education</h2>
-              <p>
-                Currently pursuing a{" "}
-                <strong>Bachelor’s in Computer Engineering</strong> — focusing
-                on software development, design thinking, and innovative
-                technologies.
-              </p>
-              <p>
-                I’ve explored fields like web development, data analysis, and
-                emerging technologies, aiming to combine them into practical and
-                creative solutions.
-              </p>
-            </div>
-          )}
+            {activeBox === "education" && (
+              <div className="overlay-content education-content">
+                <h2>Education</h2>
+                <div className="education-timeline">
+                  {/* Philippine School Doha */}
+                  <div className="education-item">
+                    <span className="dot"></span>
+                    <div className="education-info">
+                      <h3>Philippine School Doha</h3>
+                      <p>Doha, Qatar</p>
+                      <p>2009 - 2020</p>
+                      <p>Completed basic and secondary education.</p>
+                    </div>
+                  </div>
+
+                  {/* Holy Angel University (Secondary STEM) */}
+                  <div className="education-item">
+                    <span className="dot"></span>
+                    <div className="education-info">
+                      <h3>Holy Angel University (Secondary - STEM)</h3>
+                      <p>Angeles City, Pampanga</p>
+                      <p>2020 - 2021</p>
+                      <p>Focused on Science, Technology, Engineering, and Math courses.</p>
+                    </div>
+                  </div>
+
+                  {/* Holy Angel University (Bachelor) */}
+                  <div className="education-item current">
+                    <span className="dot"></span>
+                    <div className="education-info">
+                      <h3>Bachelor of Science in Computer Engineering</h3>
+                      <p>Holy Angel University, Angeles City, Pampanga</p>
+                      <p>2021 - Present</p>
+                      <p>Specializing in software development, design thinking, and innovative technologies.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+
 
           {/* PASSION */}
           {activeBox === "passion" && (

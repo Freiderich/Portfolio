@@ -461,3 +461,52 @@
 }
 
 
+/* Education Timeline */
+.education-timeline {
+  position: relative;
+  margin-left: 1.5rem;
+  left: -1rem;
+  padding-left: 1.5rem;
+  border-left: .175rem solid #00d4ff;
+}
+
+.education-item {
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.education-item .dot {
+  position: absolute;
+  left: -1rem;
+  top: 0.5rem;
+  margin-left: -1.1rem;
+  width: 1rem;
+  height: 1rem;
+  background: #00d4ff;
+  border-radius: 50%;
+}
+
+.education-item.current .dot {
+  background: #ff7b00; /* Highlight current study */
+  box-shadow: 0 0 1rem #ff7b00;
+}
+
+.education-info h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.education-info p {
+  margin: 0.2rem 0;
+  color: #ccc;
+  font-size: 0.95rem;
+  max-width: 35rem;
+}
+
+.education-info p:last-child {
+  font-style: italic;
+  color: #aaa;
+}
+
+
