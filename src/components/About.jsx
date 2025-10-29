@@ -249,12 +249,12 @@ function About() {
           {/* PASSION */}
           {activeBox === "passion" && (
             <div className="overlay-content passion-content">
-              <h2>Passion Projects</h2>
+              <h2>Passion</h2>
               <p>
-                I love creating web applications that merge functionality and
-                design. My passion lies in making interfaces that are not just
-                usable but enjoyable.
+                I love creating <span className="highlight">web applications</span> that merge  
+                <span className="highlight"> functionality</span> and <span className="highlight">design</span>.
               </p>
+
               <p>
                 From front-end React apps to experimenting with AI and kiosk
                 systems, I aim to turn ideas into real, interactive experiences.
