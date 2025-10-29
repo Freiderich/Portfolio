@@ -69,10 +69,12 @@ function About() {
     <section id="about" className="about-section">
       <h2 className="about-title">About Me</h2>
       <p className="about-description">
-        I’m passionate about blending technology and creativity to build
-        interactive experiences. Beyond coding, I explore art, animation, and
-        gaming — expressing imagination through digital design and motion.
+        I’m passionate about blending technology and creativity to create interactive experiences.
       </p>
+      <p className="about-description">
+        Beyond coding, I enjoy exploring digital art, 3D animation, and gaming, bringing imagination to life through design and motion.
+      </p>
+
 
       {/* Boxes */}
       <div className="about-boxes">
