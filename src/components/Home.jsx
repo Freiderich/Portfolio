@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/home.css";
+import "../styles/Home.css";
 
 function Home() {
   const texts = ["A Web Developer", "A Creative Designer", "A Problem Solver"];

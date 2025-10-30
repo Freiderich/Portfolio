@@ -6,7 +6,7 @@ import hobbyImage from "../assets/images/redesign N wow.jpg";
 import cynImage from "../assets/images/Cyn.jpg";
 import markImage from "../assets/images/Invincible.jpg";
 import alImage from "../assets/images/alastor.jpg";
-import huskImage from "../assets/images/Husk.jpg";
+import huskImage from "../assets/images/husk.jpg";
 import pitouImage from "../assets/images/Pitou.jpg";
 import redGames from "../assets/images/Red Dead Redemption 2.png";
 import teamGames from "../assets/images/TeamFortress2.jpg";
@@ -255,7 +255,7 @@ function About() {
                 <span className="highlight"> functionality</span> and <span className="highlight">design</span>.
               </p>
               <p>
-                My passion lies in <span className="highlight">front-end React apps</span>, and <span className="highlight">back-end </span>
+                My passion lies in <span className="highlight">front-end React apps</span>, and <span className="highlight">bnpmack-end </span>
                 experimenting with <span className="highlight">AI</span> and <span className="highlight">kiosk systems</span>.
               </p>
               <p>

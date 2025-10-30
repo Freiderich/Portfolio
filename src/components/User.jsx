@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "../styles/navbar.css";
+import "../styles/Navbar.css";
 import Navbar from "./Navbar.jsx";
 import Sections from "./Sections.jsx";
 
