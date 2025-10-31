@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import About from "./About";
+import Projects from "./Projects";
 import "../styles/Sections.css";
 
 function Sections() {
@@ -10,10 +11,7 @@ function Sections() {
       
       <About />
 
-      <section id="projects" className="section">
-        <h2>Projects</h2>
-        <p>My projects will appear here.</p>
-      </section>
+      <Projects />
 
       <section id="skills" className="section">
         <h2>Skills</h2>

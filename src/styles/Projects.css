@@ -1,0 +1,13 @@
+.projects-container {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%),
+              linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a40);
+  background-size: 100%, 400% 400%;
+  background-blend-mode: overlay;
+  color: #fff;
+  min-height: 50vh;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+  animation: gradientShift 12s ease infinite;
+}

@@ -9,7 +9,7 @@
   background-size: 100%, 400% 400%;
   background-blend-mode: overlay;
   color: #fff;
-  min-height: 100vh;
+  min-height: 75vh;
   position: relative;
   font-family: 'Segoe UI', sans-serif;
   animation: gradientShift 12s ease infinite;
