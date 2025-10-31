@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "../styles/Navbar.css";
 import Navbar from "./Navbar.jsx";
 import Sections from "./Sections.jsx";
+import Projects from "./Projects.jsx";
 
 function User({ username = "Student" }) {
   useEffect(() => {
