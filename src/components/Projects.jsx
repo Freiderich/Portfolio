@@ -3,15 +3,14 @@ import "../styles/Projects.css";
 
 function Projects() {
   return (
-    <div className="projects-container">
+    <section id="projects" className="projects-container">
       <h1>My Projects</h1>
-      <p>Here are some of the works I’ve done — from class projects to 
-        personal experiments!</p>
-        <p>
-        (Project details will be added soon.)
-        </p>
-    </div>
-
+      <p>
+        Here are some of the works I’ve done — from class projects to
+        personal experiments!
+      </p>
+      <p>(Project details will be added soon.)</p>
+    </section>
   );
 }
 
