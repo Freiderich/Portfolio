@@ -5,8 +5,13 @@ function Projects() {
   return (
     <div className="projects-container">
       <h1>My Projects</h1>
-      <p>Here are some of the works I’ve done — from class projects to personal experiments!</p>
+      <p>Here are some of the works I’ve done — from class projects to 
+        personal experiments!</p>
+        <p>
+        (Project details will be added soon.)
+        </p>
     </div>
+
   );
 }
 
