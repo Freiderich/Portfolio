@@ -19,7 +19,7 @@ function Projects() {
       title: "AI-Driven Platform for University Registrar’s Transactions",
       description:
         "Our ongoing thesis project that integrates AI to streamline university registrar processes, ensuring transparency and efficiency.",
-      tech: ["AI", "Blockchain", "React", "Python"],
+      tech: ["AI", "React", "Node.js"],
     },
   ];
 
