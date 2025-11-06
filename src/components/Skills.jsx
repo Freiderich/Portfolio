@@ -1,58 +1,59 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Skills.css";
 
 function Skills() {
   const skills = [
-    { name: "JavaScript", level: 90 },
-    { name: "React", level: 85 },
-    { name: "CSS & HTML", level: 95 },
-    { name: "Node.js & Express", level: 70 },
-    { name: "Databases (MySQL, MongoDB)", level: 75 },
-    { name: "Git & GitHub", level: 80 },
+    { name: "JavaScript", level: 90, color: "#f7df1e" },
+    { name: "React", level: 85, color: "#61dafb" },
+    { name: "CSS & HTML", level: 95, color: "#e34c26" },
+    { name: "Node.js", level: 70, color: "#3c873a" },
+    { name: "Databases", level: 75, color: "#f29111" },
   ];
 
-  const [visible, setVisible] = useState(false);
-  const sectionRef = useRef(null);
+  const [animatedSkills, setAnimatedSkills] = useState(
+    skills.map(() => 0)
+  );
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
+    const interval = setInterval(() => {
+      setAnimatedSkills((prev) =>
+        prev.map((val, i) => (val < skills[i].level ? val + 1 : val))
+      );
+    }, 20);
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
+    return () => clearInterval(interval);
+  }, [skills]);
 
   return (
-    <section ref={sectionRef} id="skills" className="skills-section">
+    <section id="skills" className="skills-section">
       <h1>My Skills</h1>
       <p className="intro">
-        Here’s a quick overview of the technologies I work with:
+        Technologies I work with and my proficiency levels.
       </p>
 
-      <div className="skills-list">
+      <div className="skills-grid">
         {skills.map((skill, index) => (
-          <div key={index} className="skill-bar">
-            <div className="skill-name">{skill.name}</div>
-            <div className="progress">
-              <div
-                className="progress-fill"
-                style={{ width: visible ? `${skill.level}%` : "0%" }}
-              >
-                <span className="percentage">{visible ? `${skill.level}%` : ""}</span>
-              </div>
-            </div>
+          <div key={index} className="skill-circle">
+            <svg viewBox="0 0 36 36">
+              <path
+                className="circle-bg"
+                d="M18 2.0845
+                   a 15.9155 15.9155 0 0 1 0 31.831
+                   a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <path
+                className="circle"
+                stroke={skill.color}
+                strokeDasharray={`${animatedSkills[index]}, 100`}
+                d="M18 2.0845
+                   a 15.9155 15.9155 0 0 1 0 31.831
+                   a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <text x="18" y="20.35" className="percentage">
+                {animatedSkills[index]}%
+              </text>
+            </svg>
+            <h3>{skill.name}</h3>
           </div>
         ))}
       </div>

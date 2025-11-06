@@ -2,62 +2,65 @@
   padding: 100px 10%;
   background: #0d1117;
   color: #e6edf3;
+  text-align: center;
 }
 
 .skills-section h1 {
-  text-align: center;
   font-size: 2.5rem;
   margin-bottom: 10px;
   color: #58a6ff;
 }
 
 .skills-section .intro {
-  text-align: center;
   font-size: 1.1rem;
   margin-bottom: 50px;
   color: #8b949e;
 }
 
-.skills-list {
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.skill-circle {
+  width: 120px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-}
-
-.skill-bar {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.skill-name {
-  font-weight: bold;
-  color: #c9d1d9;
-  margin-bottom: 4px;
-}
-
-.progress {
-  background: #161b22;
-  border-radius: 15px;
-  height: 25px;
-  overflow: hidden;
-  position: relative;
-}
-
-.progress-fill {
-  background: #58a6ff;
-  height: 100%;
-  border-radius: 15px 0 0 15px;
-  width: 0%;
-  transition: width 1.5s ease-in-out;
-  display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 10px;
-  color: #fff;
-  font-weight: bold;
+}
+
+.skill-circle svg {
+  width: 100px;
+  height: 100px;
+  transform: rotate(-90deg);
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #161b22;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease-out;
 }
 
 .percentage {
-  font-size: 0.9rem;
+  fill: #fff;
+  font-size: 0.5em;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  transform: rotate(90deg); /* counter-rotate to be upright */
+  transform-origin: center;
+}
+
+.skill-circle h3 {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #c9d1d9;
 }
