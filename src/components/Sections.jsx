@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import About from "./About";
+import Skills from "./Skills";
 import Projects from "./Projects";
 import "../styles/Sections.css";
 
@@ -13,10 +14,7 @@ function Sections() {
 
       <Projects />
 
-      <section id="skills" className="section">
-        <h2>Skills</h2>
-        <p>My skills go here.</p>
-      </section>
+      <Skills />
 
       <section id="experience" className="section">
         <h2>Experience</h2>
