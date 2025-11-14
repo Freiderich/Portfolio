@@ -8,6 +8,37 @@
   font-family: 'Inter', sans-serif;
 }
 
+.home-section {
+  padding: 100px 10%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  color: #111;
+  font-family: 'Inter', sans-serif;
+  position: relative; /* important */
+}
+
+/* dotted grid background */
+.home-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0,0,0,0.08) 1rem, transparent 1px);
+  background-size: 100px 100px;
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* keeps text + shapes above the dots */
+.home-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+
 .home-container {
   display: flex;
   justify-content: space-between;
@@ -159,8 +190,8 @@
 }
 
 .globe-sphere {
-  width: 160px;
-  height: 160px;
+  width: 15rem;
+  height: 10rem;
   position: relative;
   transform-style: preserve-3d;
 }
