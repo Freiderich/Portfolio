@@ -6,24 +6,28 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent; /* transparent navbar */
+  background: transparent; /* truly transparent */
+  box-shadow: none;        /* remove any shadows */
   padding: 0.8rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* keeps logo left, menu right */
+  justify-content: space-between;
   z-index: 1000;
+  color: #fff !important;  /* force all text inside header to be white */
 }
+
+
 
 /* Logo */
 .header__logo {
-  /* Moves FP slightly to the right */
-  margin-left: 2rem; /* adjust as needed */
+  margin-left: 2rem;      /* moves FP slightly to the right */
 }
 
 .header__logo strong {
   font-size: 1.5rem;
-  color: #fff; /* plain white */
+  color: #ffffff !important; /* force white color */
 }
+
 
 /* =========================
    Navbar Menu
@@ -42,8 +46,6 @@
   margin: 0;
   gap: 1.5rem;
 }
-
-.navbar__item {}
 
 .navbar__link {
   display: flex;
