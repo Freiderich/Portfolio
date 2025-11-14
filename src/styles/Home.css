@@ -3,7 +3,7 @@
   min-height: 90vh;
   display: flex;
   align-items: center;
-  background: #000000; /* light neutral background */
+  background: #ffffff; /* light neutral background */
   color: #111;
   font-family: 'Inter', sans-serif;
 }
@@ -51,7 +51,7 @@
 }
 
 .cta-btn:hover {
-  background-color: #005bb5;
+  background-color: #637e99;
 }
 
 /* RIGHT COLUMN (optional) */

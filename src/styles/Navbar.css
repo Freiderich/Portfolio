@@ -1,52 +1,38 @@
 /* =========================
-   Root & Base Styles
-========================= */
-:root {
-  --primary: #00d4ff;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #212121;
-  color: #ffffff;
-  font-family: monospace, serif;
-  letter-spacing: 0.05em;
-}
-
-/* =========================
    Header / Navbar
 ========================= */
 .header {
-  position: fixed; /* Stays at top */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.95);
+  background: transparent; /* transparent navbar */
   padding: 0.8rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* keeps logo left, menu right */
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 212, 255, 0.2);
+}
+
+/* Logo */
+.header__logo {
+  /* Moves FP slightly to the right */
+  margin-left: 2rem; /* adjust as needed */
 }
 
 .header__logo strong {
-  position: relative;
-  left: 10rem; /* move right */
-  /* or left: -10px; to move left */
+  font-size: 1.5rem;
+  color: #fff; /* plain white */
 }
 
-
 /* =========================
-   Navbar Structure
+   Navbar Menu
 ========================= */
 .navbar {
   display: flex;
   align-items: center;
   flex: 1;
-  justify-content: center;
+  justify-content: center; /* centers the menu */
 }
 
 .navbar__menu {
@@ -54,22 +40,19 @@ html, body {
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.navbar__item {
-  position: relative;
-}
+.navbar__item {}
 
 .navbar__link {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 3.5rem;
   width: 8rem;
-  color: #fff;
+  color: #fff; /* white links */
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.3s ease;
@@ -85,13 +68,12 @@ html, body {
   width: 20px;
   height: 20px;
   stroke-width: 2;
-  transition: transform 0.3s ease;
 }
 
-/* Hover effects */
+/* subtle hover accent */
 .navbar__link:hover {
-  color: var(--primary);
-  text-shadow: 0 0 8px var(--primary), 0 0 16px rgba(0, 212, 255, 0.4);
+  color: var(--primary); /* your blue hover */
+  text-shadow: 0 0 5px var(--primary);
 }
 
 .navbar__link:hover span {
@@ -101,55 +83,4 @@ html, body {
 
 .navbar__link:hover i {
   transform: translateY(-5px);
-}
-
-/* Sliding underline */
-.navbar__link::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -5px;
-  background: var(--primary);
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
-.navbar__link:hover::after {
-  width: 100%;
-}
-
-
-
-.navbar__user {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-
-/* =========================
-   Page Content
-========================= */
-.container {
-  margin-top: 100px; /* Space for fixed navbar */
-  padding: 2rem;
-}
-
-h1, h2, h3, p, li, a, button, span {
-  color: #fff;
-}
-
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.text-muted, .text-secondary {
-  color: #cccccc;
 }

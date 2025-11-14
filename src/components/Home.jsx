@@ -10,9 +10,11 @@ function Home() {
           <h1>Freiderich Peralta</h1>
           <h2>Web Developer | Designer | Problem Solver</h2>
           <p>
-            I build professional, user-centered web applications that
-            combine design and functionality. I focus on clean, maintainable
-            code and responsive layouts.
+           I’m a full-stack developer with great experience and
+            a passion for coding and building clean, intuitive interfaces. 
+            I love turning ideas into functional, user-friendly 
+            web applications and having fun while crafting solutions that 
+            people enjoy using.
           </p>
           <a href="#projects" className="cta-btn">Explore Projects</a>
         </div>
