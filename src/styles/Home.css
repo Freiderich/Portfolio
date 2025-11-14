@@ -1,277 +1,71 @@
-/* 🌌 HOME SECTION STYLE */
 .home-section {
-  position: relative;
-  height: 90vh;
+  padding: 100px 10%;
+  min-height: 90vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: white;
-  overflow: hidden;
-  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a40);
-  background-size: 400% 400%;
-  animation: gradientShift 12s ease infinite;
+  background: #000000; /* light neutral background */
+  color: #111;
+  font-family: 'Inter', sans-serif;
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-/* FADE IN EFFECT */
-.fade-in {
-  opacity: 0;
-  animation: fadeInUp 1.5s ease forwards;
-}
-
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* MAIN CONTAINER (LEFT + RIGHT SPLIT) */
 .home-container {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  max-width: 2000px;
+  max-width: 1200px;
   margin: 0 auto;
-  z-index: 1;
+  gap: 2rem;
 }
 
-/* LEFT SECTION */
 .home-left {
-  flex: 2;
-  text-align: left;
-  transform: translateY(-5rem); /* Move text slightly upward */
+  flex: 1;
 }
 
 .home-left h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .home-left h2 {
   font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 1rem;
 }
 
-/* RIGHT SECTION */
+.home-left p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #0070f3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #005bb5;
+}
+
+/* RIGHT COLUMN (optional) */
 .home-right {
   flex: 1;
-  text-align: center;
 }
 
-.home-right .intro-text {
-  max-width: 500px;
-  margin-top: -15rem;
-  margin-right: -2rem;
-  margin-left: -5rem;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-.intro-text p {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-/* SHARED BOX STYLE (Dream + Mission) */
-.dream-box,
-.mission-box {
-  background: rgba(0, 0, 0, 0.25);
-  border: .05rem solid;
-  padding: 1.5rem 2rem;
-  border-radius: 1rem;
-  margin-top: 5rem;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-  animation: pulseGlow 4s infinite alternate;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  cursor: pointer;
-}
-
-/* Hover effect */
-.dream-box:hover,
-.mission-box:hover {
-  transform: translateY(-5px) scale(1.02);
-}
-
-/* Dream Box – Blue Matrix Effect */
-.dream-box {
-  border-color: rgba(0, 170, 255, 0.4);
-  box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
-}
-
-.dream-box:hover {
-  border-color: rgba(0, 200, 255, 0.8);
-  box-shadow: 0 0 45px rgba(0, 200, 255, 0.6);
-}
-
-.dream-box::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: repeating-linear-gradient(
-    120deg,
-    rgba(0, 170, 255, 0.08) 0,
-    rgba(0, 170, 255, 0.08) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  transform: rotate(25deg);
-  animation: matrixScroll 10s linear infinite;
-}
-
-/* Mission Box – Green Matrix Effect */
-.mission-box {
-  border-color: rgba(0, 255, 170, 0.4);
-  box-shadow: 0 0 25px rgba(0, 255, 170, 0.3);
-}
-
-.mission-box:hover {
-  border-color: rgba(0, 255, 170, 0.8);
-  box-shadow: 0 0 45px rgba(0, 255, 170, 0.6);
-}
-
-.mission-box::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: repeating-linear-gradient(
-    120deg,
-    rgba(0, 255, 170, 0.08) 0,
-    rgba(0, 255, 170, 0.08) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  transform: rotate(25deg);
-  animation: matrixScroll 10s linear infinite;
-}
-
-/* Shared Glow Animation */
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
-  100% { box-shadow: 0 0 35px rgba(255, 255, 255, 0.4); }
-}
-
-/* Matrix Flow (used by both) */
-@keyframes matrixScroll {
-  0% { transform: translateY(0) rotate(25deg); }
-  100% { transform: translateY(100%) rotate(25deg); }
-}
-
-/* GLOWING NAME */
-.highlight {
-  background: linear-gradient(90deg, #340979, #00d4ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-}
-
-/* TYPING EFFECT */
-.typed-text {
-  display: inline-block;
-  font-size: 1.3rem;
-  color: #5e5eff;
-  margin-bottom: 15px;
-  font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  vertical-align: bottom;
-}
-
-.cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1.2em;
-  background-color: #00d4ff;
-  margin-left: 3px;
-  animation: blinkCursor 0.7s infinite;
-  vertical-align: bottom;
-}
-
-@keyframes blinkCursor {
-  50% { opacity: 0; }
-}
-
-/* CUBE BUTTON */
-.cube-btn {
-  display: inline-block;
-  padding: 12px 30px;
-  border: 2px solid #00d4ff;
-  color: #00d4ff;
-  font-weight: bold;
-  text-decoration: none;
-  letter-spacing: 0.05em;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-}
-
-.cube-btn:hover {
-  background: linear-gradient(90deg, #340979, #00d4ff);
-  color: white;
-  box-shadow: 0 0 15px rgba(0, 212, 255, 0.7);
-  transform: translateY(-3px);
-}
-
-/* SCROLL INDICATOR */
-.scroll-down {
-  font-size: 2rem;
-  color: #00d4ff;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* BOTTOM SECTION */
-.home-bottom {
-  position: absolute;
-  bottom: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.home-bottom .cube-btn {
-  margin-bottom: 50px;
-}
-
-/* RESPONSIVE DESIGN */
+/* Responsive */
 @media (max-width: 768px) {
   .home-container {
     flex-direction: column;
     text-align: center;
   }
-
   .home-left, .home-right {
-    text-align: center;
-  }
-
-  .home-left h1 {
-    font-size: 2.4rem;
-  }
-
-  .home-bottom {
-    bottom: 30px;
+    width: 100%;
   }
 }
-

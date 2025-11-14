@@ -1,77 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../styles/Home.css";
 
 function Home() {
-  const texts = ["A Web Developer", "A Creative Designer", "A Problem Solver"];
-  const [displayedText, setDisplayedText] = useState("");
-  const [textIndex, setTextIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentText = texts[textIndex];
-    const timeout = setTimeout(() => {
-      setDisplayedText(
-        isDeleting
-          ? currentText.substring(0, charIndex - 1)
-          : currentText.substring(0, charIndex + 1)
-      );
-      setCharIndex((prev) => prev + (isDeleting ? -1 : 1));
-
-      if (!isDeleting && charIndex === currentText.length) {
-        setTimeout(() => setIsDeleting(true), 1000);
-      } else if (isDeleting && charIndex === 0) {
-        setIsDeleting(false);
-        setTextIndex((prev) => (prev + 1) % texts.length);
-      }
-    }, isDeleting ? 50 : 100);
-
-    return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, textIndex]);
-
   return (
-    <section id="home" className="section home-section">
-      <div className="overlay"></div>
-
-      <div className="home-container fade-in">
-        {/* LEFT SIDE */}
+    <section id="home" className="home-section">
+      <div className="home-container">
+        {/* LEFT COLUMN */}
         <div className="home-left">
-          <h1>
-            Hi, I’m <span className="highlight">Freiderich</span>
-          </h1>
-          <h2 className="typed-text">
-            {displayedText}
-            <span className="cursor"></span>
-          </h2>
+          <h1>Freiderich Peralta</h1>
+          <h2>Web Developer | Designer | Problem Solver</h2>
+          <p>
+            I build professional, user-centered web applications that
+            combine design and functionality. I focus on clean, maintainable
+            code and responsive layouts.
+          </p>
+          <a href="#projects" className="cta-btn">Explore Projects</a>
         </div>
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT COLUMN (optional) */}
         <div className="home-right">
-          <div className="intro-text">
-            <div className="dream-box">
-              <p>
-                This portfolio showcases my skills in building dynamic, 
-                user-centered web applications. I focus on combining design 
-                and functionality to create seamless experiences that 
-                bring ideas to life on the screen.
-              </p>
-            </div>
-            <div className ="mission-box">
-               <p className="mission">
-              My goal is to keep learning, creating, and building meaningful
-              digital solutions that make an impact.
-            </p>
-            </div>
-          </div>
+          {/* You could add a minimal illustration or leave blank */}
         </div>
-      </div>
-
-      {/* CENTER BUTTON + ARROW */}
-      <div className="home-bottom">
-        <a href="#projects" className="cube-btn">
-          Explore My Work
-        </a>
-        <div className="scroll-down">&#x21E3;</div>
       </div>
     </section>
   );
