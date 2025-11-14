@@ -3,6 +3,7 @@ import Home from "./Home";
 import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
+import Experience from "./Experience";
 import "../styles/Sections.css";
 
 function Sections() {
@@ -16,10 +17,7 @@ function Sections() {
 
       <Skills />
 
-      <section id="experience" className="section">
-        <h2>Experience</h2>
-        <p>My experience goes here.</p>
-      </section>
+      <Experience />
 
       <section id="contact" className="section">
         <h2>Contact</h2>

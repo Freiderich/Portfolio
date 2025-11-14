@@ -190,11 +190,16 @@
 .hobbies-row {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 10rem;
-  margin-top: 2rem;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 .hobby-column {
   background: rgba(255, 255, 255, 0.05);
