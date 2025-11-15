@@ -1,33 +1,53 @@
 /* =========================
    Header / Navbar
 ========================= */
+:root {
+  --primary: #00d4ff;
+  --navbar-bg: rgba(0, 0, 0, 0.3);
+}
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent; /* truly transparent */
-  box-shadow: none;        /* remove any shadows */
+  background: var(--navbar-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.8rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
-  color: #fff !important;  /* force all text inside header to be white */
+  transition: all 0.3s ease;
 }
 
-
+/* Glassmorphism effect on scroll */
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
 
 /* Logo */
 .header__logo {
-  margin-left: 2rem;      /* moves FP slightly to the right */
+  margin-left: 2rem;
+  position: relative;
 }
 
 .header__logo strong {
-  font-size: 1.5rem;
-  color: #ffffff !important; /* force white color */
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
 }
 
+.header__logo strong:hover {
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+  transform: scale(1.05);
+}
 
 /* =========================
    Navbar Menu
@@ -36,7 +56,7 @@
   display: flex;
   align-items: center;
   flex: 1;
-  justify-content: center; /* centers the menu */
+  justify-content: center;
 }
 
 .navbar__menu {
@@ -45,6 +65,11 @@
   padding: 0;
   margin: 0;
   gap: 1.5rem;
+  position: relative;
+}
+
+.navbar__item {
+  position: relative;
 }
 
 .navbar__link {
@@ -53,29 +78,34 @@
   align-items: center;
   justify-content: center;
   height: 3.5rem;
-  width: 8rem;
-  color: #fff; /* white links */
+  width: 5rem;
+  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .navbar__link span {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.3rem;
   opacity: 0.8;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
-.navbar__link i {
+.navbar__icon {
   width: 20px;
   height: 20px;
   stroke-width: 2;
+  transition: all 0.3s ease;
 }
 
-/* subtle hover accent */
+/* Hover effects */
 .navbar__link:hover {
-  color: var(--primary); /* your blue hover */
-  text-shadow: 0 0 5px var(--primary);
+  color: var(--primary);
 }
 
 .navbar__link:hover span {
@@ -83,6 +113,93 @@
   transform: translateY(-2px);
 }
 
-.navbar__link:hover i {
-  transform: translateY(-5px);
+.navbar__link:hover .navbar__icon {
+  transform: translateY(-3px) scale(1.1);
+  filter: drop-shadow(0 0 8px var(--primary));
+}
+
+/* =========================
+   Speedline Effect
+========================= */
+.speedline {
+  position: absolute;
+  bottom: 8px;
+  left: 1;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--primary) 50%, 
+    transparent 100%
+  );
+  border-radius: 2px;
+  transition: left 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 0 10px var(--primary);
+  transform: translateX(-50%);
+}
+
+/* Alternative: Glow circle effect */
+.navbar__item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.navbar__item:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem 1rem;
+  }
+
+  .header__logo {
+    margin-left: 0;
+  }
+
+  .navbar__menu {
+    gap: 0.5rem;
+  }
+
+  .navbar__link {
+    width: 3.5rem;
+    height: 3rem;
+  }
+
+  .navbar__link span {
+    font-size: 0.65rem;
+  }
+
+  .navbar__icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* =========================
+   Active Link State
+========================= */
+.navbar__link.active {
+  color: var(--primary);
+}
+
+.navbar__link.active span {
+  opacity: 1;
+  font-weight: 600;
+}
+
+.navbar__link.active .navbar__icon {
+  filter: drop-shadow(0 0 8px var(--primary));
 }
