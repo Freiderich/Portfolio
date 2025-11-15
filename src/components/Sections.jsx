@@ -1,3 +1,4 @@
+import Navbar from "./Navbar";
 import React from "react";
 import Home from "./Home";
 import About from "./About";
@@ -9,6 +10,8 @@ import "../styles/Sections.css";
 function Sections() {
   return (
     <main>
+      <Navbar />
+      
       <Home />
       
       <About />

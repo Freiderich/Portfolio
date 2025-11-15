@@ -1,11 +1,12 @@
-import User from "./User.jsx";
+import Sections from "./Sections";
+import Navbar from "./Navbar";
 import "../styles/index.css";
-import Projects from "./Projects.jsx";
 
 function App() {
   return (
     <div className="app-container">
-      <User username="Freiderich" />
+      <Navbar />
+      <Sections />
     </div>
   );
 }
