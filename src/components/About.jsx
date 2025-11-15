@@ -19,40 +19,36 @@ import doughVideo from "../assets/videos/Doughnut hologram.mp4";
 import energyVideo from "../assets/videos/Energy.mp4";
 import loopVideo from "../assets/videos/Loop.mp4";
 
-
-
-
 function About() {
   const [activeBox, setActiveBox] = useState("hobbies");
-  const [visibleImagePair, setVisibleImagePair] = useState(0);
-  const [visibleVideoPair, setVisibleVideoPair] = useState(0);
-  const [visibleGamePair, setVisibleGamePair] = useState(0);
-  const [previewImage, setPreviewImage] = useState(null);
-  const [isVideo, setIsVideo] = useState(false); 
-
-
+  const [visibleImage, setVisibleImage] = useState(0);
+  const [visibleVideo, setVisibleVideo] = useState(0);
+  const [visibleGame, setVisibleGame] = useState(0);
+  const [previewMedia, setPreviewMedia] = useState(null);
+  const [isVideo, setIsVideo] = useState(false);
 
   const images = [hobbyImage, cynImage, markImage, alImage, huskImage, pitouImage];
   const videos = [blackVideo, doughVideo, energyVideo, loopVideo];
   const games = [redGames, teamGames, leftGames, tekkenGames];
 
+  // Automatic cycling
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisibleImagePair((prev) => (prev + 1) % Math.ceil(images.length / 2));
+      setVisibleImage((prev) => (prev + 1) % images.length);
     }, 4000);
     return () => clearInterval(interval);
   }, [images.length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisibleVideoPair((prev) => (prev + 1) % Math.ceil(videos.length / 2));
+      setVisibleVideo((prev) => (prev + 1) % videos.length);
     }, 5000);
     return () => clearInterval(interval);
   }, [videos.length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisibleGamePair((prev) => (prev + 1) % Math.ceil(games.length / 2));
+      setVisibleGame((prev) => (prev + 1) % games.length);
     }, 4000);
     return () => clearInterval(interval);
   }, [games.length]);
@@ -91,86 +87,86 @@ function About() {
               </p>
 
               <div className="hobbies-row">
+                {/* DIGITAL ART */}
                 <div className="hobby-column hobby-box">
                   <h3>Digital Art</h3>
                   <p>
                     I use an <strong>XP-Pen tablet</strong> in <strong>Krita</strong> to draw stylized characters and scenes, experimenting with color, light, and emotion.
                   </p>
                   <div className="fade-gallery images">
-                    {images.map((img, index) => {
-                      const pairIndex = Math.floor(index / 2);
-                      const isVisible = pairIndex === visibleImagePair;
-                      const posClass = index % 2 === 0 ? "left" : "right";
-                      return (
-                        <img
-                          key={index}
-                          src={img}
-                          alt={`Artwork ${index + 1}`}
-                          className={`pair-fade-item ${posClass} ${isVisible ? "visible" : ""}`}
-                          onClick={() => setPreviewImage(img)}  // ← Add this line
-                          style={{ cursor: "pointer" }}       // ← Optional: shows pointer on hover
-                        />
-                      );
-                    })}
+                    {images.map((img, index) => (
+                      <img
+                        key={index}
+                        src={img}
+                        alt={`Artwork ${index + 1}`}
+                        className={`pair-fade-item ${index === visibleImage ? "visible" : ""}`}
+                        onClick={() => {
+                          if (index === visibleImage) {
+                            setPreviewMedia(img);
+                            setIsVideo(false);
+                          }
+                        }}
+                        style={{ cursor: index === visibleImage ? "pointer" : "default" }}
+                      />
+                    ))}
                   </div>
                 </div>
-                
 
+                {/* 3D ANIMATION */}
                 <div className="hobby-column hobby-box">
                   <h3>3D Animation</h3>
                   <p>
                     I create models and short animations in <strong>Blender</strong>, learning lighting, motion, and design techniques that bring imagination to life.
                   </p>
                   <div className="fade-gallery videos">
-                    {videos.map((video, index) => {
-                      const pairIndex = Math.floor(index / 2);
-                      const isVisible = pairIndex === visibleVideoPair;
-                      const posClass = index % 2 === 0 ? "top" : "bottom";
-                      return (
-                        <video
-                          key={index}
-                          src={video}
-                          className={`pair-fade-item ${posClass} ${isVisible ? "visible" : ""}`}
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          onClick={() => setPreviewImage(img)}  // ← Add this line
-                          style={{ cursor: "pointer" }}       // ← Optional: shows pointer on hover
-                        />
-                      );
-                    })}
+                    {videos.map((video, index) => (
+                      <video
+                        key={index}
+                        src={video}
+                        className={`pair-fade-item ${index === visibleVideo ? "visible" : ""}`}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        onClick={() => {
+                          if (index === visibleVideo) {
+                            setPreviewMedia(video);
+                            setIsVideo(true);
+                          }
+                        }}
+                        style={{ cursor: index === visibleVideo ? "pointer" : "default" }}
+                      />
+                    ))}
                   </div>
                 </div>
 
+                {/* GAMING */}
                 <div className="hobby-column hobby-box">
                   <h3>Gaming</h3>
                   <p>
                     I enjoy exploring immersive games on <strong>Steam</strong> — from epic adventures to competitive multiplayer, each inspires strategy, creativity, and storytelling.
                   </p>
                   <div className="fade-gallery images">
-                    {games.map((game, index) => {
-                      const pairIndex = Math.floor(index / 2);
-                      const isVisible = pairIndex === visibleGamePair;
-                      const posClass = index % 2 === 0 ? "left" : "right";
-                      return (
-                        <img
-                          key={index}
-                          src={game}
-                          alt={`Game ${index + 1}`}
-                          className={`pair-fade-item ${posClass} ${isVisible ? "visible" : ""}`}
-                          onClick={() => setPreviewImage(img)}  // ← Add this line
-                          style={{ cursor: "pointer" }}       // ← Optional: shows pointer on hover
-                        />
-                      );
-                    })}
+                    {games.map((game, index) => (
+                      <img
+                        key={index}
+                        src={game}
+                        alt={`Game ${index + 1}`}
+                        className={`pair-fade-item ${index === visibleGame ? "visible" : ""}`}
+                        onClick={() => {
+                          if (index === visibleGame) {
+                            setPreviewMedia(game);
+                            setIsVideo(false);
+                          }
+                        }}
+                        style={{ cursor: index === visibleGame ? "pointer" : "default" }}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
           )}
-
-
 
           {/* EDUCATION TIMELINE */}
           {activeBox === "education" && (
@@ -212,6 +208,27 @@ function About() {
           )}
         </div>
       </div>
+
+      {/* OVERLAY FOR PREVIEW */}
+      {previewMedia && (
+        <div
+          className="image-preview-overlay"
+          onClick={() => setPreviewMedia(null)}
+        >
+          {isVideo ? (
+            <video
+              src={previewMedia}
+              className="image-preview"
+              autoPlay
+              controls
+              muted
+              loop
+            />
+          ) : (
+            <img src={previewMedia} alt="Preview" className="image-preview" />
+          )}
+        </div>
+      )}
     </section>
   );
 }
