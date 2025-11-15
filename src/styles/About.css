@@ -23,10 +23,10 @@
   
 }
 
-
 .about-description {
   font-family: 'Dancing Script', cursive;
   font-size: 1.6rem;
+  padding: 1rem;
   line-height: 1.5;
   text-align: center;
   opacity: 0.85;
