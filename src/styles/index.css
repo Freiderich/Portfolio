@@ -22,10 +22,11 @@ html, body {
    Header / Navbar
 ========================= */
 .header {
-  position: fixed;
+  position: fixed;          /* keeps it at the top */
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;                /* start from the horizontal center */
+  transform: translateX(-50%); /* shift it back by half of its width */
+  width: 60%;               /* set desired width */
   background-color: #ffffff; /* light formal navbar */
   color: var(--text-dark);
   padding: 1rem 2rem;
@@ -34,11 +35,14 @@ html, body {
   justify-content: space-between;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;      /* optional: rounded edges for a formal look */
 }
+
 
 /* Logo */
 .header__logo strong {
   font-size: 1.75rem;
+  margin-left:3rem;
   color: var(--text-dark);
   font-weight: 700;
   cursor: pointer;
