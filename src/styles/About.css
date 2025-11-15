@@ -7,7 +7,7 @@
   color: #333;
   min-height: 75vh;
   text-align: center;
-  background: #f8f9fa; /* clean formal background */
+  background: #f8f9fa;
 }
 
 .about-title {
@@ -36,6 +36,7 @@
   align-items: flex-start;
   gap: 3rem;
   flex-wrap: wrap;
+  position: relative;
 }
 
 /* ===============================
@@ -46,6 +47,17 @@
   flex-direction: column;
   gap: 1.5rem;
   min-width: 200px;
+  position: relative;
+}
+
+.about-left::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1.5rem;
+  width: 2px;
+  height: 100%;
+  background-color: #ccc;
 }
 
 .about-box {
@@ -94,6 +106,16 @@
   margin-bottom: 2rem;
 }
 
+/* Boxes for hobbies, education, passion */
+.hobby-box, .education-box, .passion-box {
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
 .overlay-content h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -108,6 +130,74 @@
 }
 
 /* ===============================
+   EDUCATION TIMELINE
+================================= */
+.education-timeline {
+  position: relative;
+  margin-left: 2rem;
+  padding-left: .85rem; /* space for the dots */
+  border-left: 3px solid #3498db; /* vertical timeline line */
+}
+
+.edu-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1rem; /* space between dot and text */
+}
+
+.edu-item::before {
+  content: "";
+  position: absolute;
+  left: -1.55rem; /* aligns dot to the line */
+  top: 0.2rem; /* vertically align with text */
+  width: 15px;
+  height: 15px;
+  background-color: #3498db; /* dot color */
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #3498db;
+}
+
+
+.edu-date {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2980b9;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.edu-school {
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* Boxed Hobbies and Passion (already added previously) */
+.hobby-box, .education-box, .passion-box {
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Fonts & colors */
+.about-section {
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-title {
+  font-family: 'Poppins', sans-serif;
+}
+
+.edu-school {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* ===============================
    HOBBIES GRID
 ================================= */
 .hobbies-row {
@@ -118,11 +208,6 @@
 
 .hobby-column {
   flex: 1 1 300px;
-  border: 1px solid #ccc;
-  border-radius: 0.8rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  background: #fff;
 }
 
 .hobby-column h3 {
@@ -180,7 +265,13 @@
     gap: 1rem;
   }
 
+  .about-left::after {
+    display: none; /* hide vertical line on small screens */
+  }
+
   .hobbies-row {
     flex-direction: column;
   }
 }
+
+

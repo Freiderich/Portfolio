@@ -75,6 +75,7 @@ function About() {
 
         {/* RIGHT CONTENT */}
         <div className="about-right">
+          {/* HOBBIES */}
           {activeBox === "hobbies" && (
             <div className="hobbies-content">
               <h2>Hobbies</h2>
@@ -83,13 +84,10 @@ function About() {
               </p>
 
               <div className="hobbies-row">
-                {/* DIGITAL ART */}
-                <div className="hobby-column">
+                <div className="hobby-column hobby-box">
                   <h3>Digital Art</h3>
                   <p>
-                    I use an <strong>XP-Pen tablet</strong> in{" "}
-                    <strong>Krita</strong> to draw stylized characters and
-                    scenes, experimenting with color, light, and emotion.
+                    I use an <strong>XP-Pen tablet</strong> in <strong>Krita</strong> to draw stylized characters and scenes, experimenting with color, light, and emotion.
                   </p>
                   <div className="fade-gallery images">
                     {images.map((img, index) => {
@@ -108,12 +106,10 @@ function About() {
                   </div>
                 </div>
 
-                {/* 3D ANIMATION */}
-                <div className="hobby-column">
+                <div className="hobby-column hobby-box">
                   <h3>3D Animation</h3>
                   <p>
-                    I create models and short animations in <strong>Blender</strong>,
-                    learning lighting, motion, and design techniques that bring imagination to life.
+                    I create models and short animations in <strong>Blender</strong>, learning lighting, motion, and design techniques that bring imagination to life.
                   </p>
                   <div className="fade-gallery videos">
                     {videos.map((video, index) => {
@@ -135,8 +131,7 @@ function About() {
                   </div>
                 </div>
 
-                {/* GAMING */}
-                <div className="hobby-column">
+                <div className="hobby-column hobby-box">
                   <h3>Gaming</h3>
                   <p>
                     I enjoy exploring immersive games on <strong>Steam</strong> — from epic adventures to competitive multiplayer, each inspires strategy, creativity, and storytelling.
@@ -161,18 +156,41 @@ function About() {
             </div>
           )}
 
+          {/* EDUCATION TIMELINE */}
           {activeBox === "education" && (
-            <div className="overlay-content education-content">
+            <div className="overlay-content education-box">
               <h2>Education</h2>
-              <p>Bachelor of Science in Computer Engineering, Holy Angel University.</p>
+              <div className="education-timeline">
+                <div className="edu-item">
+                  <span className="edu-date">2009 - 2020</span>
+                  <p className="edu-school">Philippine School Doha, Doha, Qatar</p>
+                </div>
+                <div className="edu-item">
+                  <span className="edu-date">2020 - 2021</span>
+                  <p className="edu-school">Holy Angel University, Angeles City, Pampanga (STEM Course)</p>
+                </div>
+                <div className="edu-item">
+                  <span className="edu-date">2021 - Present</span>
+                  <p className="edu-school">Holy Angel University, Angeles City, Pampanga (B.S. Computer Engineering)</p>
+                </div>
+              </div>
             </div>
           )}
 
+          {/* PASSION */}
           {activeBox === "passion" && (
-            <div className="overlay-content passion-content">
+            <div className="overlay-content passion-box">
               <h2>Passion</h2>
               <p>
                 I love creating interactive web applications that merge functionality and design.
+                I’m also passionate about exploring AI, blockchain technologies, and digital storytelling.
+              </p>
+              <p>
+                My interests extend to 3D modeling, animation, and game design, as I enjoy crafting experiences
+                that combine creativity with technology.
+              </p>
+              <p>
+                Beyond tech, I enjoy music production, sketching, and experimenting with new creative tools that enhance learning and innovation.
               </p>
             </div>
           )}
