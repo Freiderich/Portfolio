@@ -19,11 +19,18 @@ import doughVideo from "../assets/videos/Doughnut hologram.mp4";
 import energyVideo from "../assets/videos/Energy.mp4";
 import loopVideo from "../assets/videos/Loop.mp4";
 
+
+
+
 function About() {
   const [activeBox, setActiveBox] = useState("hobbies");
   const [visibleImagePair, setVisibleImagePair] = useState(0);
   const [visibleVideoPair, setVisibleVideoPair] = useState(0);
   const [visibleGamePair, setVisibleGamePair] = useState(0);
+  const [previewImage, setPreviewImage] = useState(null);
+  const [isVideo, setIsVideo] = useState(false); 
+
+
 
   const images = [hobbyImage, cynImage, markImage, alImage, huskImage, pitouImage];
   const videos = [blackVideo, doughVideo, energyVideo, loopVideo];
@@ -77,7 +84,7 @@ function About() {
         <div className="about-right">
           {/* HOBBIES */}
           {activeBox === "hobbies" && (
-            <div className="hobbies-content">
+            <div className="hobbies-content hobby-box">
               <h2>Hobbies</h2>
               <p className="intro-text">
                 I’m a digital artist who loves to express ideas visually, explore 3D animation, and unwind with games that spark creativity and storytelling.
@@ -100,11 +107,14 @@ function About() {
                           src={img}
                           alt={`Artwork ${index + 1}`}
                           className={`pair-fade-item ${posClass} ${isVisible ? "visible" : ""}`}
+                          onClick={() => setPreviewImage(img)}  // ← Add this line
+                          style={{ cursor: "pointer" }}       // ← Optional: shows pointer on hover
                         />
                       );
                     })}
                   </div>
                 </div>
+                
 
                 <div className="hobby-column hobby-box">
                   <h3>3D Animation</h3>
@@ -125,6 +135,8 @@ function About() {
                           muted
                           loop
                           playsInline
+                          onClick={() => setPreviewImage(img)}  // ← Add this line
+                          style={{ cursor: "pointer" }}       // ← Optional: shows pointer on hover
                         />
                       );
                     })}
@@ -147,6 +159,8 @@ function About() {
                           src={game}
                           alt={`Game ${index + 1}`}
                           className={`pair-fade-item ${posClass} ${isVisible ? "visible" : ""}`}
+                          onClick={() => setPreviewImage(img)}  // ← Add this line
+                          style={{ cursor: "pointer" }}       // ← Optional: shows pointer on hover
                         />
                       );
                     })}
@@ -155,6 +169,8 @@ function About() {
               </div>
             </div>
           )}
+
+
 
           {/* EDUCATION TIMELINE */}
           {activeBox === "education" && (
