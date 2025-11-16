@@ -1,61 +1,66 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../styles/Skills.css";
 
 function Skills() {
-  const skills = [
-    { name: "JavaScript", level: 90, color: "#f7df1e" },
-    { name: "React", level: 85, color: "#61dafb" },
-    { name: "CSS & HTML", level: 95, color: "#e34c26" },
-    { name: "Node.js", level: 70, color: "#3c873a" },
-    { name: "Databases", level: 75, color: "#f29111" },
-  ];
-
-  const [animatedSkills, setAnimatedSkills] = useState(
-    skills.map(() => 0)
-  );
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimatedSkills((prev) =>
-        prev.map((val, i) => (val < skills[i].level ? val + 1 : val))
-      );
-    }, 20);
-
-    return () => clearInterval(interval);
-  }, [skills]);
+  const skills = {
+    frontend: {
+      description:
+        "I code things from scratch and gracefully bring ideas to life in the browser, paying maximal attention to design and usability.",
+      technologies: ["HTML", "CSS", "JavaScript", "React"],
+      tools: ["Bootstrap", "AJAX", "GitHub", "VS Code"],
+    },
+    backend: {
+      description:
+        "I develop server-side logic, APIs, and database management systems to support applications efficiently.",
+      technologies: ["Node.js", "Express", "MySQL", "PostgreSQL"],
+      tools: ["Docker", "Git", "Postman"],
+    },
+  };
 
   return (
     <section id="skills" className="skills-section">
       <h1>My Skills</h1>
-      <p className="intro">
-        Technologies I work with and my proficiency levels.
-      </p>
 
-      <div className="skills-grid">
-        {skills.map((skill, index) => (
-          <div key={index} className="skill-circle">
-            <svg viewBox="0 0 36 36">
-              <path
-                className="circle-bg"
-                d="M18 2.0845
-                   a 15.9155 15.9155 0 0 1 0 31.831
-                   a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <path
-                className="circle"
-                stroke={skill.color}
-                strokeDasharray={`${animatedSkills[index]}, 100`}
-                d="M18 2.0845
-                   a 15.9155 15.9155 0 0 1 0 31.831
-                   a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <text x="18" y="20.35" className="percentage">
-                {animatedSkills[index]}%
-              </text>
-            </svg>
-            <h3>{skill.name}</h3>
+      <div className="skills-container">
+        {/* Frontend */}
+        <div className="skills-box">
+          <h2>Front-end Developer</h2>
+          <p>{skills.frontend.description}</p>
+          <div className="skills-list">
+            <h3>Technologies:</h3>
+            <ul>
+              {skills.frontend.technologies.map((tech, i) => (
+                <li key={i}>{tech}</li>
+              ))}
+            </ul>
+            <h3>My Tools:</h3>
+            <ul>
+              {skills.frontend.tools.map((tool, i) => (
+                <li key={i}>{tool}</li>
+              ))}
+            </ul>
           </div>
-        ))}
+        </div>
+
+        {/* Backend */}
+        <div className="skills-box">
+          <h2>Back-end Developer</h2>
+          <p>{skills.backend.description}</p>
+          <div className="skills-list">
+            <h3>Technologies:</h3>
+            <ul>
+              {skills.backend.technologies.map((tech, i) => (
+                <li key={i}>{tech}</li>
+              ))}
+            </ul>
+            <h3>My Tools:</h3>
+            <ul>
+              {skills.backend.tools.map((tool, i) => (
+                <li key={i}>{tool}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

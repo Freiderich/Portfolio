@@ -1,66 +1,75 @@
 .skills-section {
   padding: 100px 10%;
-  background: #0d1117;
-  color: #e6edf3;
+  background: #f8f9fa; /* Light formal background */
+  color: #333;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 .skills-section h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #58a6ff;
-}
-
-.skills-section .intro {
-  font-size: 1.1rem;
   margin-bottom: 50px;
-  color: #8b949e;
+  color: #2c3e50;
 }
 
-.skills-grid {
+.skills-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
-.skill-circle {
-  width: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.skills-box {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 500px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skill-circle svg {
-  width: 100px;
-  height: 100px;
-  transform: rotate(-90deg);
+.skills-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.circle-bg {
-  fill: none;
-  stroke: #161b22;
-  stroke-width: 3.8;
+.skills-box h2 {
+  font-size: 1.5rem;
+  color: #1f3a93;
+  margin-bottom: 15px;
 }
 
-.circle {
-  fill: none;
-  stroke-width: 3.8;
-  stroke-linecap: round;
-  transition: stroke-dasharray 0.3s ease-out;
-}
-
-.percentage {
-  fill: #fff;
-  font-size: 0.5em;
-  text-anchor: middle;
-  dominant-baseline: middle;
-  transform: rotate(90deg); /* counter-rotate to be upright */
-  transform-origin: center;
-}
-
-.skill-circle h3 {
-  margin-top: 10px;
+.skills-box p {
   font-size: 1rem;
-  color: #c9d1d9;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #555;
 }
+
+.skills-list h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #2980b9;
+}
+
+.skills-list ul {
+  margin: 0 0 15px 20px;
+  padding: 0;
+}
+
+.skills-list li {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
