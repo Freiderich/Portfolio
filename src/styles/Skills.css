@@ -88,3 +88,11 @@
   color: #929292e8;
 }
 
+.skills-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,15 +1,19 @@
 import React from "react";
 import "../styles/Skills.css";
+import frontendIcon from "../assets/images/front-end-programming.png"; // Frontend icon
+import backendIcon from "../assets/images/backend.png"; // Backend icon
 
 function Skills() {
   const skills = {
     frontend: {
+      icon: frontendIcon,
       description:
         "I code things from scratch and gracefully bring ideas to life in the browser, paying maximal attention to design and usability.",
       technologies: ["HTML", "CSS", "JavaScript", "React"],
       tools: ["Bootstrap", "AJAX", "GitHub", "VS Code"],
     },
     backend: {
+      icon: backendIcon, // Backend icon
       description:
         "I develop server-side logic, APIs, and database management systems to support applications efficiently.",
       technologies: ["Node.js", "Express", "MySQL", "PostgreSQL"],
@@ -27,6 +31,11 @@ function Skills() {
       <div className="skills-container">
         {/* Frontend */}
         <div className="skills-box">
+          <img
+            src={skills.frontend.icon}
+            alt="Frontend Icon"
+            className="skills-logo"
+          />
           <h2>Front-end Developer</h2>
           <p>{skills.frontend.description}</p>
           <div className="skills-list">
@@ -47,6 +56,11 @@ function Skills() {
 
         {/* Backend */}
         <div className="skills-box">
+          <img
+            src={skills.backend.icon}
+            alt="Backend Icon"
+            className="skills-logo"
+          />
           <h2>Back-end Developer</h2>
           <p>{skills.backend.description}</p>
           <div className="skills-list">
