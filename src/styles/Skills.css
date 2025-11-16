@@ -1,75 +1,90 @@
 .skills-section {
+  position: relative;
   padding: 100px 10%;
-  background: #f8f9fa; /* Light formal background */
-  color: #333;
+  background: #ffffff; /* dark formal background */
+  color: #e6edf3;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
 .skills-section h1 {
   font-size: 2.5rem;
   margin-bottom: 50px;
-  color: #2c3e50;
+  color: #58a6ff;
 }
 
+
+/* Big rectangle behind both boxes */
+.skills-rectangle {
+  position: absolute;
+  top: 120px;           /* start below the heading */
+  left: 50%;
+  transform: translateX(-50%); /* center horizontally */
+  width: 90%;
+  max-width: 1000px;
+  height: 300px;        /* adjust as needed */
+  background: #ffffff;  /* solid white */
+  border-radius: 20px;
+  z-index: 0;           /* backmost layer */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Container for both boxes */
 .skills-container {
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;           /* content above rectangle */
   flex-wrap: wrap;
 }
 
+
+/* Individual skill box */
 .skills-box {
-  background: #ffffff;
-  border: 1px solid #dcdcdc;
-  border-radius: 12px;
-  padding: 30px 25px;
-  width: 500px;
-  text-align: left;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #fcfcfcfb;
+  padding: 2rem;
+  border-radius: 15px;
+  flex: 1 1 45%;
+  min-width: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skills-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(88, 166, 255, 0.3);
 }
 
 .skills-box h2 {
-  font-size: 1.5rem;
-  color: #1f3a93;
-  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #58a6ff;
+  margin-bottom: 10px;
 }
 
 .skills-box p {
-  font-size: 1rem;
+  color: #919191;
   line-height: 1.6;
   margin-bottom: 15px;
-  color: #555;
 }
 
 .skills-list h3 {
   font-size: 1.1rem;
-  margin-bottom: 5px;
-  color: #2980b9;
+  color: #58a6ff;
+  margin: 10px 0 5px;
+  text-align: left;
 }
 
 .skills-list ul {
-  margin: 0 0 15px 20px;
-  padding: 0;
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
 }
 
 .skills-list li {
+  padding: 3px 0;
   font-size: 0.95rem;
-  margin-bottom: 4px;
-  color: #333;
+  color: #929292e8;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .skills-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-

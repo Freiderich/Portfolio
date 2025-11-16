@@ -19,7 +19,10 @@ function Skills() {
 
   return (
     <section id="skills" className="skills-section">
-      <h1>My Skills</h1>
+      <h1>Skills</h1>
+
+      {/* Solid rectangle behind both boxes */}
+      <div className="skills-rectangle"></div>
 
       <div className="skills-container">
         {/* Frontend */}
