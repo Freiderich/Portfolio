@@ -1,106 +1,85 @@
+/* ==========================
+      PROJECTS (FORMAL)
+=========================== */
+
 .projects-section {
-  position: relative;
   padding: 100px 10%;
-  background: linear-gradient(145deg, #0d1117 0%, #0a0e12 100%);
-  color: #e6edf3;
-  overflow: hidden;
+  background: #f7f7f7; /* clean light background */
+  color: #333;
 }
 
-/* Subtle moving gradient overlay for depth */
-.projects-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 20% 20%, rgba(88, 166, 255, 0.1), transparent 40%),
-              radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05), transparent 50%);
-  animation: moveGradient 12s ease-in-out infinite alternate;
-  z-index: 0;
-}
-
-@keyframes moveGradient {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-10%, -10%);
-  }
-}
-
+/* Title */
 .projects-section h1 {
   text-align: center;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #2c3e50;
   margin-bottom: 10px;
-  color: #58a6ff;
-  text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
-  position: relative;
-  z-index: 1;
 }
 
 .projects-section .intro {
   text-align: center;
   font-size: 1.1rem;
-  margin-bottom: 50px;
-  color: #8b949e;
-  position: relative;
-  z-index: 1;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
 }
 
+/* Project list container */
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  position: relative;
-  z-index: 1;
+  gap: 30px;
 }
 
+/* PROJECT CARD */
 .project-card {
-  background: linear-gradient(145deg, #161b22, #1a1f27);
-  border: 1px solid #30363d;
-  border-left: 4px solid #58a6ff;
-  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
   padding: 30px 40px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-  transition: all 0.3s ease;
+  transition: border 0.2s ease, transform 0.2s ease;
 }
 
+/* Subtle professional hover (no glow, no shadow) */
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 30px rgba(88, 166, 255, 0.3);
-  border-left-color: #79b8ff;
+  border-color: #3498db;
+  transform: translateY(-3px);
 }
 
-.project-info h2 {
-  font-size: 1.8rem;
-  color: #ffffff;
+/* Title inside card */
+.project-card h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
   margin-bottom: 12px;
+  color: #2c3e50;
 }
 
-.project-info p {
-  color: #c9d1d9;
+/* Description */
+.project-card p {
+  color: #444;
   line-height: 1.6;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
+/* Tech Stack */
 .tech-stack {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .tech-item {
-  background: rgba(88, 166, 255, 0.08);
-  border: 1px solid rgba(88, 166, 255, 0.3);
-  color: #58a6ff;
   padding: 6px 14px;
+  background: #eef4ff;
+  border: 1px solid #cddafd;
   border-radius: 20px;
   font-size: 0.9rem;
-  transition: background 0.3s ease, transform 0.2s ease;
+  color: #3a6ea5;
+  font-weight: 500;
+  transition: background 0.2s ease;
 }
 
 .tech-item:hover {
-  background: rgba(88, 166, 255, 0.2);
-  transform: scale(1.05);
+  background: #d8e6ff;
 }

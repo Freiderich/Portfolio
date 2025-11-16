@@ -27,23 +27,21 @@ function Projects() {
     <section id="projects" className="projects-section">
       <h1>My Projects</h1>
       <p className="intro">
-        Here are some of the works I’ve done — from class projects to personal
-        experiments!
+        Below are examples of the work I’ve created — academic, personal, and research-based.
       </p>
 
       <div className="projects-list">
         {projects.map((proj, index) => (
           <div key={index} className="project-card">
-            <div className="project-info">
-              <h2>{proj.title}</h2>
-              <p>{proj.description}</p>
-              <div className="tech-stack">
-                {proj.tech.map((tech, i) => (
-                  <span key={i} className="tech-item">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+            <h2>{proj.title}</h2>
+            <p>{proj.description}</p>
+
+            <div className="tech-stack">
+              {proj.tech.map((tech, i) => (
+                <span key={i} className="tech-item">
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
         ))}
