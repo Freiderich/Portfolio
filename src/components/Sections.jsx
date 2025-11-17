@@ -5,7 +5,9 @@ import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Experience from "./Experience";
+import Contact from "./Contact";
 import "../styles/Sections.css";
+
 
 function Sections() {
   return (
@@ -22,10 +24,7 @@ function Sections() {
 
       <Experience />
 
-      <section id="contact" className="section">
-        <h2>Contact</h2>
-        <p>Contact info goes here.</p>
-      </section>
+      <Contact />
     </main>
   );
 }
