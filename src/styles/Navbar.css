@@ -6,7 +6,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
-  background: #dfeeff;
+  background: #0c2aa6;
   backdrop-filter: none;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   padding: 0.9rem 1.6rem;
   border-radius: 16px;
   border: 2px solid #0b1b66;
-  box-shadow: 0 10px 24px rgba(11, 27, 102, 0.18);
+  box-shadow: 0 12px 26px rgba(11, 27, 102, 0.28);
 }
 
 
@@ -23,7 +23,7 @@
 .header__logo {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #ffffff;
   cursor: pointer;
   letter-spacing: 0.08em;
   font-family: 'Fraunces', serif;
@@ -49,7 +49,7 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: var(--text-dark);
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.95rem;
   position: relative;
@@ -58,7 +58,7 @@
 
 .navbar__link i {
   stroke-width: 1.5;
-  color: var(--text-dark);
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 
@@ -70,7 +70,7 @@
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: #0b1b66;
+  background: #ffffff;
   border-radius: 999px;
   transition: width 0.3s ease;
 }
@@ -80,17 +80,17 @@
 }
 
 .navbar__link:hover {
-  color: #0b1b66;
+  color: #dfeeff;
   transform: translateY(-1px);
 }
 
 .navbar__link:hover i {
-  color: #0b1b66;
+  color: #dfeeff;
 }
 
 /* Active link style */
 .navbar__link.active {
-  color: #0b1b66;
+  color: #dfeeff;
   font-weight: 700;
 }
 
@@ -105,9 +105,9 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background: #dfeeff;
+    background: #0c2aa6;
     padding: 1rem;
-    box-shadow: 0 12px 30px rgba(11, 27, 102, 0.2);
+    box-shadow: 0 12px 30px rgba(11, 27, 102, 0.3);
     display: none;
     border-radius: 16px;
   }

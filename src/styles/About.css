@@ -3,12 +3,12 @@
 ================================= */
 .about-section {
   position: relative; /* Important! Pseudo-elements need this */
-  padding: 120px 8% 130px;
+  padding: 100px 8% 110px;
   font-family: 'Sora', sans-serif;
   color: #0b1b66;
   min-height: 75vh;
   text-align: center;
-  background: #dfeeff;
+  background: linear-gradient(90deg, #dfeeff 0%, #dfeeff calc(100% - 220px), #0c2aa6 calc(100% - 220px), #0c2aa6 100%);
   overflow: hidden; /* Ensure pseudo-elements don't spill */
 }
 
@@ -17,10 +17,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(rgba(11, 27, 102, 0.08) 1px, transparent 1px);
-  background-size: 140px 140px;
-  opacity: 0.25;
+  background: transparent;
+  opacity: 1;
   z-index: 0; /* behind content */
   pointer-events: none; /* clicks pass through */
 }
@@ -30,11 +28,10 @@
   content: "";
   position: absolute;
   inset: 0 0 0 auto;
-  width: 26vw;
-  min-width: 190px;
+  width: 0;
   height: 100%;
-  background: #0c2aa6;
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  background: transparent;
+  clip-path: none;
   z-index: 0; /* behind content */
   pointer-events: none;
 }
@@ -48,7 +45,7 @@
 
 .about-title {
   font-family: 'Fraunces', serif;
-  font-size: clamp(2.8rem, 4.2vw, 3.8rem);
+  font-size: clamp(2.4rem, 3.8vw, 3.2rem);
   font-weight: 700;
   color: #0b1b66;
   text-align: center;
@@ -58,8 +55,8 @@
 
 .about-description {
   font-family: 'Sora', sans-serif;
-  font-size: 1.05rem;
-  padding: 0.8rem 1rem 1.6rem;
+  font-size: 0.98rem;
+  padding: 0.6rem 1rem 1.2rem;
   line-height: 1.7;
   text-align: center;
   color: #2b2f55;
@@ -67,8 +64,8 @@
 
 .intro-text {
   color: #2b2f55;
-  font-size: 1.05rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  margin-bottom: 1.1rem;
 }
 
 
@@ -79,7 +76,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 2.4rem;
+  gap: 1.8rem;
   flex-wrap: wrap;
 }
 
@@ -89,8 +86,8 @@
 .about-left {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-  min-width: 220px;
+  gap: 0.7rem;
+  min-width: 200px;
 }
 
 .about-box {
@@ -114,13 +111,13 @@
 }
 
 .inner-box {
-  padding: 0.9rem 1.4rem;
+  padding: 0.7rem 1.2rem;
   border-radius: 0.5rem;
 }
 
 .inner-box h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: inherit;
   font-family: 'Fraunces', serif;
@@ -139,7 +136,7 @@
 
 /* Boxes for Hobbies, Education, Passion */
 .hobby-box, .education-box, .passion-box {
-  padding: 2rem;
+  padding: 1.4rem;
   border-radius: var(--radius-lg);
   border: 2px solid #0b1b66;
   background: #f4f8ff;
@@ -149,7 +146,7 @@
 
 /* Section Headings */
 .about-right h2 {
-  font-size: 2.1rem;
+  font-size: 1.7rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: #0b1b66;
@@ -157,7 +154,7 @@
 }
 
 .about-right h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
   color: #0c2aa6;
@@ -165,7 +162,7 @@
 }
 
 .about-right p {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   line-height: 1.8;
   color: #2b2f55;
 }
@@ -223,16 +220,16 @@
 }
 
 .hobby-column {
-  flex: 1 1 300px;
+  flex: 1 1 280px;
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: 1rem;
   box-shadow: 0 16px 30px rgba(11, 27, 102, 0.12);
   background: #ffffff;
   border: 2px solid #0b1b66;
 }
 
 .hobby-column p {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
 }
 
 /* ===============================
@@ -242,8 +239,8 @@
 .fade-gallery.videos {
   position: relative;
   width: 100%;
-  height: 200px;
-  margin-top: 1rem;
+  height: 150px;
+  margin-top: 0.8rem;
 }
 
 .fade-gallery.images .pair-fade-item,
@@ -282,17 +279,14 @@
     flex-direction: column;
   }
 
-  .about-section::after {
-    width: 150px;
-  }
 }
 
 .fade-gallery.images,
 .fade-gallery.videos {
   position: relative;
   width: 100%;
-  height: 200px;
-  margin-top: 1rem;
+  height: 150px;
+  margin-top: 0.8rem;
 }
 
 .pair-fade-item {
