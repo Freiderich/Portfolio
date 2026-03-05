@@ -32,11 +32,10 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 28vw;
-  min-width: 200px;
+  width: 0;
   height: 100%;
-  background: #0c2aa6;
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  background: transparent;
+  clip-path: none;
   z-index: 0;
   pointer-events: none;
 }
@@ -105,6 +104,10 @@
   gap: 14px;
   align-items: center;
   margin-bottom: 1.6rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFade 0.7s ease forwards;
+  animation-delay: 0.36s;
 }
 
 .cta-btn.ghost {
@@ -305,7 +308,7 @@
     padding: 150px 8% 90px;
   }
   .home-section::after {
-    width: 160px;
+    width: 0;
   }
   .home-right {
     justify-content: center;
@@ -339,11 +342,19 @@
   text-transform: uppercase;
   color: #2c3db6;
   margin-bottom: 0.8rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFade 0.7s ease forwards;
+  animation-delay: 0.05s;
 }
 
 .hero-name {
   color: #1021a6;
   line-height: 0.95;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFade 0.7s ease forwards;
+  animation-delay: 0.12s;
 }
 
 .hero-roles {
@@ -352,10 +363,18 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFade 0.7s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .hero-summary {
   max-width: 520px;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFade 0.7s ease forwards;
+  animation-delay: 0.28s;
 }
 
 .hero-badge {
@@ -368,11 +387,19 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFade 0.7s ease forwards;
+  animation-delay: 0.44s;
 }
 
 .hero-portrait {
   position: relative;
   align-self: flex-end;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFade 0.8s ease forwards;
+  animation-delay: 0.3s;
 }
 
 .portrait-frame {
@@ -382,10 +409,39 @@
   border-radius: 20px;
   overflow: hidden;
   background: transparent;
+  animation: portraitFloat 6s ease-in-out infinite;
 }
 
 .portrait-frame img {
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+@keyframes heroFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes portraitFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kicker,
+  .hero-name,
+  .hero-roles,
+  .hero-summary,
+  .hero-actions,
+  .hero-badge,
+  .hero-portrait,
+  .portrait-frame {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
