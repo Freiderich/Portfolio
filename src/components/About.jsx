@@ -57,7 +57,7 @@ function About() {
     <section id="about" className="about-section">
       <h2 className="about-title">About Me</h2>
       <p className="about-description">
-        I’m passionate about blending technology and creativity to create interactive experiences.
+        I build modern web experiences where clarity, usability, and creative detail work together.
       </p>
 
       <div className="about-main">
@@ -83,16 +83,16 @@ function About() {
             <div className="hobbies-content hobby-box">
               <h2>Hobbies</h2>
               <p className="intro-text">
-                I’m a digital artist who loves to express ideas visually, explore 3D animation, and unwind with games that spark creativity and storytelling.
+                Outside of development, I explore visual storytelling through digital art, 3D animation, and games that inspire design ideas.
               </p>
 
               <div className="hobbies-row">
                 {/* DIGITAL ART */}
                 <div className="hobby-column hobby-box">
                   <h3>Digital Art</h3>
-                  <p>
-                    I use an <strong>XP-Pen tablet</strong> in <strong>Krita</strong> to draw stylized characters and scenes, experimenting with color, light, and emotion.
-                  </p>
+                    <p>
+                      I use an <strong>XP-Pen tablet</strong> in <strong>Krita</strong> to create stylized character work, focusing on color, lighting, and mood.
+                    </p>
                   <div className="fade-gallery images">
                     {images.map((img, index) => (
                       <img
@@ -115,9 +115,9 @@ function About() {
                 {/* 3D ANIMATION */}
                 <div className="hobby-column hobby-box">
                   <h3>3D Animation</h3>
-                  <p>
-                    I create models and short animations in <strong>Blender</strong>, learning lighting, motion, and design techniques that bring imagination to life.
-                  </p>
+                    <p>
+                      I create models and short animations in <strong>Blender</strong>, practicing lighting, motion, and visual composition.
+                    </p>
                   <div className="fade-gallery videos">
                     {videos.map((video, index) => (
                       <video
@@ -143,9 +143,9 @@ function About() {
                 {/* GAMING */}
                 <div className="hobby-column hobby-box">
                   <h3>Gaming</h3>
-                  <p>
-                    I enjoy exploring immersive games on <strong>Steam</strong> — from epic adventures to competitive multiplayer, each inspires strategy, creativity, and storytelling.
-                  </p>
+                    <p>
+                      I enjoy immersive games on <strong>Steam</strong> for their pacing, interaction design, and storytelling.
+                    </p>
                   <div className="fade-gallery images">
                     {games.map((game, index) => (
                       <img
@@ -194,15 +194,15 @@ function About() {
             <div className="overlay-content passion-box">
               <h2>Passion</h2>
               <p>
-                I love creating interactive web applications that merge functionality and design.
-                I’m also passionate about exploring AI, blockchain technologies, and digital storytelling.
+                I enjoy building interactive web applications that combine usability, motion, and clean architecture.
+                I explore AI-driven experiences and systems that make processes simpler and more transparent.
               </p>
               <p>
-                My interests extend to 3D modeling, animation, and game design, as I enjoy crafting experiences
-                that combine creativity with technology.
+                My interests include 3D modeling, animation, and game design, which sharpen my eye for motion
+                and interface storytelling.
               </p>
               <p>
-                Beyond tech, I enjoy music production, sketching, and experimenting with new creative tools that enhance learning and innovation.
+                Beyond tech, I experiment with music production and illustration to keep my creative process sharp.
               </p>
             </div>
           )}

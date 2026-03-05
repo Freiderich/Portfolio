@@ -4,21 +4,21 @@ import "../styles/Projects.css";
 function Projects() {
   const projects = [
     {
-      title: "Fico Café Website",
+      title: "Fico Cafe Website",
       description:
-        "A modern website designed for Fico Café in Angeles City, showcasing menus, locations, and ambiance with responsive web design principles.",
+        "Designed and built a responsive cafe site that highlights menus, locations, and brand personality with clean UX and quick navigation.",
       tech: ["React", "CSS", "JavaScript"],
     },
     {
       title: "Docker-based CRUD Application",
       description:
-        "A containerized CRUD web app demonstrating backend integration and deployment using Docker and Node.js.",
+        "Containerized full-stack CRUD app with robust API endpoints and deployment-focused workflows using Docker.",
       tech: ["Docker", "Node.js", "MongoDB"],
     },
     {
-      title: "AI-Driven Platform for University Registrar’s Transactions",
+      title: "AI Platform for Registrar Transactions",
       description:
-        "Our ongoing thesis project that integrates AI to streamline university registrar processes, ensuring transparency and efficiency.",
+        "Thesis project using AI to streamline registrar workflows with transparent tracking and faster approvals.",
       tech: ["AI", "React", "Node.js"],
     },
   ];

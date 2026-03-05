@@ -3,61 +3,65 @@
 =========================== */
 
 .projects-section {
-  padding: 100px 10%;
-  background: #f7f7f7; /* clean light background */
-  color: #333;
+  padding: 120px 10% 130px;
+  background: #fffdf9;
+  color: var(--text-dark);
 }
 
 /* Title */
 .projects-section h1 {
   text-align: center;
-  font-size: 2.4rem;
+  font-size: clamp(2.3rem, 3.2vw, 3rem);
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--text-dark);
   margin-bottom: 10px;
+  font-family: 'Fraunces', serif;
 }
 
 .projects-section .intro {
   text-align: center;
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 700px;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 720px;
   margin: 0 auto 50px auto;
 }
 
 /* Project list container */
 .projects-list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 26px;
 }
 
 /* PROJECT CARD */
 .project-card {
-  background: #ffffff;
-  border: 1px solid #dcdcdc;
-  border-radius: 12px;
-  padding: 30px 40px;
-  transition: border 0.2s ease, transform 0.2s ease;
+  background: var(--surface);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 28px 28px 26px;
+  transition: border 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-card);
 }
 
 /* Subtle professional hover (no glow, no shadow) */
 .project-card:hover {
-  border-color: #3498db;
-  transform: translateY(-3px);
+  border-color: rgba(43, 111, 255, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16);
 }
 
 /* Title inside card */
 .project-card h2 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #2c3e50;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+  font-family: 'Fraunces', serif;
 }
 
 /* Description */
 .project-card p {
-  color: #444;
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -70,28 +74,27 @@
 }
 
 .tech-item {
-  padding: 6px 14px;
-  background: #eef4ff;
-  border: 1px solid #cddafd;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  color: #3a6ea5;
-  font-weight: 500;
+  padding: 6px 12px;
+  background: var(--surface-tint);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: var(--primary-dark);
+  font-weight: 600;
   transition: background 0.2s ease;
 }
 
 .tech-item:hover {
-  background: #d8e6ff;
+  background: rgba(255, 107, 53, 0.12);
 }
 
 /* Divider line */
 .section-divider {
-  width: 100%;
-  border-radius: 2rem;
-  height: 1rem;
-  background: #626870;
-  opacity: 0.6;
-  margin-bottom: 50px;
+  width: 140px;
+  border-radius: 999px;
+  height: 6px;
+  background: linear-gradient(90deg, rgba(255, 107, 53, 0.85), rgba(14, 165, 164, 0.7));
+  margin: 0 auto 30px auto;
 }
 
 /* Header layout with icon */
@@ -104,7 +107,7 @@
 }
 
 .projects-icon {
-  width: 32px;
-  height: 32px;
-  opacity: 0.9;
+  width: 28px;
+  height: 28px;
+  opacity: 0.7;
 }

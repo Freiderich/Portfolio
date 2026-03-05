@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import "../styles/Navbar.css";
 
 function Navbar({ username, onLogout }) {
   useEffect(() => {

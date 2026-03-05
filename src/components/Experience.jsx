@@ -28,7 +28,7 @@ function Experience() {
 
   return (
     <section id="experience" className="experience-section">
-      <h2>Experience</h2>
+      <h2>Experience & Work</h2>
       <div className="timeline">
         {experiences.map((exp, index) => (
           <div key={index} className="timeline-item">

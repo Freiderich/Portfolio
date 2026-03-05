@@ -3,14 +3,14 @@ import "../styles/Contact.css";
 
 function Contact() {
   const contacts = [
-    { type: "Gmail", info: "freiderichperalta@gmail.com", icon: "fas fa-envelope", color: "#58a6ff" },
-    { type: "Phone", info: "+63 949-405-6725", icon: "fas fa-phone", color: "#f7c948" },
-    { type: "Location", info: "Mabalacat City, Philippines", icon: "fas fa-map-marker-alt", color: "#ff6b6b" },
+    { type: "Gmail", info: "freiderichperalta@gmail.com", icon: "fas fa-envelope", color: "#ff6b35" },
+    { type: "Phone", info: "+63 949-405-6725", icon: "fas fa-phone", color: "#0ea5a4" },
+    { type: "Location", info: "Mabalacat City, Philippines", icon: "fas fa-map-marker-alt", color: "#1f2937" },
   ];
 
   const socials = [
-    { type: "LinkedIn", link: "https://www.linkedin.com/in/freiderich-peralta-95bbaa371/", icon: "fab fa-linkedin-in", color: "#0077b5" },
-    { type: "Facebook", link: "https://www.facebook.com/peraltafreiderich", icon: "fab fa-facebook-f", color: "#3b5998" },
+    { type: "LinkedIn", link: "https://www.linkedin.com/in/freiderich-peralta-95bbaa371/", icon: "fab fa-linkedin-in", color: "#0a66c2" },
+    { type: "Facebook", link: "https://www.facebook.com/peraltafreiderich", icon: "fab fa-facebook-f", color: "#1877f2" },
     { type: "Instagram", link: "https://www.instagram.com/peraltafreiderich/", icon: "fab fa-instagram", color: "#e1306c" },
   ];
 

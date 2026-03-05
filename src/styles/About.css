@@ -1,17 +1,14 @@
 /* ===============================
    ABOUT SECTION
 ================================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-
 .about-section {
   position: relative; /* Important! Pseudo-elements need this */
-  padding: 6rem 2rem;
-  font-family: 'Poppins', sans-serif;
-  color: #333;
+  padding: 120px 8% 130px;
+  font-family: 'Sora', sans-serif;
+  color: #0b1b66;
   min-height: 75vh;
   text-align: center;
-  background: #f8f9fa;
+  background: #dfeeff;
   overflow: hidden; /* Ensure pseudo-elements don't spill */
 }
 
@@ -20,11 +17,10 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
-  background-size: 60px 60px; /* grid spacing */
-  opacity: 0.3;
+  background-image:
+    radial-gradient(rgba(11, 27, 102, 0.08) 1px, transparent 1px);
+  background-size: 140px 140px;
+  opacity: 0.25;
   z-index: 0; /* behind content */
   pointer-events: none; /* clicks pass through */
 }
@@ -33,11 +29,12 @@
 .about-section::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(45deg, rgba(0,212,255,0.03) 1px, transparent 1px),
-    linear-gradient(-45deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-  background-size: 1rem 1rem;
+  inset: 0 0 0 auto;
+  width: 26vw;
+  min-width: 190px;
+  height: 100%;
+  background: #0c2aa6;
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
   z-index: 0; /* behind content */
   pointer-events: none;
 }
@@ -50,23 +47,28 @@
 
 
 .about-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 6rem;
-  font-weight: 400;
-  color: #000000;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.8rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  color: #0b1b66;
   text-align: center;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-  
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
 }
 
 .about-description {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.6rem;
-  padding: 1rem;
-  line-height: 1.5;
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  padding: 0.8rem 1rem 1.6rem;
+  line-height: 1.7;
   text-align: center;
-  opacity: 0.85;
+  color: #2b2f55;
+}
+
+.intro-text {
+  color: #2b2f55;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
 }
 
 
@@ -77,7 +79,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 3rem;
+  gap: 2.4rem;
   flex-wrap: wrap;
 }
 
@@ -87,36 +89,41 @@
 .about-left {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  min-width: 200px;
+  gap: 0.9rem;
+  min-width: 220px;
 }
 
 .about-box {
-  border: 1px solid #ccc;
-  border-radius: 0.8rem;
+  border: 2px solid #0b1b66;
+  border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s ease;
+  background: #e8f1ff;
+  box-shadow: 0 10px 22px rgba(11, 27, 102, 0.12);
 }
 
 .about-box:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(11, 27, 102, 0.18);
 }
 
 .about-box.active {
-  border-color: #2c3e50;
-  background: #ecf0f1;
+  border-color: #0c2aa6;
+  background: #0c2aa6;
+  color: #ffffff;
 }
 
 .inner-box {
-  padding: 1.5rem 2rem;
+  padding: 0.9rem 1.4rem;
   border-radius: 0.5rem;
 }
 
 .inner-box h3 {
   margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: inherit;
+  font-family: 'Fraunces', serif;
 }
 
 /* ===============================
@@ -126,39 +133,41 @@
   flex: 1;
   max-width: 1000px;
   text-align: left;
-  font-family: 'Poppins', sans-serif;
-  color: #2c3e50;
+  font-family: 'Sora', sans-serif;
+  color: #0b1b66;
 }
 
 /* Boxes for Hobbies, Education, Passion */
 .hobby-box, .education-box, .passion-box {
   padding: 2rem;
-  border-radius: 0.8rem;
-  border: 1px solid #ccc;
-  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 2px solid #0b1b66;
+  background: #f4f8ff;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 16px 30px rgba(11, 27, 102, 0.12);
 }
 
 /* Section Headings */
 .about-right h2 {
-  font-size: 2.8rem;
+  font-size: 2.1rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #1f3a93;
+  color: #0b1b66;
+  font-family: 'Fraunces', serif;
 }
 
 .about-right h3 {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   margin-bottom: 0.8rem;
-  color: #2980b9;
+  color: #0c2aa6;
+  font-family: 'Fraunces', serif;
 }
 
 .about-right p {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   line-height: 1.8;
-  color: #555;
+  color: #2b2f55;
 }
 
 /* ===============================
@@ -168,7 +177,7 @@
   position: relative;
   margin-left: 2rem;
   padding-left: .85rem;
-  border-left: 3px solid #3498db;
+  border-left: 3px solid #0c2aa6;
 }
 
 .edu-item {
@@ -184,24 +193,24 @@
   top: 0.3rem;
   width: 15px;
   height: 15px;
-  background-color: #3498db;
+  background-color: #0c2aa6;
   border-radius: 50%;
   border: 3px solid #fff;
-  box-shadow: 0 0 0 2px #3498db;
+  box-shadow: 0 0 0 2px rgba(12, 42, 166, 0.35);
 }
 
 .edu-date {
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  color: #2980b9;
+  color: #0b1b66;
   display: block;
   margin-bottom: 0.3rem;
 }
 
 .edu-school {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0b1b66;
 }
 
 /* ===============================
@@ -215,10 +224,11 @@
 
 .hobby-column {
   flex: 1 1 300px;
-  border-radius: 0.8rem;
+  border-radius: var(--radius-md);
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  background: #fff;
+  box-shadow: 0 16px 30px rgba(11, 27, 102, 0.12);
+  background: #ffffff;
+  border: 2px solid #0b1b66;
 }
 
 .hobby-column p {
@@ -270,6 +280,10 @@
 
   .hobbies-row {
     flex-direction: column;
+  }
+
+  .about-section::after {
+    width: 150px;
   }
 }
 
