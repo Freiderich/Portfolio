@@ -25,6 +25,9 @@ function Projects() {
 
       return (
       <section id="projects" className="projects-section">
+        <div className="projects-swipe" aria-hidden="true">
+          <span className="projects-swipe-bar"></span>
+        </div>
 
         {/* Clean separator line */}
         <div className="section-divider"></div>
