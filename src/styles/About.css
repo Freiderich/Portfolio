@@ -7,7 +7,7 @@
   font-family: 'Sora', sans-serif;
   color: #0b1b66;
   min-height: 80vh;
-  text-align: center;
+  text-align: left;
   background: linear-gradient(90deg, #dfeeff 0%, #dfeeff calc(100% - 220px), #0c2aa6 calc(100% - 220px), #0c2aa6 100%);
   overflow: hidden; /* Ensure pseudo-elements don't spill */
 }
@@ -43,22 +43,34 @@
 }
 
 
+.about-header {
+  max-width: 820px;
+  margin: 0 auto 2rem 0;
+}
+
 .about-title {
   font-family: 'Fraunces', serif;
-  font-size: clamp(2.4rem, 3.8vw, 3.2rem);
+  font-size: clamp(3.1rem, 4.8vw, 4.2rem);
   font-weight: 700;
   color: #0b1b66;
-  text-align: center;
-  margin-bottom: 12px;
+  text-align: left;
+  margin-bottom: 8px;
   letter-spacing: -0.01em;
+}
+
+.about-quote {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  color: #2c3db6;
+  margin: 0 0 0.8rem;
 }
 
 .about-description {
   font-family: 'Sora', sans-serif;
   font-size: 0.98rem;
-  padding: 0.6rem 1rem 1.2rem;
+  padding: 0;
   line-height: 1.7;
-  text-align: center;
+  text-align: left;
   color: #2b2f55;
 }
 
@@ -70,101 +82,113 @@
 
 
 /* ===============================
-   MAIN LAYOUT
+   PANELS LAYOUT
 ================================= */
-.about-main {
+.about-panels {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  justify-content: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 1.6rem;
   align-items: start;
-  gap: 1.8rem;
 }
 
-/* ===============================
-   LEFT BOXES
-================================= */
-.about-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  width: 220px;
-}
-
-.about-box {
-  border: 2px solid #0b1b66;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: #e8f1ff;
-  box-shadow: 0 10px 22px rgba(11, 27, 102, 0.12);
-}
-
-.about-box:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(11, 27, 102, 0.18);
-}
-
-.about-box.active {
-  border-color: #0c2aa6;
-  background: #0c2aa6;
-  color: #ffffff;
-}
-
-.inner-box {
-  padding: 0.7rem 1.2rem;
-  border-radius: 0.5rem;
-}
-
-.inner-box h3 {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 700;
-  color: inherit;
-  font-family: 'Fraunces', serif;
-}
-
-/* ===============================
-   RIGHT CONTENT
-================================= */
-.about-right {
-  flex: 1;
-  max-width: 1000px;
-  text-align: left;
-  font-family: 'Sora', sans-serif;
-  color: #0b1b66;
-  min-height: 480px;
+.about-panel {
+  position: relative;
 }
 
 /* Boxes for Hobbies, Education, Passion */
 .hobby-box, .education-box, .passion-box {
-  padding: 1.1rem;
-  border-radius: var(--radius-lg);
-  border: 2px solid #0b1b66;
-  background: #f4f8ff;
+  padding: 1.4rem;
+  border-radius: 22px;
+  border: 1.5px solid rgba(12, 42, 166, 0.25);
+  background: #ffffff;
   margin-bottom: 2rem;
-  box-shadow: 0 16px 30px rgba(11, 27, 102, 0.12);
+  box-shadow: 0 20px 36px rgba(11, 27, 102, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-subbox {
+  padding: 1.2rem 1.2rem 1.1rem;
+  border-radius: 22px;
+  border: 1.5px solid rgba(12, 42, 166, 0.25);
+  background: #ffffff;
+  box-shadow: 0 20px 36px rgba(11, 27, 102, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-subbox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #0c2aa6, #6b82ff, #0c2aa6);
+}
+
+.hobby-box::before,
+.education-box::before,
+.passion-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #0c2aa6, #6b82ff, #0c2aa6);
 }
 
 /* Section Headings */
 .about-right h2 {
-  font-size: 1.55rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   color: #0b1b66;
   font-family: 'Fraunces', serif;
 }
 
 .about-right h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   color: #0c2aa6;
   font-family: 'Fraunces', serif;
 }
 
+.about-list {
+  margin: 0.4rem 0 0;
+  padding: 0;
+  color: #2b2f55;
+  line-height: 1.65;
+  font-size: 0.9rem;
+  list-style: none;
+}
+
+.about-list li {
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem;
+  border-bottom: 1px dashed rgba(12, 42, 166, 0.2);
+  padding-bottom: 0.4rem;
+}
+
+.about-item {
+  flex: 1;
+}
+
+.about-year {
+  font-weight: 700;
+  color: #0b1b66;
+  min-width: 44px;
+  text-align: right;
+}
+
 .about-right p {
   font-size: 0.9rem;
-  line-height: 1.8;
+  line-height: 1.75;
   color: #2b2f55;
 }
 
@@ -173,7 +197,7 @@
 ================================= */
 .education-timeline {
   position: relative;
-  margin-left: 2rem;
+  margin-left: 0.8rem;
   padding-left: .85rem;
   border-left: 3px solid #0c2aa6;
 }
@@ -216,21 +240,22 @@
 ================================= */
 .hobbies-row {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
   flex-wrap: wrap;
   align-items: stretch;
 }
 
 .hobby-column {
   flex: 1 1 280px;
-  border-radius: var(--radius-md);
-  padding: 0.85rem;
-  box-shadow: 0 16px 30px rgba(11, 27, 102, 0.12);
-  background: #ffffff;
-  border: 2px solid #0b1b66;
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 14px 28px rgba(11, 27, 102, 0.1);
+  background: #f7faff;
+  border: 1.5px solid rgba(12, 42, 166, 0.2);
   display: flex;
   flex-direction: column;
   min-height: 300px;
+  gap: 0.6rem;
 }
 
 .hobby-column p {
@@ -244,9 +269,9 @@
 .fade-gallery.videos {
   position: relative;
   width: 100%;
-  height: 120px;
-  margin-top: 0.7rem;
-  margin-top: auto;
+  height: 140px;
+  margin-top: 0.2rem;
+  order: -1;
 }
 
 .fade-gallery.images .pair-fade-item,
@@ -270,15 +295,8 @@
    RESPONSIVE
 ================================= */
 @media (max-width: 768px) {
-  .about-main {
+  .about-panels {
     grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  .about-left {
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
   }
 
   .hobbies-row {
