@@ -6,7 +6,7 @@ function Projects() {
     {
       title: "Fico Cafe Website",
       description:
-        "Designed and built a responsive cafe site that highlights menus, locations, and brand personality with clean UX and quick navigation.",
+        "Created a responsive, user-friendly website with groupmates to boost a local business’s online presence and clarify menus, locations, and brand story.",
       tech: ["React", "CSS", "JavaScript"],
     },
     {
@@ -18,30 +18,47 @@ function Projects() {
     {
       title: "AI Platform for Registrar Transactions",
       description:
-        "Thesis project using AI to streamline registrar workflows with transparent tracking and faster approvals.",
-      tech: ["AI", "React", "Node.js"],
+        "Thesis project using AI to streamline registrar workflows with transparent tracking, facial recognition, and multilingual support.",
+      tech: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "PostgreSQL",
+        "Prisma",
+        "TensorFlow.js",
+        "face-api",
+        "Hugging Face",
+      ],
+    },
+    {
+      title: "Python Web App with CSS UI",
+      description:
+        "Built a Python-based web app with frontend and backend support, focused on clean structure and consistent UI styling.",
+      tech: ["Python", "HTML", "CSS"],
+    },
+    {
+      title: "Inventory Management System",
+      description:
+        "Developed an inventory system during an internship at the Department of Information and Communications Technology using PHP and MySQL for data management.",
+      tech: ["PHP", "MySQL"],
     },
   ];
 
       return (
       <section id="projects" className="projects-section">
 
-        {/* Clean separator line */}
-        <div className="section-divider"></div>
-
-        {/* Header with icon */}
         <div className="projects-header">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"
-            alt="projects icon"
-            className="projects-icon"
-          />
-          <h1>My Projects</h1>
+          <h1 className="projects-vertical-title" aria-label="My Projects">
+            <span>P</span>
+            <span>R</span>
+            <span>O</span>
+            <span>J</span>
+            <span>E</span>
+            <span>C</span>
+            <span>T</span>
+          </h1>
         </div>
-
-        <p className="intro">
-          Below are examples of the work I’ve created, academic, personal, and research based.
-        </p>
 
         <div className="projects-list">
           {projects.map((proj, index) => (
