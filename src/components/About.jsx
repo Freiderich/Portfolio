@@ -55,7 +55,10 @@ function About() {
   return (
     <section id="about" className="about-section">
       <div className="about-header">
-        <h2 className="about-title">About Me</h2>
+        <div className="about-title-row">
+          <h2 className="about-title">About Me</h2>
+          <span className="about-title-rule" aria-hidden="true"></span>
+        </div>
         <p className="about-quote">"Design is the quiet confidence behind every great experience."</p>
       </div>
 
@@ -78,14 +81,14 @@ function About() {
           <div className="about-subbox">
             <h3>Certificates</h3>
             <ul className="about-list">
-              <li><span className="about-item">Introduction to IoT and Digital Transformation</span><span className="about-year">2026</span></li>
-              <li><span className="about-item">Introduction to Data Science</span><span className="about-year">2026</span></li>
               <li><span className="about-item">Junior Cybersecurity Analyst Career Path</span><span className="about-year">2025</span></li>
               <li><span className="about-item">Introduction to Data Science</span><span className="about-year">2025</span></li>
               <li><span className="about-item">Using Computer and Mobile Devices</span><span className="about-year">2025</span></li>
               <li><span className="about-item">Introduction to Modern AI</span><span className="about-year">2025</span></li>
               <li><span className="about-item">SPARK Social Media Marketing Certificate of Completion</span><span className="about-year">2025</span></li>
               <li><span className="about-item">AI for Digital Novice MSMEs</span><span className="about-year">2025</span></li>
+              <li><span className="about-item">Introduction to IoT and Digital Transformation</span><span className="about-year">2026</span></li>
+              <li><span className="about-item">Introduction to Data Science</span><span className="about-year">2026</span></li>
             </ul>
           </div>
         </div>
