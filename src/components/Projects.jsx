@@ -6,19 +6,19 @@ function Projects() {
     {
       title: "Fico Cafe Website",
       description:
-        "Created a responsive, user-friendly website with groupmates to boost a local business’s online presence and clarify menus, locations, and brand story.",
+        "Collaborated on a responsive marketing site that clarifies menus, locations, and brand voice while improving the cafe’s online visibility.",
       tech: ["React", "CSS", "JavaScript"],
     },
     {
       title: "Docker-based CRUD Application",
       description:
-        "Containerized full-stack CRUD app with robust API endpoints and deployment-focused workflows using Docker.",
+        "Built a containerized CRUD system with clean API endpoints and repeatable deployment workflows using Docker.",
       tech: ["Docker", "Node.js", "MongoDB"],
     },
     {
       title: "AI Platform for Registrar Transactions",
       description:
-        "Thesis project using AI to streamline registrar workflows with transparent tracking, facial recognition, and multilingual support.",
+        "Thesis platform that streamlines registrar workflows with AI-driven assistance, facial recognition, and multilingual support.",
       tech: [
         "Next.js",
         "React",
@@ -34,13 +34,13 @@ function Projects() {
     {
       title: "Python Web App with CSS UI",
       description:
-        "Built a Python-based web app with frontend and backend support, focused on clean structure and consistent UI styling.",
+        "Developed a Python web app with full-stack support and a consistent, polished UI.",
       tech: ["Python", "HTML", "CSS"],
     },
     {
       title: "Inventory Management System",
       description:
-        "Developed an inventory system during an internship at the Department of Information and Communications Technology using PHP and MySQL for data management.",
+        "Delivered an inventory management system during a DICT internship, using PHP and MySQL for reliable data processing.",
       tech: ["PHP", "MySQL"],
     },
   ];
