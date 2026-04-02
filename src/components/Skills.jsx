@@ -1,83 +1,52 @@
 import React from "react";
 import "../styles/Skills.css";
-import frontendIcon from "../assets/images/front-end-programming.png"; // Frontend icon
-import backendIcon from "../assets/images/backend.png"; // Backend icon
-
 function Skills() {
-  const skills = {
-    frontend: {
-      icon: frontendIcon,
-      description:
-        "I code things from scratch and gracefully bring ideas to life in the browser, paying maximal attention to design and usability.",
-      technologies: ["HTML", "CSS", "JavaScript", "React"],
-      tools: ["Bootstrap", "AJAX", "GitHub", "VS Code"],
-    },
-    backend: {
-      icon: backendIcon, // Backend icon
-      description:
-        "I develop server-side logic, APIs, and database management systems to support applications efficiently.",
-      technologies: ["Node.js", "Express", "MySQL", "PostgreSQL"],
-      tools: ["Docker", "Git", "Postman"],
-    },
-  };
-
   return (
     <section id="skills" className="skills-section">
-      <h1>Core Skills</h1>
+      <div className="skills-header">
+        <h1>Tech &amp; Tools I Use</h1>
+        <a
+          className="skills-github"
+          href="https://github.com/Freiderich"
+          target="_blank"
+          rel="noreferrer"
+        >
+          github.com/Freiderich
+        </a>
+      </div>
 
-      {/* Solid rectangle behind both boxes */}
-      <div className="skills-rectangle"></div>
-
-      <div className="skills-container">
-        {/* Frontend */}
-        <div className="skills-box">
-          <img
-            src={skills.frontend.icon}
-            alt="Frontend Icon"
-            className="skills-logo"
-          />
-          <h2>Front-end Developer</h2>
-          <p>{skills.frontend.description}</p>
-          <div className="skills-list">
-            <h3>Technologies:</h3>
-            <ul>
-              {skills.frontend.technologies.map((tech, i) => (
-                <li key={i}>{tech}</li>
-              ))}
-            </ul>
-            <h3>My Tools:</h3>
-            <ul>
-              {skills.frontend.tools.map((tool, i) => (
-                <li key={i}>{tool}</li>
-              ))}
-            </ul>
+      <div className="skills-grid">
+        <div className="skills-card">
+          <h2>Backend / Servers / Databases</h2>
+          <div className="skills-tags">
+            <span>PHP</span>
+            <span>MySQL</span>
+            <span>Django</span>
+            <span>Node.js</span>
           </div>
         </div>
 
-        {/* Backend */}
-        <div className="skills-box">
-          <img
-            src={skills.backend.icon}
-            alt="Backend Icon"
-            className="skills-logo"
-          />
-          <h2>Back-end Developer</h2>
-          <p>{skills.backend.description}</p>
-          <div className="skills-list">
-            <h3>Technologies:</h3>
-            <ul>
-              {skills.backend.technologies.map((tech, i) => (
-                <li key={i}>{tech}</li>
-              ))}
-            </ul>
-            <h3>My Tools:</h3>
-            <ul>
-              {skills.backend.tools.map((tool, i) => (
-                <li key={i}>{tool}</li>
-              ))}
-            </ul>
+        <div className="skills-card">
+          <h2>Frontend Development / Styling</h2>
+          <div className="skills-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Vite</span>
+            <span>Tailwind</span>
           </div>
         </div>
+
+        <div className="skills-card">
+          <h2>Frameworks / Libraries</h2>
+          <div className="skills-tags">
+            <span>React</span>
+            <span>Django</span>
+            <span>Node.js</span>
+            <span>Vercel</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );

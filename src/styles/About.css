@@ -8,7 +8,7 @@
   color: #0b1b66;
   min-height: 80vh;
   text-align: left;
-  background: linear-gradient(90deg, #dfeeff 0%, #dfeeff calc(100% - 220px), #0c2aa6 calc(100% - 220px), #0c2aa6 100%);
+  background: #dfeeff;
   overflow: hidden; /* Ensure pseudo-elements don't spill */
 }
 

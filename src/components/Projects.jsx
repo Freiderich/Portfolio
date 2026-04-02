@@ -57,6 +57,7 @@ function Projects() {
             <span>E</span>
             <span>C</span>
             <span>T</span>
+            <span>S</span> 
           </h1>
         </div>
 

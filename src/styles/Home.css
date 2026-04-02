@@ -3,7 +3,7 @@
   min-height: 92vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(90deg, #dfeeff 0%, #dfeeff calc(100% - 220px), #0c2aa6 calc(100% - 220px), #0c2aa6 100%);
+  background: #dfeeff;
   color: #0b1b66;
   font-family: 'Sora', sans-serif;
   position: relative;
