@@ -28,19 +28,6 @@
   padding: 0.35rem 1.2rem;
 }
 
-.skills-github {
-  color: #0c2aa6;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-bottom: 2px solid rgba(12, 42, 166, 0.25);
-  padding-bottom: 2px;
-}
-
-.skills-github:hover {
-  color: #0b1b66;
-  border-color: #0b1b66;
-}
 
 .skills-grid {
   position: relative;

@@ -5,14 +5,6 @@ function Skills() {
     <section id="skills" className="skills-section">
       <div className="skills-header">
         <h1>Tech &amp; Tools I Use</h1>
-        <a
-          className="skills-github"
-          href="https://github.com/Freiderich"
-          target="_blank"
-          rel="noreferrer"
-        >
-          github.com/Freiderich
-        </a>
       </div>
 
       <div className="skills-grid">
@@ -44,6 +36,17 @@ function Skills() {
             <span>Django</span>
             <span>Node.js</span>
             <span>Vercel</span>
+          </div>
+        </div>
+
+        <div className="skills-card">
+          <h2>Design &amp; Video Tools</h2>
+          <div className="skills-tags">
+            <span>Canva</span>
+            <span>Framer</span>
+            <span>Figma</span>
+            <span>CapCut</span>
+            <span>Filmora</span>
           </div>
         </div>
 

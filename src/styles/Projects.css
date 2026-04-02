@@ -10,9 +10,6 @@
   overflow: hidden;
 }
 
-
-
-
 /* Title */
 .projects-section h1 {
   text-align: right;
@@ -142,7 +139,7 @@
 
 .projects-group {
   margin-bottom: 42px;
-  padding-right: 120px;
+  padding-right: 200px;
   min-height: 520px;
 }
 
