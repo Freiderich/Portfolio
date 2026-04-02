@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Projects.css";
 
 function Projects() {
-  const projects = [
+  const [activeTab, setActiveTab] = useState("web");
+  const webProjects = [
     {
       title: "Fico Cafe Website",
       description:
@@ -45,6 +46,50 @@ function Projects() {
     },
   ];
 
+  const networkingProjects = [
+    {
+      title: "Network Lab Design & Troubleshooting",
+      description:
+        "Built small network topologies in Cisco Packet Tracer, validating routing, switching, and baseline security.",
+      tech: ["Cisco Packet Tracer", "Routing", "Switching"],
+    },
+    {
+      title: "VLANs, Trunks & Inter-VLAN Routing",
+      description:
+        "Configured VLAN segmentation, trunk links, and inter-VLAN routing scenarios across multiple lab activities.",
+      tech: ["VLANs", "Trunking", "Inter-VLAN Routing"],
+    },
+    {
+      title: "Routing Protocols & ACL Practice",
+      description:
+        "Implemented static and dynamic routing labs with access control lists for basic traffic filtering.",
+      tech: ["Routing", "ACLs", "Network Security"],
+    },
+  ];
+
+  const hardwareProjects = [
+    {
+      title: "Smart Door Alert System",
+      description:
+        "Built a Raspberry Pi 3-based alert system that detects activity and notifies users for added security.",
+      tech: ["Raspberry Pi", "Python", "GPIO"],
+    },
+    {
+      title: "Functional Battle Bot",
+      description:
+        "Designed and assembled an Arduino Uno robot with motor control and responsive movement logic.",
+      tech: ["Arduino Uno", "C++", "Electronics"],
+    },
+  ];
+
+  const tabs = [
+    { id: "web", label: "Web Development", projects: webProjects },
+    { id: "networking", label: "Networking & Security", projects: networkingProjects },
+    { id: "hardware", label: "Hardware & Systems", projects: hardwareProjects },
+  ];
+
+  const activeTabData = tabs.find((tab) => tab.id === activeTab) ?? tabs[0];
+
       return (
       <section id="projects" className="projects-section">
 
@@ -61,21 +106,39 @@ function Projects() {
           </h1>
         </div>
 
-        <div className="projects-list">
-          {projects.map((proj, index) => (
-            <div key={index} className="project-card">
-              <h2>{proj.title}</h2>
-              <p>{proj.description}</p>
-
-              <div className="tech-stack">
-                {proj.tech.map((tech, i) => (
-                  <span key={i} className="tech-item">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+        <div className="projects-tabs" role="tablist" aria-label="Project categories">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === tab.id}
+              className={`projects-tab ${activeTab === tab.id ? "is-active" : ""}`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.label}
+            </button>
           ))}
+        </div>
+
+        <div className="projects-group">
+          <h2 className="projects-group-title">{activeTabData.label}</h2>
+          <div className="projects-list">
+            {activeTabData.projects.map((proj, index) => (
+              <div key={`${activeTabData.id}-${index}`} className="project-card">
+                <h3>{proj.title}</h3>
+                <p>{proj.description}</p>
+
+                <div className="tech-stack">
+                  {proj.tech.map((tech, i) => (
+                    <span key={i} className="tech-item">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     );
