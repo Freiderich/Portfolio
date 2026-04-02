@@ -20,7 +20,7 @@ function Home() {
             <a href="#projects" className="cta-btn">View Work</a>
             <a href="#contact" className="cta-btn ghost">Contact Me</a>
           </div>
-          <div className="hero-badge">Creative &amp; Motivated Virtual Assistant</div>
+          <div className="hero-badge">Creative Portfolio &amp; Digital Craft</div>
         </div>
         <div className="home-right hero-portrait" aria-hidden="true">
           <div className="portrait-frame">
