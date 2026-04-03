@@ -10,8 +10,8 @@ function Skills() {
         <div className="skills-intro">
           <h2>Toolset Overview</h2>
           <p>
-            A focused stack for building reliable web products, from backend logic to polished interfaces and
-            creative production.
+            A practical stack for building full web experiences. I focus on clean architecture, reliable data
+            handling, and clear visual communication from concept to deployment.
           </p>
           <div className="skills-pill-row">
             <span>Full-stack</span>
@@ -24,7 +24,7 @@ function Skills() {
         <div className="skills-cards">
           <div className="skills-card">
             <h3>Backend / Servers / Databases</h3>
-            <p>Server-side logic, APIs, and structured data handling.</p>
+            <p>API development, data modeling, and database operations for stable, scalable systems.</p>
             <div className="skills-tags">
               <span>PHP</span>
               <span>MySQL</span>
@@ -35,7 +35,7 @@ function Skills() {
 
           <div className="skills-card">
             <h3>Frontend Development / Styling</h3>
-            <p>Clean interfaces, responsive layouts, and modern UI systems.</p>
+            <p>Responsive layouts, accessible UI, and consistent styling across devices.</p>
             <div className="skills-tags">
               <span>HTML</span>
               <span>CSS</span>
@@ -47,7 +47,7 @@ function Skills() {
 
           <div className="skills-card">
             <h3>Frameworks / Libraries</h3>
-            <p>Scalable frameworks and platforms for faster delivery.</p>
+            <p>Frameworks that speed up development while keeping code maintainable.</p>
             <div className="skills-tags">
               <span>React</span>
               <span>Django</span>
@@ -58,7 +58,7 @@ function Skills() {
 
           <div className="skills-card">
             <h3>Design &amp; Video Tools</h3>
-            <p>Visual design, prototyping, and editing workflows.</p>
+            <p>Design systems, prototyping, and video editing for marketing-ready assets.</p>
             <div className="skills-tags">
               <span>Canva</span>
               <span>Framer</span>
