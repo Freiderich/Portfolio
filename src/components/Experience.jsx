@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Experience.css";
+import dictMap from "../assets/images/dict-map.png";
 
 function Experience() {
+  const [isMapOpen, setIsMapOpen] = useState(false);
   const dictExperience = {
     role: "OJT Intern (ICT Operations)",
     company: "Department of Information and Communications Technology (DICT) - Pampanga",
@@ -59,16 +61,16 @@ function Experience() {
           </p>
         </header>
 
-        <div className="experience-dashboard">
-          <div className="dashboard-main">
-            <article className="dashboard-card intro">
-              <div className="dashboard-header">
-                <span className="experience-date">{dictExperience.period}</span>
-                <div>
-                  <h3>{dictExperience.role}</h3>
-                  <h4>{dictExperience.company}</h4>
+          <div className="experience-dashboard">
+            <div className="dashboard-main">
+              <article className="dashboard-card intro">
+                <div className="dashboard-header">
+                  <span className="experience-date">{dictExperience.period}</span>
+                  <div>
+                    <h3>{dictExperience.role}</h3>
+                    <h4>{dictExperience.company}</h4>
+                  </div>
                 </div>
-              </div>
 
               <p className="experience-summary">{dictExperience.summary}</p>
 
@@ -88,7 +90,44 @@ function Experience() {
                   </span>
                 ))}
               </div>
-            </article>
+              </article>
+            </div>
+
+            <aside className="dashboard-side">
+              <div className="stat-grid">
+                {dictExperience.stats.map((stat) => (
+                  <div key={stat.label} className="stat-card">
+                    <span className="stat-label">{stat.label}</span>
+                    <span className="stat-value">{stat.value}</span>
+                  </div>
+                ))}
+                <div className="stat-card highlight">
+                  <span className="stat-label">Impact</span>
+                  <span className="stat-value">Improved inventory visibility and training readiness</span>
+                </div>
+              </div>
+            </aside>
+
+            <aside className="dashboard-location">
+              <div className="location-card">
+                <span className="location-label">Location</span>
+                <p className="location-text">
+                  Homesite, Brgy. Dau Access Road, Ubas St, Dau, Mabalacat City
+                </p>
+                <button
+                  className="location-map"
+                  type="button"
+                  onClick={() => setIsMapOpen(true)}
+                  aria-label="Open full-size map preview"
+                >
+                  <img
+                    src={dictMap}
+                    alt="Map showing DICT Pampanga Provincial Office location"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </aside>
 
             <div className="dashboard-panels">
               <div className="panel">
@@ -117,24 +156,32 @@ function Experience() {
               </div>
             </div>
           </div>
-
-          <aside className="dashboard-side">
-            <div className="stat-grid">
-              {dictExperience.stats.map((stat) => (
-                <div key={stat.label} className="stat-card">
-                  <span className="stat-label">{stat.label}</span>
-                  <span className="stat-value">{stat.value}</span>
-                </div>
-              ))}
-              <div className="stat-card highlight">
-                <span className="stat-label">Impact</span>
-                <span className="stat-value">Improved inventory visibility and training readiness</span>
+          {isMapOpen && (
+            <div
+              className="map-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Location map preview"
+              onClick={() => setIsMapOpen(false)}
+            >
+              <div className="map-modal-content" onClick={(event) => event.stopPropagation()}>
+                <button
+                  className="map-modal-close"
+                  type="button"
+                  onClick={() => setIsMapOpen(false)}
+                  aria-label="Close map preview"
+                >
+                  Close
+                </button>
+                <img
+                  src={dictMap}
+                  alt="Map showing DICT Pampanga Provincial Office location"
+                />
               </div>
             </div>
-          </aside>
+          )}
         </div>
-      </div>
-    </section>
+      </section>
   );
 }
 
