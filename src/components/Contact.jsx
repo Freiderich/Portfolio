@@ -2,19 +2,15 @@ import React, { useState } from "react";
 import "../styles/Contact.css";
 
 function Contact() {
-  const contacts = [
-    { type: "Gmail", info: "freiderichperalta@gmail.com", icon: "fas fa-envelope", color: "#ff6b35" },
-    { type: "Phone", info: "+63 949-405-6725", icon: "fas fa-phone", color: "#0ea5a4" },
-    { type: "Location", info: "Mabalacat City, Philippines", icon: "fas fa-map-marker-alt", color: "#1f2937" },
-  ];
 
-  const socials = [
-    { type: "LinkedIn", link: "https://www.linkedin.com/in/freiderich-peralta-95bbaa371/", icon: "fab fa-linkedin-in", color: "#0a66c2" },
-    { type: "Facebook", link: "https://www.facebook.com/peraltafreiderich", icon: "fab fa-facebook-f", color: "#1877f2" },
-    { type: "Instagram", link: "https://www.instagram.com/peraltafreiderich/", icon: "fab fa-instagram", color: "#e1306c" },
-  ];
 
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,38 +19,117 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent! 🎉");
-    setFormData({ name: "", email: "", message: "" });
+    const subject = "Portfolio inquiry";
+    const body = formData.message.trim();
+    if (!body || !formData.email.trim()) {
+      return;
+    }
+    const details = [
+      `First Name: ${formData.firstName || "N/A"}`,
+      `Last Name: ${formData.lastName || "N/A"}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone || "N/A"}`,
+      "",
+      "Message:",
+      body,
+    ].join("\n");
+    const mailtoLink = `mailto:freiderichperalta@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(details)}`;
+    window.location.href = mailtoLink;
+    setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
   };
 
   return (
     <section id="contact" className="contact-section">
       <h2>Contacts</h2>
-      <p className="intro">Let's connect — feel free to reach out!</p>
 
-      {/* Contact Cards */}
-      <div className="contact-container">
-        {contacts.map((contact, index) => (
-          <div key={index} className="contact-card">
-            <div className="icon-wrapper" style={{ backgroundColor: contact.color }}>
-              <i className={contact.icon}></i>
+      <div className="contact-layout">
+        <div className="contact-left">
+          <p className="contact-note">
+            Have a question or want to collaborate? Send an inquiry and I will be in touch.
+          </p>
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="contact-form-grid">
+              <div className="contact-field">
+                <label className="contact-label" htmlFor="firstName">
+                  First Name
+                </label>
+                <input
+                  id="firstName"
+                  name="firstName"
+                  className="contact-input"
+                  type="text"
+                  placeholder="Juan"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="contact-field">
+                <label className="contact-label" htmlFor="lastName">
+                  Last Name
+                </label>
+                <input
+                  id="lastName"
+                  name="lastName"
+                  className="contact-input"
+                  type="text"
+                  placeholder="Dela Cruz"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="contact-field">
+                <label className="contact-label" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  className="contact-input"
+                  type="email"
+                  placeholder="you@email.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="contact-field">
+                <label className="contact-label" htmlFor="phone">
+                  Phone
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  className="contact-input"
+                  type="tel"
+                  placeholder="+63 9xx xxx xxxx"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
-            <div className="contact-info">
-              <h3>{contact.type}</h3>
-              <p>{contact.info}</p>
+            <div className="contact-field full">
+              <label className="contact-label" htmlFor="message">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                className="contact-textarea"
+                rows="6"
+                placeholder="Write your question here..."
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
             </div>
-          </div>
-        ))}
-      </div>
+            <button className="contact-submit" type="submit">
+              Send Inquiry
+            </button>
+          </form>
+        </div>
 
-      {/* Social Icons */}
-      <div className="socials-container">
-        {socials.map((social, index) => (
-          <a key={index} href={social.link} target="_blank" rel="noopener noreferrer"
-             className="social-icon" style={{ backgroundColor: social.color }} title={social.type}>
-            <i className={social.icon}></i>
-          </a>
-        ))}
       </div>
     </section>
   );
