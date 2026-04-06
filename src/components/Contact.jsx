@@ -5,10 +5,9 @@ function Contact() {
 
 
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
-    phone: "",
+    subject: "",
     message: "",
   });
 
@@ -19,16 +18,14 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const subject = "Portfolio inquiry";
+    const subject = formData.subject.trim() || "Portfolio inquiry";
     const body = formData.message.trim();
     if (!body || !formData.email.trim()) {
       return;
     }
     const details = [
-      `First Name: ${formData.firstName || "N/A"}`,
-      `Last Name: ${formData.lastName || "N/A"}`,
+      `Full Name: ${formData.fullName || "N/A"}`,
       `Email: ${formData.email}`,
-      `Phone: ${formData.phone || "N/A"}`,
       "",
       "Message:",
       body,
@@ -37,7 +34,7 @@ function Contact() {
       subject
     )}&body=${encodeURIComponent(details)}`;
     window.location.href = mailtoLink;
-    setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+    setFormData({ fullName: "", email: "", subject: "", message: "" });
   };
 
   return (
@@ -45,69 +42,55 @@ function Contact() {
       <h2>Contacts</h2>
 
       <div className="contact-layout">
-        <div className="contact-left">
+        <div className="contact-form-wrap">
           <p className="contact-note">
-            Have a question or want to collaborate? Send an inquiry and I will be in touch.
+            Have a project in mind or want to discuss an idea? Send an inquiry and I will be in touch.
           </p>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="contact-form-grid">
               <div className="contact-field">
-                <label className="contact-label" htmlFor="firstName">
-                  First Name
+                <label className="contact-label" htmlFor="fullName">
+                  Full Name
                 </label>
                 <input
-                  id="firstName"
-                  name="firstName"
+                  id="fullName"
+                  name="fullName"
                   className="contact-input"
                   type="text"
-                  placeholder="Juan"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="contact-field">
-                <label className="contact-label" htmlFor="lastName">
-                  Last Name
-                </label>
-                <input
-                  id="lastName"
-                  name="lastName"
-                  className="contact-input"
-                  type="text"
-                  placeholder="Dela Cruz"
-                  value={formData.lastName}
+                  placeholder="Enter your name"
+                  value={formData.fullName}
                   onChange={handleChange}
                 />
               </div>
               <div className="contact-field">
                 <label className="contact-label" htmlFor="email">
-                  Email
+                  Email Address
                 </label>
                 <input
                   id="email"
                   name="email"
                   className="contact-input"
                   type="email"
-                  placeholder="you@email.com"
+                  placeholder="Email address"
                   value={formData.email}
                   onChange={handleChange}
                   required
                 />
               </div>
-              <div className="contact-field">
-                <label className="contact-label" htmlFor="phone">
-                  Phone
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  className="contact-input"
-                  type="tel"
-                  placeholder="+63 9xx xxx xxxx"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
-              </div>
+            </div>
+            <div className="contact-field full">
+              <label className="contact-label" htmlFor="subject">
+                Subject
+              </label>
+              <input
+                id="subject"
+                name="subject"
+                className="contact-input"
+                type="text"
+                placeholder="Subject"
+                value={formData.subject}
+                onChange={handleChange}
+              />
             </div>
             <div className="contact-field full">
               <label className="contact-label" htmlFor="message">
@@ -118,18 +101,17 @@ function Contact() {
                 name="message"
                 className="contact-textarea"
                 rows="6"
-                placeholder="Write your question here..."
+                placeholder="Write something"
                 value={formData.message}
                 onChange={handleChange}
                 required
               />
             </div>
             <button className="contact-submit" type="submit">
-              Send Inquiry
+              Send Message
             </button>
           </form>
         </div>
-
       </div>
     </section>
   );

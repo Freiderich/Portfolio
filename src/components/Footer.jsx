@@ -17,6 +17,9 @@ function Footer() {
             <a className="footer-link" href="https://www.linkedin.com/in/freiderich-peralta-95bbaa371/" target="_blank" rel="noreferrer">
               LinkedIn
             </a>
+            <a className="footer-link" href="https://github.com/Freiderich" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
           </div>
           <div className="footer-col">
             <span className="footer-kicker">Current location</span>
@@ -28,21 +31,21 @@ function Footer() {
             <span className="footer-text">+63 949-405-6725</span>
           </div>
           <div className="footer-col">
+            <span className="footer-kicker">Resume</span>
+            <a className="footer-link" href="/Freiderich-Peralta-Resume.pdf" download>
+              Download Resume
+            </a>
+          </div>
+          <div className="footer-col">
             <span className="footer-kicker">Email me</span>
             <a className="footer-link" href="mailto:freiderichperalta@gmail.com">
               freiderichperalta@gmail.com
-            </a>
-            <a className="footer-link" href="https://github.com/Freiderich" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a className="footer-link" href="/freiderich-peralta-resume.pdf" download>
-              Download Resume
             </a>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
-        <span>Freiderich Peralta · Built with care and curiosity.</span>
+        <span>Freiderich Peralta</span>
       </div>
     </footer>
   );

@@ -40,7 +40,7 @@
 }
 
 .contact-layout {
-  max-width: 900px;
+  max-width: 840px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -51,10 +51,10 @@
 }
 
 .contact-note {
-  margin: 0 0 14px;
+  margin: 0 0 18px;
   color: #2b2f55;
   line-height: 1.7;
-  text-align: left;
+  text-align: center;
 }
 
 .contact-container {
@@ -223,6 +223,39 @@
 .contact-submit:hover {
   transform: translateY(-2px);
   box-shadow: 0 18px 30px rgba(11, 27, 102, 0.2);
+}
+
+.contact-form-wrap {
+  display: grid;
+  gap: 16px;
+}
+
+
+
+.info-title {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #2c3db6;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.info-link {
+  color: #0b1b66;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.info-link:hover {
+  color: #2c3db6;
+}
+
+.info-text {
+  color: #2b2f55;
+  line-height: 1.6;
 }
 
 @media (max-width: 900px) {

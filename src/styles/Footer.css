@@ -25,7 +25,7 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: 1.1fr 1.1fr 0.9fr 0.9fr 1.4fr;
   gap: 24px;
   border-top: 1px solid rgba(230, 236, 255, 0.15);
   padding-top: 24px;
@@ -34,6 +34,7 @@
 .footer-col {
   display: grid;
   gap: 10px;
+  min-width: 0;
 }
 
 .footer-kicker {
@@ -51,6 +52,7 @@
   align-items: center;
   gap: 6px;
   transition: color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
 }
 
 .footer-link:hover {
