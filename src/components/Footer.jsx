@@ -32,7 +32,7 @@ function Footer() {
           </div>
           <div className="footer-col">
             <span className="footer-kicker">Resume</span>
-            <a className="footer-link" href="/Freiderich-Peralta-Resume.pdf" download>
+            <a className="footer-link" href="/Freiderich_Peralta_Resume.pdf" download>
               Download Resume
             </a>
           </div>
