@@ -63,7 +63,7 @@ function Contact() {
       <div className="contact-layout">
         <div className="contact-form-wrap">
           <p className="contact-note">
-            Have a project in mind or want to discuss an idea? Send an inquiry and I will be in touch.
+            Send an inquiry and I will be in touch.
           </p>
           <form
             className="contact-form"
