@@ -64,7 +64,6 @@ function Skills() {
               <span>Framer</span>
               <span>Figma</span>
               <span>CapCut</span>
-              <span>Filmora</span>
             </div>
           </div>
         </div>
