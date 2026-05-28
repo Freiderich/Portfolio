@@ -45,7 +45,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>Freiderich Peralta</span>
+        <span>Freiderich S. Peralta</span>
       </div>
     </footer>
   );
