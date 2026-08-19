@@ -18,7 +18,7 @@ function Home() {
           </p>
           <div className="hero-actions">
             <a href="#projects" className="cta-btn">View Work</a>
-            <a href="#contact" className="cta-btn ghost">Contact <br />Me</a>
+            <a href="#contact" className="cta-btn ghost">Contact Me</a>
           </div>
           <div className="hero-badge">Creative Portfolio &amp; Digital Craft</div>
         </div>
