@@ -57,7 +57,8 @@
 
 .footer-link:hover {
   color: #8cb3ff;
-  transform: translateX(2px);
+  transform: translateX(2px)
+  position:relative;
 }
 
 .footer-text {

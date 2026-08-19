@@ -8,7 +8,7 @@ function Home() {
       <div className="home-container hero-grid">
         <div className="home-left hero-text">
           <p className="hero-kicker">Hi, my name is</p>
-          <h1 className="hero-name">Freiderich<br />Peralta</h1>
+          <h1 className="hero-name">Freiderich Peralta</h1>
           <p className="hero-roles">Graphic Designer · Web Developer · Video Editing</p>
           <p className="hero-summary">
             Freiderich Peralta is a reliable and dedicated creative professional, known
@@ -18,7 +18,7 @@ function Home() {
           </p>
           <div className="hero-actions">
             <a href="#projects" className="cta-btn">View Work</a>
-            <a href="#contact" className="cta-btn ghost">Contact Me</a>
+            <a href="#contact" className="cta-btn ghost">Contact <br>Me</a>
           </div>
           <div className="hero-badge">Creative Portfolio &amp; Digital Craft</div>
         </div>
