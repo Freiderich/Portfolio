@@ -8,6 +8,8 @@
   --primary-dark: #e75523;
   --secondary: #0ea5a4;
   --bg-light: #fdf6f0;
+  --grid-line: #b8cbea;
+  --grid-background: #dfeeff;
   --bg-ink: #111827;
   --text-dark: #1b1f2a;
   --text-muted: #4b5563;
@@ -27,7 +29,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #dfeeff;
+  background-color: var(--grid-background);
   color: var(--text-dark);
   font-family: 'Sora', sans-serif;
   scroll-behavior: smooth; /* smooth scroll for nav links */

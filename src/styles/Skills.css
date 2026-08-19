@@ -1,7 +1,9 @@
 .skills-section {
   position: relative;
   padding: 120px 10% 130px;
-  background: #dfeeff;
+  background-color: var(--grid-background);
+  background-image: linear-gradient(0deg, transparent 24%, var(--grid-line) 25%, var(--grid-line) 26%, transparent 27%, transparent 74%, var(--grid-line) 75%, var(--grid-line) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, var(--grid-line) 25%, var(--grid-line) 26%, transparent 27%, transparent 74%, var(--grid-line) 75%, var(--grid-line) 76%, transparent 77%, transparent);
+  background-size: 55px 55px;
   color: #0b1b66;
   text-align: left;
   overflow: hidden;
